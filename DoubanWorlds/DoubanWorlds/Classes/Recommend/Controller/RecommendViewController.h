@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  RecommendViewController.h
 //  DoubanWorlds
 //
 //  Created by LYoung on 15/12/22.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface RecommendViewController : UIViewController
 
 @end
-

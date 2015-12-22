@@ -8,8 +8,10 @@
 
 #import "MainTabbarController.h"
 #import "MainNavgationController.h"
-#import "ContentViewController.h"
-#import "SettingViewController.h"
+#import "MeViewController.h"
+#import "SearchViewController.h"
+#import "RecommendViewController.h"
+#import "NearbyViewController.h"
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
 @implementation MainTabbarController
@@ -35,17 +37,17 @@
     NSArray *buttonImages = @[@"tabbar_mainframe", @"tabbar_discover", @"tabbar_contacts",@"tabbar_me"];
     NSArray *buttonImagesSelected = @[@"tabbar_mainframeHL", @"tabbar_discoverHL", @"tabbar_contactsHL",@"tabbar_meHL"];
     
-    ContentViewController *contentsVC = [[ContentViewController alloc] init];
-    [self addChildViewController:contentsVC title:@"微信" image:buttonImages[0] selectedImage:buttonImagesSelected[0]];
+    RecommendViewController *recommendVC = [[RecommendViewController alloc] init];
+    [self addChildViewController:recommendVC title:@"推荐" image:buttonImages[0] selectedImage:buttonImagesSelected[0]];
     
-    UIViewController *pictureVC = [[UIViewController alloc] init];
-    [self addChildViewController:pictureVC title:@"通讯录" image:buttonImages[1] selectedImage:buttonImagesSelected[1]];
+    NearbyViewController *nearbyVC = [[NearbyViewController alloc] init];
+    [self addChildViewController:nearbyVC title:@"附近" image:buttonImages[1] selectedImage:buttonImagesSelected[1]];
     
-    UIViewController *voiceVC = [[UIViewController alloc] init];
-    [self addChildViewController:voiceVC title:@"发现" image:buttonImages[2] selectedImage:buttonImagesSelected[2]];
+    SearchViewController *searchVC = [[SearchViewController alloc] init];
+    [self addChildViewController:searchVC title:@"搜索" image:buttonImages[2] selectedImage:buttonImagesSelected[2]];
     
-    SettingViewController *settingsVC = [[SettingViewController alloc] init];
-    [self addChildViewController:settingsVC title:@"我" image:buttonImages[3] selectedImage:buttonImagesSelected[3]];
+    MeViewController *meVC = [[MeViewController alloc] init];
+    [self addChildViewController:meVC title:@"我" image:buttonImages[3] selectedImage:buttonImagesSelected[3]];
     
 }
 
