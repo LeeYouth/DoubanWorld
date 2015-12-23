@@ -12,6 +12,9 @@
 typedef void (^HttpSuccess)(id json);
 typedef void (^HttpFailure)(NSError *error);
 
+typedef void (^ArrayBlock)(NSMutableArray *resultArray);
+
+
 @interface HttpTools : NSObject
 
 

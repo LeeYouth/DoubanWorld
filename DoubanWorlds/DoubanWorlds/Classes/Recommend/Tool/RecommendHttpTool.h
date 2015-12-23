@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface RecommendHttpTool : NSObject
+
+/**
+*  获取活动列表(get请求
+*
+*  @param startNum 请求页数
+*  @param loc      地区信息
+*/
++(void)getRecommendList:(NSInteger)startNum loc:(NSString *)loc arrayBlock:(ArrayBlock)arrayBlock;
 
 @end

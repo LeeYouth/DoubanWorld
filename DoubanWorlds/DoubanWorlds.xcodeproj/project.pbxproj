@@ -28,6 +28,8 @@
 		E611AACE1C2A362D00A1107C /* tableview_pull_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AAC81C2A362D00A1107C /* tableview_pull_refresh@2x.png */; };
 		E611AACF1C2A362D00A1107C /* tableview_pull_refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AAC91C2A362D00A1107C /* tableview_pull_refresh@3x.png */; };
 		E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E611AACB1C2A362D00A1107C /* UIScrollView+LDRefresh.m */; };
+		E64A13BC1C2A7BF500AC0750 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */; };
+		E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BE1C2A7D1B00AC0750 /* ActivityOwnerModel.m */; };
 		E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4791C2A3F7D0039A839 /* HttpTools.m */; };
 		E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A47C1C2A3FA80039A839 /* RecommendHttpTool.m */; };
 		E697A47F1C2A46090039A839 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E697A47E1C2A46090039A839 /* Podfile */; };
@@ -97,6 +99,10 @@
 		E611AACA1C2A362D00A1107C /* UIScrollView+LDRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LDRefresh.h"; sourceTree = "<group>"; };
 		E611AACB1C2A362D00A1107C /* UIScrollView+LDRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LDRefresh.m"; sourceTree = "<group>"; };
 		E611AAD11C2A370600A1107C /* LDRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDRefresh.h; sourceTree = "<group>"; };
+		E64A13BA1C2A7BF500AC0750 /* RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendModel.h; sourceTree = "<group>"; };
+		E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
+		E64A13BD1C2A7D1B00AC0750 /* ActivityOwnerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOwnerModel.h; sourceTree = "<group>"; };
+		E64A13BE1C2A7D1B00AC0750 /* ActivityOwnerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityOwnerModel.m; sourceTree = "<group>"; };
 		E697A4781C2A3F7D0039A839 /* HttpTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTools.h; sourceTree = "<group>"; };
 		E697A4791C2A3F7D0039A839 /* HttpTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTools.m; sourceTree = "<group>"; };
 		E697A47B1C2A3FA80039A839 /* RecommendHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHttpTool.h; sourceTree = "<group>"; };
@@ -486,6 +492,10 @@
 		E6E2B40D1C2944FE003F2C4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E64A13BA1C2A7BF500AC0750 /* RecommendModel.h */,
+				E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */,
+				E64A13BD1C2A7D1B00AC0750 /* ActivityOwnerModel.h */,
+				E64A13BE1C2A7D1B00AC0750 /* ActivityOwnerModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -780,6 +790,7 @@
 				E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */,
 				E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */,
 				E6E2B3B41C2942F4003F2C4B /* main.m in Sources */,
+				E64A13BC1C2A7BF500AC0750 /* RecommendModel.m in Sources */,
 				E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */,
 				E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */,
 				E611AACD1C2A362D00A1107C /* LDRefreshHeaderView.m in Sources */,
@@ -787,6 +798,7 @@
 				E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */,
 				E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */,
 				E611AACC1C2A362D00A1107C /* LDRefreshFooterView.m in Sources */,
+				E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */,
 				E6E2B4001C2943F5003F2C4B /* MainTabbarController.m in Sources */,
 				E6E2B41B1C294597003F2C4B /* NearbyViewController.m in Sources */,
 			);

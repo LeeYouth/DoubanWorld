@@ -8,24 +8,45 @@
 
 #import "RecommendViewController.h"
 #import "LDRefresh.h"
+#import "RecommendHttpTool.h"
+#import "RecommendModel.h"
 
 @interface RecommendViewController ()
+{
+    NSInteger _startNum;
+}
 
-//UI
 @property (nonatomic, strong) UITableView *tableView;
-
-//Data
-@property (nonatomic, assign) NSInteger   data;
+@property (nonatomic, strong) NSMutableArray *resultArray;
 
 @end
 
 @implementation RecommendViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.resultArray = [NSMutableArray arrayWithCapacity:1];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _startNum = 0;
     
+    [self initTableView];
+    
+    [self addRefreshView];
+    
+    [self refreshData];
+    
+}
+
+- (void)initTableView{
     self.view.backgroundColor = [UIColor whiteColor];
+
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
     {
         self.automaticallyAdjustsScrollViewInsets = NO;
@@ -36,10 +57,6 @@
     _tableView.dataSource      = (id<UITableViewDataSource>) self;
     _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:_tableView];
-    
-    _data = 20;
-    [self addRefreshView];
-
 }
 
 - (void)addRefreshView {
@@ -62,8 +79,11 @@
     __weak __typeof(self)weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        _data = 20;
-        [weakSelf.tableView reloadData];
+        [RecommendHttpTool getRecommendList:_startNum loc:@"108288" arrayBlock:^(NSMutableArray *resultArray) {
+            _resultArray = resultArray;
+            [weakSelf.tableView reloadData];
+
+        }];
         [weakSelf.tableView.refreshHeader endRefresh];
         
         weakSelf.tableView.refreshFooter.loadMoreEnabled = YES;
@@ -75,16 +95,19 @@
     __weak __typeof(self)weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        _data += 20;
-        [weakSelf.tableView reloadData];
+        _startNum++;
+        [RecommendHttpTool getRecommendList:_startNum loc:@"108288" arrayBlock:^(NSMutableArray *resultArray) {
+            [_resultArray addObjectsFromArray:resultArray];
+            [weakSelf.tableView reloadData];
+        }];
         [weakSelf.tableView.refreshFooter endRefresh];
         
-        weakSelf.tableView.refreshFooter.loadMoreEnabled = NO;
+//        weakSelf.tableView.refreshFooter.loadMoreEnabled = NO;
     });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _data;
+    return _resultArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,8 +117,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+    RecommendModel *model = [_resultArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = model.title;
     return cell;
 }
 
