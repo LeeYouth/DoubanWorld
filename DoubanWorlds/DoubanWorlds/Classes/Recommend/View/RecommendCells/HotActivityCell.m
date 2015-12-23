@@ -12,6 +12,9 @@
 @interface HotActivityCell ()
 {
     UIImageView *_imageView;
+    UILabel *_categoryLabel;
+    UILabel *_titleLabel;
+    UILabel *_contentLabel;
 }
 
 @end
@@ -41,19 +44,30 @@
         
         [self initUI];
         
+        [self setttingViewAtuoLayout];
+        
     }
     return self;
 }
 
 -(void)initUI{
     _imageView = [[UIImageView alloc] init];
-    [self addSubview:_imageView];
+    [self.contentView addSubview:_imageView];
     
-    [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(80, 120));
-        make.top.mas_equalTo(@(HMStatusCellMargin));
-        make.left.mas_equalTo(@(10));
-    }];
+    _categoryLabel = [[UILabel alloc] init];
+    _categoryLabel.textColor = [UIColor lightGrayColor];
+    _categoryLabel.backgroundColor = [UIColor clearColor];
+    _categoryLabel.font = [UIFont systemFontOfSize:14.f];
+    [self.contentView addSubview:_categoryLabel];
+    
+    _titleLabel = [[UILabel alloc] init];
+    _titleLabel.numberOfLines = 0;
+    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.backgroundColor = [UIColor clearColor];
+    _titleLabel.font = [UIFont boldSystemFontOfSize:18.f];
+    [self.contentView addSubview:_titleLabel];
+    
+    
     
     UIView *lineView = [[UIView alloc] init];
     lineView.frame = CGRectMake(0, 149, SCREEN_WIDTH, 0.7);
@@ -62,6 +76,25 @@
 
 }
 
+
+-(void)setttingViewAtuoLayout{
+    [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(80, 120));
+        make.top.mas_equalTo(@(HMStatusCellMargin));
+        make.left.mas_equalTo(@(10));
+    }];
+    
+    [_categoryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_imageView);
+        make.left.equalTo(_imageView.mas_right).offset(HMStatusCellMargin);
+        make.right.mas_equalTo(self.contentView.mas_right).offset(-HMStatusCellMargin); // 设置titleLabel右边与父控件的偏移量
+        make.height.mas_equalTo(@(20));
+    }];
+    
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.
+    }]
+}
 
 
 
@@ -75,6 +108,8 @@
     
 
     [_imageView sd_setImageWithURL:[NSURL URLWithString:model.image] placeholderImage:nil];
+    
+    _categoryLabel.text = model.category_name;
     
 }
 
