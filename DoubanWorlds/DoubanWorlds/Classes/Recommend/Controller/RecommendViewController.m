@@ -10,6 +10,7 @@
 #import "LDRefresh.h"
 #import "RecommendHttpTool.h"
 #import "RecommendModel.h"
+#import "HotActivityCell.h"
 
 @interface RecommendViewController ()
 {
@@ -56,6 +57,7 @@
     _tableView.delegate        = (id<UITableViewDelegate>)self;
     _tableView.dataSource      = (id<UITableViewDataSource>) self;
     _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
 }
 
@@ -110,18 +112,19 @@
     return _resultArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *reuseIdentifier = @"reuseIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-    }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     RecommendModel *model = [_resultArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = model.title;
-    return cell;
+    return [HotActivityCell getCellHeight:model];
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    RecommendModel *model = [_resultArray objectAtIndex:indexPath.row];
+
+    HotActivityCell *activityCell = [HotActivityCell cellWithTableView:tableView];
+    activityCell.model = model;
+    return activityCell;
+}
 
 
 

@@ -26,4 +26,5 @@
 #endif
 
 
+#define HMStatusCellMargin 15
 
