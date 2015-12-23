@@ -31,6 +31,11 @@
 		E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4791C2A3F7D0039A839 /* HttpTools.m */; };
 		E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A47C1C2A3FA80039A839 /* RecommendHttpTool.m */; };
 		E697A47F1C2A46090039A839 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E697A47E1C2A46090039A839 /* Podfile */; };
+		E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4821C2A72280039A839 /* SVIndefiniteAnimatedView.m */; };
+		E697A48B1C2A72280039A839 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E697A4831C2A72280039A839 /* SVProgressHUD.bundle */; };
+		E697A48C1C2A72280039A839 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4851C2A72280039A839 /* SVProgressHUD.m */; };
+		E697A48D1C2A72280039A839 /* SVProgressHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4871C2A72280039A839 /* SVProgressHUDManager.m */; };
+		E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4891C2A72280039A839 /* SVRadialGradientLayer.m */; };
 		E6E2B3B41C2942F4003F2C4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B3B31C2942F4003F2C4B /* main.m */; };
 		E6E2B3BF1C2942F4003F2C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */; };
 		E6E2B3C21C2942F4003F2C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E2B3C01C2942F4003F2C4B /* LaunchScreen.storyboard */; };
@@ -97,6 +102,15 @@
 		E697A47B1C2A3FA80039A839 /* RecommendHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHttpTool.h; sourceTree = "<group>"; };
 		E697A47C1C2A3FA80039A839 /* RecommendHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHttpTool.m; sourceTree = "<group>"; };
 		E697A47E1C2A46090039A839 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		E697A4811C2A72280039A839 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		E697A4821C2A72280039A839 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		E697A4831C2A72280039A839 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		E697A4841C2A72280039A839 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		E697A4851C2A72280039A839 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		E697A4861C2A72280039A839 /* SVProgressHUDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUDManager.h; sourceTree = "<group>"; };
+		E697A4871C2A72280039A839 /* SVProgressHUDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUDManager.m; sourceTree = "<group>"; };
+		E697A4881C2A72280039A839 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		E697A4891C2A72280039A839 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		E6E2B3AF1C2942F4003F2C4B /* DoubanWorlds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanWorlds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E2B3B31C2942F4003F2C4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
@@ -217,6 +231,22 @@
 			path = LDRefresh;
 			sourceTree = "<group>";
 		};
+		E697A4801C2A72280039A839 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				E697A4811C2A72280039A839 /* SVIndefiniteAnimatedView.h */,
+				E697A4821C2A72280039A839 /* SVIndefiniteAnimatedView.m */,
+				E697A4831C2A72280039A839 /* SVProgressHUD.bundle */,
+				E697A4841C2A72280039A839 /* SVProgressHUD.h */,
+				E697A4851C2A72280039A839 /* SVProgressHUD.m */,
+				E697A4861C2A72280039A839 /* SVProgressHUDManager.h */,
+				E697A4871C2A72280039A839 /* SVProgressHUDManager.m */,
+				E697A4881C2A72280039A839 /* SVRadialGradientLayer.h */,
+				E697A4891C2A72280039A839 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		E6E2B3A61C2942F4003F2C4B = {
 			isa = PBXGroup;
 			children = (
@@ -281,7 +311,7 @@
 				E6E2B4151C294514003F2C4B /* Other */,
 				E6E2B4011C2944FE003F2C4B /* Me */,
 				E6E2B4061C2944FE003F2C4B /* Nearby */,
-				E6E2B40B1C2944FE003F2C4B /* Recommend */,
+				E6E2B40B1C2944FE003F2C4B /* Recommend(推荐) */,
 				E6E2B4101C2944FE003F2C4B /* Search */,
 				E6E2B3F41C2943F5003F2C4B /* Lib */,
 				E6E2B3F51C2943F5003F2C4B /* Main */,
@@ -292,6 +322,7 @@
 		E6E2B3F41C2943F5003F2C4B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				E697A4801C2A72280039A839 /* SVProgressHUD */,
 				E611AAC31C2A362D00A1107C /* LDRefresh */,
 			);
 			path = Lib;
@@ -431,7 +462,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		E6E2B40B1C2944FE003F2C4B /* Recommend */ = {
+		E6E2B40B1C2944FE003F2C4B /* Recommend(推荐) */ = {
 			isa = PBXGroup;
 			children = (
 				E6E2B40C1C2944FE003F2C4B /* Controller */,
@@ -439,6 +470,7 @@
 				E6E2B40E1C2944FE003F2C4B /* Tool */,
 				E6E2B40F1C2944FE003F2C4B /* View */,
 			);
+			name = "Recommend(推荐)";
 			path = Recommend;
 			sourceTree = "<group>";
 		};
@@ -667,6 +699,7 @@
 				E611AAAA1C2A31D500A1107C /* tabbar_discover@3x.png in Resources */,
 				E611AAB31C2A31D500A1107C /* tabbar_meHL@2x.png in Resources */,
 				E611AAA51C2A31D500A1107C /* tabbar_contacts@2x.png in Resources */,
+				E697A48B1C2A72280039A839 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,13 +774,17 @@
 			files = (
 				E6E2B4181C294582003F2C4B /* MeViewController.m in Sources */,
 				E6E2B3FF1C2943F5003F2C4B /* MainNavgationController.m in Sources */,
+				E697A48C1C2A72280039A839 /* SVProgressHUD.m in Sources */,
 				E6E2B4211C2945BE003F2C4B /* SearchViewController.m in Sources */,
 				E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */,
 				E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */,
+				E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */,
 				E6E2B3B41C2942F4003F2C4B /* main.m in Sources */,
 				E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */,
 				E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */,
 				E611AACD1C2A362D00A1107C /* LDRefreshHeaderView.m in Sources */,
+				E697A48D1C2A72280039A839 /* SVProgressHUDManager.m in Sources */,
+				E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */,
 				E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */,
 				E611AACC1C2A362D00A1107C /* LDRefreshFooterView.m in Sources */,
 				E6E2B4001C2943F5003F2C4B /* MainTabbarController.m in Sources */,

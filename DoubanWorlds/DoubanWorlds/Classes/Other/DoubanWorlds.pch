@@ -12,6 +12,10 @@
 
 #import "URLDefines.h"
 #import "CommenDefines.h"
+#import <Masonry/Masonry.h>
+#import "SVProgressHUDManager.h"
+#import "UIImageView+WebCache.h"
+#import "HttpTools.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.
