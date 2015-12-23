@@ -93,7 +93,7 @@
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.
-    }]
+    }];
 }
 
 
