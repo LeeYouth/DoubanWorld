@@ -17,6 +17,7 @@
 #import "UIImageView+WebCache.h"
 #import "HttpTools.h"
 #import "AppTools.h"
+#import "NSString+Extension.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

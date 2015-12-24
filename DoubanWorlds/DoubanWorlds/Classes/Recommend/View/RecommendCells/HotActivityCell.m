@@ -9,6 +9,9 @@
 #import "HotActivityCell.h"
 #import "RecommendModel.h"
 
+#define IntroduceFont 13.f
+#define TitleFont 17.f
+
 @interface HotActivityCell ()
 {
     UIImageView *_imageView;
@@ -19,6 +22,7 @@
     UILabel *_timeLabel;
     UILabel *_addressLabel;
     
+    UIView *_lineView;
 }
 
 @end
@@ -34,9 +38,7 @@
     return cell;
 }
 
-+(CGFloat)getCellHeight:(RecommendModel *)model{
-    return 200;
-}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -61,31 +63,30 @@
     _categoryLabel = [[UILabel alloc] init];
     _categoryLabel.textColor = [UIColor lightGrayColor];
     _categoryLabel.backgroundColor = [UIColor clearColor];
-    _categoryLabel.font = [UIFont systemFontOfSize:14.f];
+    _categoryLabel.font = [UIFont systemFontOfSize:IntroduceFont];
     [self.contentView addSubview:_categoryLabel];
     
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.numberOfLines = 0;
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.backgroundColor = [UIColor clearColor];
-    _titleLabel.font = [UIFont boldSystemFontOfSize:17.f];
+    _titleLabel.font = [UIFont boldSystemFontOfSize:TitleFont];
     [self.contentView addSubview:_titleLabel];
     
     _timeLabel = [[UILabel alloc] init];
     _timeLabel.textColor = [UIColor lightGrayColor];
-    _timeLabel.font = [UIFont systemFontOfSize:14.f];
+    _timeLabel.font = [UIFont systemFontOfSize:IntroduceFont];
     [self.contentView addSubview:_timeLabel];
     
     _addressLabel = [[UILabel alloc] init];
     _addressLabel.numberOfLines = 0;
     _addressLabel.textColor = [UIColor lightGrayColor];
-    _addressLabel.font = [UIFont systemFontOfSize:14.f];
+    _addressLabel.font = [UIFont systemFontOfSize:IntroduceFont];
     [self.contentView addSubview:_addressLabel];
     
-    UIView *lineView = [[UIView alloc] init];
-    lineView.frame = CGRectMake(0, 199, SCREEN_WIDTH, 0.7);
-    lineView.backgroundColor = [AppTools colorWithHexString:@"#F0F0F0"];
-    [self.contentView addSubview:lineView];
+    _lineView = [[UIView alloc] init];
+    _lineView.backgroundColor = [AppTools colorWithHexString:@"#F0F0F0"];
+    [self.contentView addSubview:_lineView];
 
 }
 
@@ -125,7 +126,12 @@
         make.top.equalTo(_timeLabel.mas_bottom);
     }];
     
+    _lineView.frame = CGRectMake(0, 199, SCREEN_WIDTH, 0.7);
     
+    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+    }];
+
 }
 
 
@@ -157,15 +163,33 @@
     NSString *addressString = [NSString stringWithFormat:@"地点:%@",finallyString];
     _addressLabel.attributedText = [AppTools setLineSpacingWith:addressString lineSpacing:2];
     
-
-    
-    NSLog(@"");
-    
 }
 
 
 
++(CGFloat)getCellHeight:(RecommendModel *)model{
+    CGFloat imageBottom = 120 + HMStatusCellMargin;
+    
+    CGFloat timeH = 20;
+    
+    int magin = HMStatusCellMargin;
+    int padding = 10;
+    CGFloat w = SCREEN_WIDTH - 2*padding - magin - 80;
 
+    CGSize maxSize = CGSizeMake(w, MAXFLOAT);
+    CGSize titleSize = [model.title attrStrSizeWithFont:[UIFont systemFontOfSize:TitleFont] andmaxSize:maxSize lineSpacing:6];
+
+    NSString *finallyString = [model.address stringByReplacingOccurrencesOfString:model.loc_name withString:@""];
+    NSString *addressString = [NSString stringWithFormat:@"地点:%@",finallyString];
+    CGSize addressSize = [addressString attrStrSizeWithFont:[UIFont systemFontOfSize:IntroduceFont] andmaxSize:maxSize lineSpacing:2];
+    
+    CGFloat allH = addressSize.height + titleSize.height + 2*padding + 2*timeH;
+    if (imageBottom > allH) {
+        return imageBottom + HMStatusCellMargin;
+    }else{
+        return allH + 2*HMStatusCellMargin;
+    }
+}
 
 
 

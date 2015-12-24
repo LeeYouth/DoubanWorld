@@ -52,6 +52,7 @@
 		E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B41D1C2945A3003F2C4B /* RecommendViewController.m */; };
 		E6E2B4211C2945BE003F2C4B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4201C2945BE003F2C4B /* SearchViewController.m */; };
 		E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4241C294714003F2C4B /* AppDelegate.m */; };
+		E6E51D5C1C2BE29800DABA5D /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */; };
 		EDE4EBA20E98E5C3B8D88A19 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 339FE046F528EA539C511ED1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +152,8 @@
 		E6E2B4241C294714003F2C4B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E6E2B4271C2948AB003F2C4B /* CommenDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommenDefines.h; sourceTree = "<group>"; };
 		E6E2B4281C2948AB003F2C4B /* URLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLDefines.h; sourceTree = "<group>"; };
+		E6E51D5A1C2BE29800DABA5D /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -578,6 +581,7 @@
 		E6E2B4151C294514003F2C4B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				E6E51D591C2BE29800DABA5D /* category */,
 				E697A47E1C2A46090039A839 /* Podfile */,
 				E611A09D1C2A315C00A1107C /* Resources */,
 				E6E2B4261C2948AB003F2C4B /* Defines */,
@@ -598,6 +602,15 @@
 				E6E2B4281C2948AB003F2C4B /* URLDefines.h */,
 			);
 			path = Defines;
+			sourceTree = "<group>";
+		};
+		E6E51D591C2BE29800DABA5D /* category */ = {
+			isa = PBXGroup;
+			children = (
+				E6E51D5A1C2BE29800DABA5D /* NSString+Extension.h */,
+				E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */,
+			);
+			path = category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -805,6 +818,7 @@
 				E697A48C1C2A72280039A839 /* SVProgressHUD.m in Sources */,
 				E6E2B4211C2945BE003F2C4B /* SearchViewController.m in Sources */,
 				E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */,
+				E6E51D5C1C2BE29800DABA5D /* NSString+Extension.m in Sources */,
 				E64A13C61C2A918C00AC0750 /* AppTools.m in Sources */,
 				E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */,
 				E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */,
