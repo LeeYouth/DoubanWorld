@@ -10,8 +10,7 @@
 
 @implementation AppTools
 
-+(UIColor *) colorWithHexString: (NSString *) stringToConvert  //@"#5a5a5a"
-{
++(UIColor *) colorWithHexString: (NSString *) stringToConvert{
     NSString *cString = [[stringToConvert stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
     // String should be 6 or 8 characters
@@ -62,6 +61,27 @@
             
                            alpha:1.0f];
     
+}
+
++(NSAttributedString *)setLineSpacingWith:(NSString *)contentText lineSpacing:(CGFloat)lineSpacing{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:contentText];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:lineSpacing];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [contentText length])];
+    return attributedString;
+}
+
++(NSString *)formatCount:(NSString *)count{
+    NSString *title;
+    // 1.得出title的内容
+    if ([count intValue] >= 10000) {
+        NSString *old = [NSString stringWithFormat:@"%.1f万", [count intValue]/10000.0];
+        // 将.0换成空串
+        title = [old stringByReplacingOccurrencesOfString:@".0" withString:@""];
+    } else if (count != 0) {
+        title = [NSString stringWithFormat:@"%d", [count intValue]];
+    }
+    return title;
 }
 
 @end

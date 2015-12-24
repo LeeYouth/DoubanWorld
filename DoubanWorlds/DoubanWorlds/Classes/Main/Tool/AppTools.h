@@ -18,4 +18,21 @@
  */
 + (UIColor *) colorWithHexString: (NSString *) stringToConvert;
 
+/**
+ *  设置行间距为6的字符
+ *
+ *  @param contentText 传入的字符串
+ *
+ *  @return 返回属性化的字符
+ */
++(NSAttributedString *)setLineSpacingWith:(NSString *)contentText lineSpacing:(CGFloat)lineSpacing;
+/**
+ *  格式化一个数量
+ *
+ *  @param count 传入的数量
+ *
+ *  @return 返回格式化的数量
+ */
++(NSString *)formatCount:(NSString *)count;
+
 @end

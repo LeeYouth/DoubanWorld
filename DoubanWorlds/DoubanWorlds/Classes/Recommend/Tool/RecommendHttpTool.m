@@ -15,6 +15,7 @@
 +(void)getRecommendList:(NSInteger)startNum loc:(NSString *)loc arrayBlock:(ArrayBlock)arrayBlock{
     
     NSString *urlString = [NSString stringWithFormat:@"%@?start=%ld&loc=%@&count=10",Recommend_URL,startNum,loc];
+    NSLog(@"RecommendListURL = %@",urlString);
     [HttpTools getWithURL:urlString params:nil success:^(id json) {
         NSLog(@"getRecommendList = %@",json);
         NSMutableArray *resultArr = [[NSMutableArray alloc] init];
