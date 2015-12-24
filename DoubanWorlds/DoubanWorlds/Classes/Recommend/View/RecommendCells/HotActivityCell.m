@@ -45,7 +45,7 @@
     if (self) {
         
         self.backgroundColor = [UIColor whiteColor];
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+//        self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         
         [self initUI];
@@ -126,10 +126,12 @@
         make.top.equalTo(_timeLabel.mas_bottom);
     }];
     
-    _lineView.frame = CGRectMake(0, 199, SCREEN_WIDTH, 0.7);
-    
+    int offSet =  - 1;
+
     [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, 1));
+        make.left.mas_equalTo(@0);
+        make.top.equalTo(self.contentView.mas_bottom).offset(offSet);
     }];
 
 }
@@ -183,11 +185,11 @@
     NSString *addressString = [NSString stringWithFormat:@"地点:%@",finallyString];
     CGSize addressSize = [addressString attrStrSizeWithFont:[UIFont systemFontOfSize:IntroduceFont] andmaxSize:maxSize lineSpacing:2];
     
-    CGFloat allH = addressSize.height + titleSize.height + 2*padding + 2*timeH;
+    CGFloat allH = addressSize.height + titleSize.height + 2*padding + 2*timeH + HMStatusCellMargin;
     if (imageBottom > allH) {
         return imageBottom + HMStatusCellMargin;
     }else{
-        return allH + 2*HMStatusCellMargin;
+        return allH + HMStatusCellMargin;
     }
 }
 
