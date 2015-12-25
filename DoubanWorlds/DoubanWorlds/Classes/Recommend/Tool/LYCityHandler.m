@@ -31,6 +31,7 @@
     
     NSDictionary *dict = [array objectAtIndex:indexPath.row];
     NSEnumerator * enumeratorKey = [dict keyEnumerator];
+    
     NSString *value;
     while((value = [enumeratorKey nextObject]))
     {
@@ -47,4 +48,5 @@
     NSArray *array = [cityDict valueForKey:key];
     return array.count;
 }
+
 @end

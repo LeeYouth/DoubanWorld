@@ -22,10 +22,10 @@ typedef void (^CityInfoBlock)(NSDictionary *resDict,NSArray *firstArray,NSArray 
 
 
 /**
- *  获取城市信息
+ *  获取中国城市信息
  *
  *  @param cityInfoBlock 从本地获取的城市信息
  */
-+(void)getCityInfo:(CityInfoBlock)cityInfoBlock;
++(void)getChinaCityInfo:(CityInfoBlock)cityInfoBlock;
 
 @end

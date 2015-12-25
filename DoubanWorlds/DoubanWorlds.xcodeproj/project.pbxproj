@@ -12,6 +12,9 @@
 		E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */; };
 		E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146531C2CE39600CF0391 /* CityIndexCell.m */; };
 		E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146561C2CEA2800CF0391 /* LYCityHandler.m */; };
+		E611465A1C2D15F400CF0391 /* YLYTableViewIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146591C2D15F400CF0391 /* YLYTableViewIndexView.m */; };
+		E611465F1C2D1C3400CF0391 /* flotageBackgroud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611465E1C2D1C3400CF0391 /* flotageBackgroud@2x.png */; };
+		E61146611C2D220400CF0391 /* outLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61146601C2D220400CF0391 /* outLandCityGroup.plist */; };
 		E611AAA51C2A31D500A1107C /* tabbar_contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA951C2A31D500A1107C /* tabbar_contacts@2x.png */; };
 		E611AAA61C2A31D500A1107C /* tabbar_contacts@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA961C2A31D500A1107C /* tabbar_contacts@3x.png */; };
 		E611AAA71C2A31D500A1107C /* tabbar_contactsHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA971C2A31D500A1107C /* tabbar_contactsHL@2x.png */; };
@@ -90,6 +93,10 @@
 		E61146531C2CE39600CF0391 /* CityIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityIndexCell.m; sourceTree = "<group>"; };
 		E61146551C2CEA2800CF0391 /* LYCityHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYCityHandler.h; sourceTree = "<group>"; };
 		E61146561C2CEA2800CF0391 /* LYCityHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYCityHandler.m; sourceTree = "<group>"; };
+		E61146581C2D15F400CF0391 /* YLYTableViewIndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLYTableViewIndexView.h; sourceTree = "<group>"; };
+		E61146591C2D15F400CF0391 /* YLYTableViewIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLYTableViewIndexView.m; sourceTree = "<group>"; };
+		E611465E1C2D1C3400CF0391 /* flotageBackgroud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flotageBackgroud@2x.png"; sourceTree = "<group>"; };
+		E61146601C2D220400CF0391 /* outLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = outLandCityGroup.plist; sourceTree = "<group>"; };
 		E611AA951C2A31D500A1107C /* tabbar_contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@2x.png"; sourceTree = "<group>"; };
 		E611AA961C2A31D500A1107C /* tabbar_contacts@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@3x.png"; sourceTree = "<group>"; };
 		E611AA971C2A31D500A1107C /* tabbar_contactsHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contactsHL@2x.png"; sourceTree = "<group>"; };
@@ -214,6 +221,8 @@
 		E611464A1C2CD6C200CF0391 /* PickViews */ = {
 			isa = PBXGroup;
 			children = (
+				E61146581C2D15F400CF0391 /* YLYTableViewIndexView.h */,
+				E61146591C2D15F400CF0391 /* YLYTableViewIndexView.m */,
 				E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */,
 				E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */,
 				E61146521C2CE39600CF0391 /* CityIndexCell.h */,
@@ -225,6 +234,7 @@
 		E611A09D1C2A315C00A1107C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E611465E1C2D1C3400CF0391 /* flotageBackgroud@2x.png */,
 				E611AA941C2A31D500A1107C /* tabbarIcons */,
 			);
 			path = Resources;
@@ -609,6 +619,7 @@
 		E6E2B4151C294514003F2C4B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				E61146601C2D220400CF0391 /* outLandCityGroup.plist */,
 				E61146481C2CD45900CF0391 /* inLandCityGroup.plist */,
 				E6E51D591C2BE29800DABA5D /* category */,
 				E611A09D1C2A315C00A1107C /* Resources */,
@@ -762,11 +773,13 @@
 				E611AAA91C2A31D500A1107C /* tabbar_discover@2x.png in Resources */,
 				E611AAAB1C2A31D500A1107C /* tabbar_discoverHL@2x.png in Resources */,
 				E611AAB21C2A31D500A1107C /* tabbar_me@3x.png in Resources */,
+				E611465F1C2D1C3400CF0391 /* flotageBackgroud@2x.png in Resources */,
 				E611AAAE1C2A31D500A1107C /* tabbar_mainframe@3x.png in Resources */,
 				E611AACE1C2A362D00A1107C /* tableview_pull_refresh@2x.png in Resources */,
 				E611AAA81C2A31D500A1107C /* tabbar_contactsHL@3x.png in Resources */,
 				E611AAAA1C2A31D500A1107C /* tabbar_discover@3x.png in Resources */,
 				E611AAB31C2A31D500A1107C /* tabbar_meHL@2x.png in Resources */,
+				E61146611C2D220400CF0391 /* outLandCityGroup.plist in Resources */,
 				E611AAA51C2A31D500A1107C /* tabbar_contacts@2x.png in Resources */,
 				E697A48B1C2A72280039A839 /* SVProgressHUD.bundle in Resources */,
 			);
@@ -859,6 +872,7 @@
 				E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */,
 				E611AACD1C2A362D00A1107C /* LDRefreshHeaderView.m in Sources */,
 				E697A48D1C2A72280039A839 /* SVProgressHUDManager.m in Sources */,
+				E611465A1C2D15F400CF0391 /* YLYTableViewIndexView.m in Sources */,
 				E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */,
 				E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */,
 				E611AACC1C2A362D00A1107C /* LDRefreshFooterView.m in Sources */,

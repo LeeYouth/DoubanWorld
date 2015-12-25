@@ -34,7 +34,7 @@
     }];
 }
 
-+(void)getCityInfo:(CityInfoBlock)cityInfoBlock{
++(void)getChinaCityInfo:(CityInfoBlock)cityInfoBlock{
     
     //1.所有分区对应的字典
     NSString *inlandPlistURL = [[NSBundle mainBundle] pathForResource:@"inLandCityGroup" ofType:@"plist"];

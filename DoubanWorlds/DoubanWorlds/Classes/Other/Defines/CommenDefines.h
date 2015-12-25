@@ -28,3 +28,18 @@
 
 #define HMStatusCellMargin 15
 
+#define TheThemeColor KColor(63, 184, 56)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

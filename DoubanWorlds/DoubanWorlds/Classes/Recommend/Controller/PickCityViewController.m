@@ -11,14 +11,16 @@
 #import "CityIndexCell.h"
 #import "SectionHeaderView.h"
 #import "LYCityHandler.h"
+#import "YLYTableViewIndexView.h"
 
-@interface PickCityViewController ()
+@interface PickCityViewController ()<YLYTableViewIndexDelegate>
 
 @property (nonatomic, strong) NSMutableArray *sectionArray;
 @property (nonatomic, strong) NSMutableArray *allIndexArray;
 @property (nonatomic, strong) NSDictionary *citiesDic;
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UILabel *flotageLabel;//显示视图
 
 @end
 
@@ -39,17 +41,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     
     [self initTableView];
     
     [self requestData];
+    
+    
+    [self initIndexView];
+    
+    [self initUISegmentedControl];
 }
+
 
 -(void)requestData{
     
-    [RecommendHttpTool getCityInfo:^(NSDictionary *resDict, NSArray *firstArray, NSArray *secondArray) {
+    [RecommendHttpTool getChinaCityInfo:^(NSDictionary *resDict, NSArray *firstArray, NSArray *secondArray) {
         _citiesDic = [resDict copy];
         _sectionArray = [firstArray copy];
         _allIndexArray = [secondArray copy];
@@ -71,8 +78,43 @@
     _tableView.dataSource      = (id<UITableViewDataSource>) self;
     _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_tableView];
 }
+
+- (void)initIndexView{
+    self.flotageLabel = [[UILabel alloc] init];
+    self.flotageLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"flotageBackgroud"]];
+    self.flotageLabel.hidden = YES;
+    self.flotageLabel.textAlignment = NSTextAlignmentCenter;
+    self.flotageLabel.textColor = [UIColor whiteColor];
+    [self.view addSubview:self.flotageLabel];
+    [self.flotageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(64, 64));
+    }];
+    
+    //indexView
+    YLYTableViewIndexView *indexView = [[YLYTableViewIndexView alloc] initWithFrame:(CGRect){SCREEN_WIDTH - 20,0,20,SCREEN_HEIGHT}];
+    indexView.tableViewIndexDelegate = self;
+    CGRect rect = indexView.frame;
+    rect.size.height = _sectionArray.count * 16;
+    rect.origin.y = (SCREEN_HEIGHT - rect.size.height) / 2;
+    indexView.frame = rect;
+    [self.view addSubview:indexView];
+}
+
+-(void)initUISegmentedControl{
+    NSArray *segmentedArray = [[NSArray alloc]initWithObjects:@"国内",@"国外",nil];
+
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc]initWithItems:segmentedArray];
+    segmentedControl.frame =CGRectMake(0,0,180,30);
+    [segmentedControl setTintColor:TheThemeColor];
+    
+    
+    self.navigationItem.titleView = segmentedControl;
+}
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return _allIndexArray.count;
@@ -116,7 +158,28 @@
     
 }
 
-
+#pragma mark -YLYTableViewIndexDelegate
+- (void)tableViewIndex:(YLYTableViewIndexView *)tableViewIndex didSelectSectionAtIndex:(NSInteger)index withTitle:(NSString *)title{
+    if ([_tableView numberOfSections] > index && index > -1){   // for safety, should always be YES
+        [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:index]
+                    atScrollPosition:UITableViewScrollPositionTop
+                            animated:NO];
+        self.flotageLabel.text = title;
+    }
+}
+- (void)tableViewIndexTouchesBegan:(YLYTableViewIndexView *)tableViewIndex{
+    self.flotageLabel.hidden = NO;
+}
+- (void)tableViewIndexTouchesEnd:(YLYTableViewIndexView *)tableViewIndex{
+    CATransition *animation = [CATransition animation];
+    animation.type = kCATransitionFade;
+    animation.duration = 0.4;
+    [self.flotageLabel.layer addAnimation:animation forKey:nil];
+    self.flotageLabel.hidden = YES;
+}
+- (NSArray *)tableViewIndexTitle:(YLYTableViewIndexView *)tableViewIndex{
+    return _sectionArray;
+}
 
 
 @end

@@ -1,5 +1,5 @@
 //
-//  RecommendHttpTool.h
+//  SectionHeaderView.h
 //  DoubanWorlds
 //
 //  Created by LYoung on 15/12/23.
