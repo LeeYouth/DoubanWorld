@@ -28,4 +28,13 @@ typedef void (^CityInfoBlock)(NSDictionary *resDict,NSArray *firstArray,NSArray 
  */
 +(void)getChinaCityInfo:(CityInfoBlock)cityInfoBlock;
 
+
+/**
+ *  获取国外城市信息
+ *
+ *  @param cityInfoBlock 从本地获取的城市信息
+ */
++(void)getOverseasCityInfo:(CityInfoBlock)cityInfoBlock;
+
+
 @end

@@ -51,5 +51,22 @@
     }
 }
 
++(void)getOverseasCityInfo:(CityInfoBlock)cityInfoBlock{
+    
+    //1.所有分区对应的字典
+    NSString *inlandPlistURL = [[NSBundle mainBundle] pathForResource:@"outLandCityGroup" ofType:@"plist"];
+    NSDictionary *cityGroupDic = [[NSDictionary alloc] initWithContentsOfFile:inlandPlistURL];
+    
+    //2.所有分区
+    NSArray *sections = [cityGroupDic allKeys];
+    sections = [sections sortedArrayUsingSelector:@selector(compare:)]; // 对该数组里边的元素进行升序排序
+    //3.每个分区对应的所有城市
+    NSArray *indexs = [cityGroupDic allValues];
+    
+    if (cityInfoBlock) {
+        cityInfoBlock(cityGroupDic,sections,indexs);
+    }
+}
+
 
 @end

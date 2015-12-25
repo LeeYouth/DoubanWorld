@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSMutableArray *allIndexArray;
 @property (nonatomic, strong) NSDictionary *citiesDic;
 
+@property (nonatomic, strong) YLYTableViewIndexView *indexView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UILabel *flotageLabel;//显示视图
 
@@ -45,16 +46,16 @@
     
     [self initTableView];
     
-    [self requestData];
-    
+    //国内数据
+    [self requestChinaData];
     
     [self initIndexView];
     
     [self initUISegmentedControl];
 }
 
-
--(void)requestData{
+#pragma - 国内数据
+-(void)requestChinaData{
     
     [RecommendHttpTool getChinaCityInfo:^(NSDictionary *resDict, NSArray *firstArray, NSArray *secondArray) {
         _citiesDic = [resDict copy];
@@ -63,6 +64,20 @@
     }];
     
     [self.tableView reloadData];
+    
+    [self reloadIndexFrame];
+}
+#pragma mark - 国外数据
+-(void)requestOverseasData{
+    [RecommendHttpTool getOverseasCityInfo:^(NSDictionary *resDict, NSArray *firstArray, NSArray *secondArray) {
+        _citiesDic = [resDict copy];
+        _sectionArray = [firstArray copy];
+        _allIndexArray = [secondArray copy];
+    }];
+    
+    [self.tableView reloadData];
+    [self reloadIndexFrame];
+
 }
 
 - (void)initTableView{
@@ -95,13 +110,18 @@
     }];
     
     //indexView
-    YLYTableViewIndexView *indexView = [[YLYTableViewIndexView alloc] initWithFrame:(CGRect){SCREEN_WIDTH - 20,0,20,SCREEN_HEIGHT}];
-    indexView.tableViewIndexDelegate = self;
-    CGRect rect = indexView.frame;
+    _indexView = [[YLYTableViewIndexView alloc] initWithFrame:(CGRect){SCREEN_WIDTH - 20,0,20,SCREEN_HEIGHT}];
+    [self.view addSubview:_indexView];
+    
+    [self reloadIndexFrame];
+}
+#pragma mark - 刷新索引视图
+-(void)reloadIndexFrame{
+    _indexView.tableViewIndexDelegate = self;
+    CGRect rect = _indexView.frame;
     rect.size.height = _sectionArray.count * 16;
     rect.origin.y = (SCREEN_HEIGHT - rect.size.height) / 2;
-    indexView.frame = rect;
-    [self.view addSubview:indexView];
+    _indexView.frame = rect;
 }
 
 -(void)initUISegmentedControl{
@@ -109,16 +129,19 @@
 
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc]initWithItems:segmentedArray];
     segmentedControl.frame = CGRectMake(0,0,180,30);
-    [segmentedControl setTintColor:TheThemeColor];
+    segmentedControl.tintColor = TheThemeColor;
     [segmentedControl setSelectedSegmentIndex:0];
     [segmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
-    
     self.navigationItem.titleView = segmentedControl;
 }
 
 -(void)segmentedControlAction:(id)sender{
     NSInteger selectedIndex = [sender selectedSegmentIndex];
-
+    if (selectedIndex == 0) {
+        [self requestChinaData];
+    }else{
+        [self requestOverseasData];
+    }
 }
 
 
