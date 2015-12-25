@@ -108,11 +108,17 @@
     NSArray *segmentedArray = [[NSArray alloc]initWithObjects:@"国内",@"国外",nil];
 
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc]initWithItems:segmentedArray];
-    segmentedControl.frame =CGRectMake(0,0,180,30);
+    segmentedControl.frame = CGRectMake(0,0,180,30);
     [segmentedControl setTintColor:TheThemeColor];
-    
+    [segmentedControl setSelectedSegmentIndex:0];
+    [segmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
     
     self.navigationItem.titleView = segmentedControl;
+}
+
+-(void)segmentedControlAction:(id)sender{
+    NSInteger selectedIndex = [sender selectedSegmentIndex];
+
 }
 
 
