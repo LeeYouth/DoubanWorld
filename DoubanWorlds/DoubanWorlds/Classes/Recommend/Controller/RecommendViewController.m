@@ -11,6 +11,7 @@
 #import "RecommendHttpTool.h"
 #import "RecommendModel.h"
 #import "HotActivityCell.h"
+#import "PickCityViewController.h"
 
 @interface RecommendViewController ()
 {
@@ -43,6 +44,14 @@
     
     [self refreshData];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pushPickViewController)];
+    
+    
+}
+
+-(void)pushPickViewController{
+    PickCityViewController *pickVC = [[PickCityViewController alloc] init];
+    [self.navigationController pushViewController:pickVC animated:YES];
 }
 
 - (void)initTableView{
@@ -97,11 +106,11 @@
     __weak __typeof(self)weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        _startNum++;
-        [RecommendHttpTool getRecommendList:_startNum loc:@"108288" arrayBlock:^(NSMutableArray *resultArray) {
-            [_resultArray addObjectsFromArray:resultArray];
-            [weakSelf.tableView reloadData];
-        }];
+//        _startNum++;
+//        [RecommendHttpTool getRecommendList:_startNum loc:@"108288" arrayBlock:^(NSMutableArray *resultArray) {
+//            [_resultArray addObjectsFromArray:resultArray];
+//            [weakSelf.tableView reloadData];
+//        }];
         [weakSelf.tableView.refreshFooter endRefresh];
         
 //        weakSelf.tableView.refreshFooter.loadMoreEnabled = NO;
