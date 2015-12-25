@@ -7,31 +7,136 @@
 //
 
 #import "PickCityViewController.h"
+#import "HotActivityCell.h"
+#import "SectionHeaderView.h"
 
 @interface PickCityViewController ()
+
+@property (nonatomic, strong) NSMutableArray *sectionArray;
+@property (nonatomic, strong) NSMutableArray *indexArray;
+@property (nonatomic, strong) NSDictionary *resultDict;
+
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
 @implementation PickCityViewController
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+        self.sectionArray = [NSMutableArray arrayWithCapacity:1];
+        self.indexArray = [NSMutableArray arrayWithCapacity:1];
+        self.resultDict = [[NSDictionary alloc] init];
+
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    [self initTableView];
+    
+    [self requestData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)requestData{
+    
+    
+    NSString *inlandPlistURL = [[NSBundle mainBundle] pathForResource:@"inLandCityGroup" ofType:@"plist"];
+    NSDictionary *cityGroupDic = [[NSDictionary alloc] initWithContentsOfFile:inlandPlistURL];
+    
+    _resultDict = [cityGroupDic copy];
+    
+    NSArray *sections = [cityGroupDic allKeys];
+    // 对该数组里边的元素进行升序排序
+    sections = [sections sortedArrayUsingSelector:@selector(compare:)];
+    _sectionArray = [sections copy];
+    
+    
+    NSArray *indexs = [cityGroupDic allValues];
+    [_indexArray addObjectsFromArray:indexs];
+    
+    [self.tableView reloadData];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)initTableView{
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
+    {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
+    _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.height, [UIScreen mainScreen].bounds.size.height - 64)];
+    _tableView.delegate        = (id<UITableViewDelegate>)self;
+    _tableView.dataSource      = (id<UITableViewDataSource>) self;
+    _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:_tableView];
 }
-*/
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return _indexArray.count;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    SectionHeaderView *headerView = [[SectionHeaderView alloc] init];
+    headerView.text = [_sectionArray objectAtIndex:section];
+    return headerView;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 25;
+}
+-(NSArray *)sectionIndexsAtIndexes:(NSIndexSet *)indexes{
+    return _sectionArray;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    // 返回cell条数
+    NSString *key = [_sectionArray objectAtIndex:section];
+    NSArray *array = [_resultDict valueForKey:key];
+    return array.count;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *cellIndertifer = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndertifer];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndertifer];
+    }
+    NSString *key = [_sectionArray objectAtIndex:indexPath.section];
+    NSArray *array = [_resultDict valueForKey:key];
+    NSDictionary *sss = [array objectAtIndex:indexPath.row];
+    NSEnumerator * enumeratorKey = [sss keyEnumerator];
+    NSString *value;
+    while((value = [enumeratorKey nextObject]))
+    {
+        NSLog(@"遍历的值: %@",value);
+        cell.textLabel.text = value;
+    }
+    
+
+    return cell;
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
+
+
 
 @end

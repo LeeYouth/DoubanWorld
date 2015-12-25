@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E61146471C2CD25000CF0391 /* PickCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146461C2CD25000CF0391 /* PickCityViewController.m */; };
+		E61146491C2CD45900CF0391 /* inLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61146481C2CD45900CF0391 /* inLandCityGroup.plist */; };
+		E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */; };
 		E611AAA51C2A31D500A1107C /* tabbar_contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA951C2A31D500A1107C /* tabbar_contacts@2x.png */; };
 		E611AAA61C2A31D500A1107C /* tabbar_contacts@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA961C2A31D500A1107C /* tabbar_contacts@3x.png */; };
 		E611AAA71C2A31D500A1107C /* tabbar_contactsHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA971C2A31D500A1107C /* tabbar_contactsHL@2x.png */; };
@@ -35,7 +37,6 @@
 		E64A13C61C2A918C00AC0750 /* AppTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13C51C2A918C00AC0750 /* AppTools.m */; };
 		E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4791C2A3F7D0039A839 /* HttpTools.m */; };
 		E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A47C1C2A3FA80039A839 /* RecommendHttpTool.m */; };
-		E697A47F1C2A46090039A839 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E697A47E1C2A46090039A839 /* Podfile */; };
 		E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4821C2A72280039A839 /* SVIndefiniteAnimatedView.m */; };
 		E697A48B1C2A72280039A839 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E697A4831C2A72280039A839 /* SVProgressHUD.bundle */; };
 		E697A48C1C2A72280039A839 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4851C2A72280039A839 /* SVProgressHUD.m */; };
@@ -80,6 +81,9 @@
 		7A78E1E9DF9917575AB4B510 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E61146451C2CD25000CF0391 /* PickCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickCityViewController.h; sourceTree = "<group>"; };
 		E61146461C2CD25000CF0391 /* PickCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickCityViewController.m; sourceTree = "<group>"; };
+		E61146481C2CD45900CF0391 /* inLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = inLandCityGroup.plist; path = Resources/inLandCityGroup.plist; sourceTree = "<group>"; };
+		E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
+		E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
 		E611AA951C2A31D500A1107C /* tabbar_contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@2x.png"; sourceTree = "<group>"; };
 		E611AA961C2A31D500A1107C /* tabbar_contacts@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@3x.png"; sourceTree = "<group>"; };
 		E611AA971C2A31D500A1107C /* tabbar_contactsHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contactsHL@2x.png"; sourceTree = "<group>"; };
@@ -117,7 +121,6 @@
 		E697A4791C2A3F7D0039A839 /* HttpTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTools.m; sourceTree = "<group>"; };
 		E697A47B1C2A3FA80039A839 /* RecommendHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHttpTool.h; sourceTree = "<group>"; };
 		E697A47C1C2A3FA80039A839 /* RecommendHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHttpTool.m; sourceTree = "<group>"; };
-		E697A47E1C2A46090039A839 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		E697A4811C2A72280039A839 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		E697A4821C2A72280039A839 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		E697A4831C2A72280039A839 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -200,6 +203,15 @@
 				339FE046F528EA539C511ED1 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E611464A1C2CD6C200CF0391 /* PickViews */ = {
+			isa = PBXGroup;
+			children = (
+				E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */,
+				E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */,
+			);
+			path = PickViews;
 			sourceTree = "<group>";
 		};
 		E611A09D1C2A315C00A1107C /* Resources */ = {
@@ -537,6 +549,7 @@
 		E6E2B40F1C2944FE003F2C4B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E611464A1C2CD6C200CF0391 /* PickViews */,
 				E64A13C01C2A884300AC0750 /* RecommendCells */,
 			);
 			path = View;
@@ -586,8 +599,8 @@
 		E6E2B4151C294514003F2C4B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				E61146481C2CD45900CF0391 /* inLandCityGroup.plist */,
 				E6E51D591C2BE29800DABA5D /* category */,
-				E697A47E1C2A46090039A839 /* Podfile */,
 				E611A09D1C2A315C00A1107C /* Resources */,
 				E6E2B4261C2948AB003F2C4B /* Defines */,
 				E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */,
@@ -731,12 +744,12 @@
 				E611AAB01C2A31D500A1107C /* tabbar_mainframeHL@3x.png in Resources */,
 				E611AAB41C2A31D500A1107C /* tabbar_meHL@3x.png in Resources */,
 				E6E2B3C21C2942F4003F2C4B /* LaunchScreen.storyboard in Resources */,
+				E61146491C2CD45900CF0391 /* inLandCityGroup.plist in Resources */,
 				E6E2B3BF1C2942F4003F2C4B /* Assets.xcassets in Resources */,
 				E611AACF1C2A362D00A1107C /* tableview_pull_refresh@3x.png in Resources */,
 				E611AAA61C2A31D500A1107C /* tabbar_contacts@3x.png in Resources */,
 				E611AAB11C2A31D500A1107C /* tabbar_me@2x.png in Resources */,
 				E611AAA91C2A31D500A1107C /* tabbar_discover@2x.png in Resources */,
-				E697A47F1C2A46090039A839 /* Podfile in Resources */,
 				E611AAAB1C2A31D500A1107C /* tabbar_discoverHL@2x.png in Resources */,
 				E611AAB21C2A31D500A1107C /* tabbar_me@3x.png in Resources */,
 				E611AAAE1C2A31D500A1107C /* tabbar_mainframe@3x.png in Resources */,
@@ -825,6 +838,7 @@
 				E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */,
 				E6E51D5C1C2BE29800DABA5D /* NSString+Extension.m in Sources */,
 				E64A13C61C2A918C00AC0750 /* AppTools.m in Sources */,
+				E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */,
 				E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */,
 				E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */,
 				E6E2B3B41C2942F4003F2C4B /* main.m in Sources */,
