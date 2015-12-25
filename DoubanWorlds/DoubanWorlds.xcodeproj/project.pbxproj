@@ -17,6 +17,9 @@
 		E61146611C2D220400CF0391 /* outLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61146601C2D220400CF0391 /* outLandCityGroup.plist */; };
 		E61146641C2D2EE900CF0391 /* ChinaCityHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146631C2D2EE900CF0391 /* ChinaCityHeadView.m */; };
 		E61146671C2D31AE00CF0391 /* HotCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146661C2D31AE00CF0391 /* HotCityModel.m */; };
+		E611466F1C2D349A00CF0391 /* SKTag.m in Sources */ = {isa = PBXBuildFile; fileRef = E611466A1C2D349A00CF0391 /* SKTag.m */; };
+		E61146701C2D349A00CF0391 /* SKTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E611466C1C2D349A00CF0391 /* SKTagButton.m */; };
+		E61146711C2D349A00CF0391 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = E611466E1C2D349A00CF0391 /* SKTagView.m */; };
 		E611AAA51C2A31D500A1107C /* tabbar_contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA951C2A31D500A1107C /* tabbar_contacts@2x.png */; };
 		E611AAA61C2A31D500A1107C /* tabbar_contacts@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA961C2A31D500A1107C /* tabbar_contacts@3x.png */; };
 		E611AAA71C2A31D500A1107C /* tabbar_contactsHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA971C2A31D500A1107C /* tabbar_contactsHL@2x.png */; };
@@ -103,6 +106,12 @@
 		E61146631C2D2EE900CF0391 /* ChinaCityHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaCityHeadView.m; sourceTree = "<group>"; };
 		E61146651C2D31AE00CF0391 /* HotCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCityModel.h; sourceTree = "<group>"; };
 		E61146661C2D31AE00CF0391 /* HotCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCityModel.m; sourceTree = "<group>"; };
+		E61146691C2D349A00CF0391 /* SKTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTag.h; sourceTree = "<group>"; };
+		E611466A1C2D349A00CF0391 /* SKTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTag.m; sourceTree = "<group>"; };
+		E611466B1C2D349A00CF0391 /* SKTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTagButton.h; sourceTree = "<group>"; };
+		E611466C1C2D349A00CF0391 /* SKTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTagButton.m; sourceTree = "<group>"; };
+		E611466D1C2D349A00CF0391 /* SKTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTagView.h; sourceTree = "<group>"; };
+		E611466E1C2D349A00CF0391 /* SKTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTagView.m; sourceTree = "<group>"; };
 		E611AA951C2A31D500A1107C /* tabbar_contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@2x.png"; sourceTree = "<group>"; };
 		E611AA961C2A31D500A1107C /* tabbar_contacts@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@3x.png"; sourceTree = "<group>"; };
 		E611AA971C2A31D500A1107C /* tabbar_contactsHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contactsHL@2x.png"; sourceTree = "<group>"; };
@@ -237,6 +246,19 @@
 				E61146631C2D2EE900CF0391 /* ChinaCityHeadView.m */,
 			);
 			path = PickViews;
+			sourceTree = "<group>";
+		};
+		E61146681C2D349A00CF0391 /* SKTagView */ = {
+			isa = PBXGroup;
+			children = (
+				E61146691C2D349A00CF0391 /* SKTag.h */,
+				E611466A1C2D349A00CF0391 /* SKTag.m */,
+				E611466B1C2D349A00CF0391 /* SKTagButton.h */,
+				E611466C1C2D349A00CF0391 /* SKTagButton.m */,
+				E611466D1C2D349A00CF0391 /* SKTagView.h */,
+				E611466E1C2D349A00CF0391 /* SKTagView.m */,
+			);
+			path = SKTagView;
 			sourceTree = "<group>";
 		};
 		E611A09D1C2A315C00A1107C /* Resources */ = {
@@ -387,6 +409,7 @@
 		E6E2B3F41C2943F5003F2C4B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				E61146681C2D349A00CF0391 /* SKTagView */,
 				E697A4801C2A72280039A839 /* SVProgressHUD */,
 				E611AAC31C2A362D00A1107C /* LDRefresh */,
 			);
@@ -864,6 +887,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E611466F1C2D349A00CF0391 /* SKTag.m in Sources */,
 				E6E2B4181C294582003F2C4B /* MeViewController.m in Sources */,
 				E6E2B3FF1C2943F5003F2C4B /* MainNavgationController.m in Sources */,
 				E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */,
@@ -879,6 +903,7 @@
 				E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */,
 				E64A13BC1C2A7BF500AC0750 /* RecommendModel.m in Sources */,
 				E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */,
+				E61146701C2D349A00CF0391 /* SKTagButton.m in Sources */,
 				E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */,
 				E611AACD1C2A362D00A1107C /* LDRefreshHeaderView.m in Sources */,
 				E697A48D1C2A72280039A839 /* SVProgressHUDManager.m in Sources */,
@@ -889,6 +914,7 @@
 				E611AACC1C2A362D00A1107C /* LDRefreshFooterView.m in Sources */,
 				E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */,
 				E61146671C2D31AE00CF0391 /* HotCityModel.m in Sources */,
+				E61146711C2D349A00CF0391 /* SKTagView.m in Sources */,
 				E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */,
 				E6E2B4001C2943F5003F2C4B /* MainTabbarController.m in Sources */,
 				E6E2B41B1C294597003F2C4B /* NearbyViewController.m in Sources */,

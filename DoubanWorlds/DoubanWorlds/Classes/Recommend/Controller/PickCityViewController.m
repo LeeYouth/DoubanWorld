@@ -101,7 +101,6 @@
     
     _headView = [[ChinaCityHeadView alloc] init];
     _headView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
-    _headView.backgroundColor = [UIColor redColor];
     _tableView.tableHeaderView = _headView;
     
 }
