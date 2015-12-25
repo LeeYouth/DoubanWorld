@@ -13,4 +13,6 @@
 
 @property (nonatomic, copy) NSString *text;
 
++(CGFloat)getSectionHeadHeight;
+
 @end

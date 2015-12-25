@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^CityInfoBlock)(NSDictionary *resDict,NSArray *firstArray,NSArray *secondArray);
 
 @interface RecommendHttpTool : NSObject
 
@@ -18,5 +19,13 @@
 *  @param loc      地区信息
 */
 +(void)getRecommendList:(NSInteger)startNum loc:(NSString *)loc arrayBlock:(ArrayBlock)arrayBlock;
+
+
+/**
+ *  获取城市信息
+ *
+ *  @param cityInfoBlock 从本地获取的城市信息
+ */
++(void)getCityInfo:(CityInfoBlock)cityInfoBlock;
 
 @end

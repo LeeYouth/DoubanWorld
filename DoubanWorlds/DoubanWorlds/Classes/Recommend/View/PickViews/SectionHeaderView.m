@@ -43,4 +43,9 @@
     _text = text;
     _headerLabel.text = text;
 }
+
++(CGFloat)getSectionHeadHeight{
+    return 25;
+}
+
 @end
