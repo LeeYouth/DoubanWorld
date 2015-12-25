@@ -7,7 +7,7 @@
 //
 
 #import "PickCityViewController.h"
-#import "HotActivityCell.h"
+#import "CityIndexCell.h"
 #import "SectionHeaderView.h"
 
 @interface PickCityViewController ()
@@ -105,16 +105,13 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 20;
+    return [CityIndexCell getCellHeight];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *cellIndertifer = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndertifer];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndertifer];
-    }
+    CityIndexCell *indexCell = [CityIndexCell cellWithTableView:tableView];
+    
     NSString *key = [_sectionArray objectAtIndex:indexPath.section];
     NSArray *array = [_resultDict valueForKey:key];
     NSDictionary *sss = [array objectAtIndex:indexPath.row];
@@ -123,11 +120,11 @@
     while((value = [enumeratorKey nextObject]))
     {
         NSLog(@"遍历的值: %@",value);
-        cell.textLabel.text = value;
+        indexCell.cityName = value;
     }
     
 
-    return cell;
+    return indexCell;
 
 }
 

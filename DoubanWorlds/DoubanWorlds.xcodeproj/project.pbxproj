@@ -10,6 +10,7 @@
 		E61146471C2CD25000CF0391 /* PickCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146461C2CD25000CF0391 /* PickCityViewController.m */; };
 		E61146491C2CD45900CF0391 /* inLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61146481C2CD45900CF0391 /* inLandCityGroup.plist */; };
 		E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */; };
+		E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146531C2CE39600CF0391 /* CityIndexCell.m */; };
 		E611AAA51C2A31D500A1107C /* tabbar_contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA951C2A31D500A1107C /* tabbar_contacts@2x.png */; };
 		E611AAA61C2A31D500A1107C /* tabbar_contacts@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA961C2A31D500A1107C /* tabbar_contacts@3x.png */; };
 		E611AAA71C2A31D500A1107C /* tabbar_contactsHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AA971C2A31D500A1107C /* tabbar_contactsHL@2x.png */; };
@@ -84,6 +85,8 @@
 		E61146481C2CD45900CF0391 /* inLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = inLandCityGroup.plist; path = Resources/inLandCityGroup.plist; sourceTree = "<group>"; };
 		E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
+		E61146521C2CE39600CF0391 /* CityIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityIndexCell.h; sourceTree = "<group>"; };
+		E61146531C2CE39600CF0391 /* CityIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityIndexCell.m; sourceTree = "<group>"; };
 		E611AA951C2A31D500A1107C /* tabbar_contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@2x.png"; sourceTree = "<group>"; };
 		E611AA961C2A31D500A1107C /* tabbar_contacts@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@3x.png"; sourceTree = "<group>"; };
 		E611AA971C2A31D500A1107C /* tabbar_contactsHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contactsHL@2x.png"; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 			children = (
 				E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */,
 				E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */,
+				E61146521C2CE39600CF0391 /* CityIndexCell.h */,
+				E61146531C2CE39600CF0391 /* CityIndexCell.m */,
 			);
 			path = PickViews;
 			sourceTree = "<group>";
@@ -842,6 +847,7 @@
 				E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */,
 				E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */,
 				E6E2B3B41C2942F4003F2C4B /* main.m in Sources */,
+				E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */,
 				E64A13BC1C2A7BF500AC0750 /* RecommendModel.m in Sources */,
 				E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */,
 				E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */,
