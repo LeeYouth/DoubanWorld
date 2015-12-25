@@ -12,6 +12,7 @@
 #import "SectionHeaderView.h"
 #import "LYCityHandler.h"
 #import "YLYTableViewIndexView.h"
+#import "ChinaCityHeadView.h"
 
 @interface PickCityViewController ()<YLYTableViewIndexDelegate>
 
@@ -19,6 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *allIndexArray;
 @property (nonatomic, strong) NSDictionary *citiesDic;
 
+@property (nonatomic, strong) ChinaCityHeadView *headView;
 @property (nonatomic, strong) YLYTableViewIndexView *indexView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UILabel *flotageLabel;//显示视图
@@ -55,7 +57,7 @@
 }
 
 #pragma - 国内数据
--(void)requestChinaData{
+- (void)requestChinaData{
     
     [RecommendHttpTool getChinaCityInfo:^(NSDictionary *resDict, NSArray *firstArray, NSArray *secondArray) {
         _citiesDic = [resDict copy];
@@ -68,7 +70,7 @@
     [self reloadIndexFrame];
 }
 #pragma mark - 国外数据
--(void)requestOverseasData{
+- (void)requestOverseasData{
     [RecommendHttpTool getOverseasCityInfo:^(NSDictionary *resDict, NSArray *firstArray, NSArray *secondArray) {
         _citiesDic = [resDict copy];
         _sectionArray = [firstArray copy];
@@ -95,6 +97,13 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_tableView];
+    
+    
+    _headView = [[ChinaCityHeadView alloc] init];
+    _headView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
+    _headView.backgroundColor = [UIColor redColor];
+    _tableView.tableHeaderView = _headView;
+    
 }
 
 - (void)initIndexView{
@@ -116,17 +125,16 @@
     [self reloadIndexFrame];
 }
 #pragma mark - 刷新索引视图
--(void)reloadIndexFrame{
+- (void)reloadIndexFrame{
     _indexView.tableViewIndexDelegate = self;
     CGRect rect = _indexView.frame;
     rect.size.height = _sectionArray.count * 16;
-    rect.origin.y = (SCREEN_HEIGHT - rect.size.height) / 2;
+    rect.origin.y = (SCREEN_HEIGHT - rect.size.height + 44) / 2;
     _indexView.frame = rect;
 }
 
--(void)initUISegmentedControl{
+- (void)initUISegmentedControl{
     NSArray *segmentedArray = [[NSArray alloc]initWithObjects:@"国内",@"国外",nil];
-
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc]initWithItems:segmentedArray];
     segmentedControl.frame = CGRectMake(0,0,180,30);
     segmentedControl.tintColor = TheThemeColor;
@@ -135,28 +143,31 @@
     self.navigationItem.titleView = segmentedControl;
 }
 
--(void)segmentedControlAction:(id)sender{
+- (void)segmentedControlAction:(id)sender{
     NSInteger selectedIndex = [sender selectedSegmentIndex];
     if (selectedIndex == 0) {
         [self requestChinaData];
+        _tableView.tableHeaderView = _headView;
     }else{
         [self requestOverseasData];
+        _tableView.tableHeaderView = nil;
+
     }
 }
 
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return _allIndexArray.count;
 }
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     SectionHeaderView *headerView = [[SectionHeaderView alloc] init];
     headerView.text = [_sectionArray objectAtIndex:section];
     return headerView;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return [SectionHeaderView getSectionHeadHeight];
 }
--(NSArray *)sectionIndexsAtIndexes:(NSIndexSet *)indexes{
+- (NSArray *)sectionIndexsAtIndexes:(NSIndexSet *)indexes{
     return _sectionArray;
 }
 

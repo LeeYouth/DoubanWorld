@@ -56,9 +56,9 @@
         }];
         
         [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH - 15, 1));
+            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH - 15, 0.8));
             make.left.mas_equalTo(@15);
-            make.top.equalTo(self.contentView.mas_bottom).offset(-1);
+            make.top.equalTo(self.contentView.mas_bottom).offset(-0.8);
         }];
 
     }
