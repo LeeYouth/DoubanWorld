@@ -33,9 +33,10 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = KColor(244, 244, 244);
         
-        
+                
         [self initUI];
     }
     return self;
@@ -55,8 +56,7 @@
     [locationBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [locationBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
     [locationBtn setImage:[UIImage imageNamed:@"AlbumLocationIconHL"] forState:UIControlStateNormal];
-//    locationBtn.frame = CGRectMake(0, 10, 60, 40);
-//    [locationBtn addTarget:self action:@selector(findHeaderButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [locationBtn addTarget:self action:@selector(locationBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:locationBtn];
     
 
@@ -65,6 +65,10 @@
         make.left.mas_equalTo(HMStatusCellMargin);
         make.size.mas_equalTo(CGSizeMake(HotCityButtonWith, HotCityButtonHeight));
     }];
+}
+
+-(void)locationBtnAction:(UIButton *)sender{
+    
 }
 
 +(CGFloat)getCellHeight{

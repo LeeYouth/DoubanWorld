@@ -10,7 +10,9 @@
 #import "PickOverseasController.h"
 #import "PickChinaCityController.h"
 
+
 @interface PickCityViewController ()
+
 
 @property (nonatomic, strong) PickChinaCityController *chinaVC;
 @property (nonatomic, strong) PickOverseasController *overseasVC;
@@ -34,7 +36,11 @@
     [self loadControllers];
     
     [self loadScrollView];
+    
+       
 }
+
+
 
 
 - (void)loadSegmentedControl{

@@ -66,5 +66,9 @@
  */
 +(NSInteger)getOneSectionCountWithSectionArr:(NSArray *)sectionArr cityDict:(NSDictionary *)cityDict section:(NSInteger)section;
 
++(NSString *)getCityNameByUID:(NSString *)cityID;
+
++(NSString *)getCityIDByName:(NSString *)cityName;
+
 
 @end
