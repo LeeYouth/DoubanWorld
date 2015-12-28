@@ -19,6 +19,8 @@
 #import "AppTools.h"
 #import "NSString+Extension.h"
 #import "BaseViewController.h"
+#import "UIViewExt.h"
+
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

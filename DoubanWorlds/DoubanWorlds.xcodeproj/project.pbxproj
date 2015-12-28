@@ -47,6 +47,10 @@
 		E65486611C30C82200A47EC1 /* PickChinaCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = E654865C1C30C82200A47EC1 /* PickChinaCityController.m */; };
 		E65486621C30C82200A47EC1 /* PickCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E654865E1C30C82200A47EC1 /* PickCityViewController.m */; };
 		E65486631C30C82200A47EC1 /* PickOverseasController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486601C30C82200A47EC1 /* PickOverseasController.m */; };
+		E65486671C30C9A700A47EC1 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486661C30C9A700A47EC1 /* UIBarButtonItem+Extension.m */; };
+		E65486711C30CA3500A47EC1 /* UIView+i7Rotate360.m in Sources */ = {isa = PBXBuildFile; fileRef = E654866A1C30CA3500A47EC1 /* UIView+i7Rotate360.m */; };
+		E65486731C30CA3500A47EC1 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E654866E1C30CA3500A47EC1 /* UIView+ViewController.m */; };
+		E65486741C30CA3500A47EC1 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486701C30CA3500A47EC1 /* UIViewExt.m */; };
 		E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4791C2A3F7D0039A839 /* HttpTools.m */; };
 		E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A47C1C2A3FA80039A839 /* RecommendHttpTool.m */; };
 		E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4821C2A72280039A839 /* SVIndefiniteAnimatedView.m */; };
@@ -151,6 +155,14 @@
 		E654865E1C30C82200A47EC1 /* PickCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickCityViewController.m; sourceTree = "<group>"; };
 		E654865F1C30C82200A47EC1 /* PickOverseasController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickOverseasController.h; sourceTree = "<group>"; };
 		E65486601C30C82200A47EC1 /* PickOverseasController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickOverseasController.m; sourceTree = "<group>"; };
+		E65486651C30C9A700A47EC1 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		E65486661C30C9A700A47EC1 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		E65486691C30CA3500A47EC1 /* UIView+i7Rotate360.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+i7Rotate360.h"; sourceTree = "<group>"; };
+		E654866A1C30CA3500A47EC1 /* UIView+i7Rotate360.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+i7Rotate360.m"; sourceTree = "<group>"; };
+		E654866D1C30CA3500A47EC1 /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
+		E654866E1C30CA3500A47EC1 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
+		E654866F1C30CA3500A47EC1 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		E65486701C30CA3500A47EC1 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		E697A4781C2A3F7D0039A839 /* HttpTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTools.h; sourceTree = "<group>"; };
 		E697A4791C2A3F7D0039A839 /* HttpTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTools.m; sourceTree = "<group>"; };
 		E697A47B1C2A3FA80039A839 /* RecommendHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHttpTool.h; sourceTree = "<group>"; };
@@ -333,6 +345,28 @@
 				E65486601C30C82200A47EC1 /* PickOverseasController.m */,
 			);
 			path = PickControllers;
+			sourceTree = "<group>";
+		};
+		E65486641C30C9A700A47EC1 /* UIBarButtonItem+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E65486651C30C9A700A47EC1 /* UIBarButtonItem+Extension.h */,
+				E65486661C30C9A700A47EC1 /* UIBarButtonItem+Extension.m */,
+			);
+			path = "UIBarButtonItem+Extension";
+			sourceTree = "<group>";
+		};
+		E65486681C30CA3500A47EC1 /* UIView+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E65486691C30CA3500A47EC1 /* UIView+i7Rotate360.h */,
+				E654866A1C30CA3500A47EC1 /* UIView+i7Rotate360.m */,
+				E654866D1C30CA3500A47EC1 /* UIView+ViewController.h */,
+				E654866E1C30CA3500A47EC1 /* UIView+ViewController.m */,
+				E654866F1C30CA3500A47EC1 /* UIViewExt.h */,
+				E65486701C30CA3500A47EC1 /* UIViewExt.m */,
+			);
+			path = "UIView+Extension";
 			sourceTree = "<group>";
 		};
 		E697A4801C2A72280039A839 /* SVProgressHUD */ = {
@@ -697,6 +731,8 @@
 		E6E51D591C2BE29800DABA5D /* category */ = {
 			isa = PBXGroup;
 			children = (
+				E65486681C30CA3500A47EC1 /* UIView+Extension */,
+				E65486641C30C9A700A47EC1 /* UIBarButtonItem+Extension */,
 				E6E51D5A1C2BE29800DABA5D /* NSString+Extension.h */,
 				E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */,
 			);
@@ -924,7 +960,10 @@
 				E61146701C2D349A00CF0391 /* SKTagButton.m in Sources */,
 				E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */,
 				E611AACD1C2A362D00A1107C /* LDRefreshHeaderView.m in Sources */,
+				E65486711C30CA3500A47EC1 /* UIView+i7Rotate360.m in Sources */,
 				E697A48D1C2A72280039A839 /* SVProgressHUDManager.m in Sources */,
+				E65486731C30CA3500A47EC1 /* UIView+ViewController.m in Sources */,
+				E65486741C30CA3500A47EC1 /* UIViewExt.m in Sources */,
 				E611465A1C2D15F400CF0391 /* YLYTableViewIndexView.m in Sources */,
 				E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */,
 				E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */,
@@ -934,6 +973,7 @@
 				E65486611C30C82200A47EC1 /* PickChinaCityController.m in Sources */,
 				E611AACC1C2A362D00A1107C /* LDRefreshFooterView.m in Sources */,
 				E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */,
+				E65486671C30C9A700A47EC1 /* UIBarButtonItem+Extension.m in Sources */,
 				E61146671C2D31AE00CF0391 /* HotCityModel.m in Sources */,
 				E61146711C2D349A00CF0391 /* SKTagView.m in Sources */,
 				E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */,

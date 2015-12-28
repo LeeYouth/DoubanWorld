@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
+#import "UIBarButtonItem+Extension.h"
 
-@interface BaseViewController ()
+@interface BaseViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -24,22 +25,24 @@
         self.extendedLayoutIncludesOpaqueBars = NO;
         self.modalPresentationCapturesStatusBarAppearance = NO;
     }
-   }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self creatLeftBtn];
+}
+-(void)creatLeftBtn{
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(superArrowButtonClick) normalImage:@"stock_navtitle_leftback" highlightedImage:@"stock_navtitle_leftback"];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)superArrowButtonClick{
+    
+    if ([self.navigationController respondsToSelector:@selector(popViewControllerAnimated:)]){
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    if([self respondsToSelector:@selector(dismissModalViewControllerAnimated:)]){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
-*/
+
+
 
 @end
