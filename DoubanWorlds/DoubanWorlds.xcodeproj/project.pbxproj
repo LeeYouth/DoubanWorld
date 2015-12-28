@@ -53,6 +53,7 @@
 		E65486741C30CA3500A47EC1 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486701C30CA3500A47EC1 /* UIViewExt.m */; };
 		E65486771C30D34200A47EC1 /* LocationCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486761C30D34200A47EC1 /* LocationCityCell.m */; };
 		E654867A1C30D35600A47EC1 /* HotCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486791C30D35600A47EC1 /* HotCityCell.m */; };
+		E654867C1C3131AB00A47EC1 /* hotcityCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = E654867B1C3131AB00A47EC1 /* hotcityCode.plist */; };
 		E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4791C2A3F7D0039A839 /* HttpTools.m */; };
 		E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A47C1C2A3FA80039A839 /* RecommendHttpTool.m */; };
 		E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4821C2A72280039A839 /* SVIndefiniteAnimatedView.m */; };
@@ -169,6 +170,7 @@
 		E65486761C30D34200A47EC1 /* LocationCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCityCell.m; sourceTree = "<group>"; };
 		E65486781C30D35600A47EC1 /* HotCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCityCell.h; sourceTree = "<group>"; };
 		E65486791C30D35600A47EC1 /* HotCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCityCell.m; sourceTree = "<group>"; };
+		E654867B1C3131AB00A47EC1 /* hotcityCode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotcityCode.plist; sourceTree = "<group>"; };
 		E697A4781C2A3F7D0039A839 /* HttpTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTools.h; sourceTree = "<group>"; };
 		E697A4791C2A3F7D0039A839 /* HttpTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTools.m; sourceTree = "<group>"; };
 		E697A47B1C2A3FA80039A839 /* RecommendHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHttpTool.h; sourceTree = "<group>"; };
@@ -714,6 +716,7 @@
 		E6E2B4151C294514003F2C4B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				E654867B1C3131AB00A47EC1 /* hotcityCode.plist */,
 				E61146601C2D220400CF0391 /* outLandCityGroup.plist */,
 				E61146481C2CD45900CF0391 /* inLandCityGroup.plist */,
 				E6E51D591C2BE29800DABA5D /* category */,
@@ -863,6 +866,7 @@
 				E611AAB41C2A31D500A1107C /* tabbar_meHL@3x.png in Resources */,
 				E6E2B3C21C2942F4003F2C4B /* LaunchScreen.storyboard in Resources */,
 				E61146491C2CD45900CF0391 /* inLandCityGroup.plist in Resources */,
+				E654867C1C3131AB00A47EC1 /* hotcityCode.plist in Resources */,
 				E6E2B3BF1C2942F4003F2C4B /* Assets.xcassets in Resources */,
 				E611AACF1C2A362D00A1107C /* tableview_pull_refresh@3x.png in Resources */,
 				E611AAA61C2A31D500A1107C /* tabbar_contacts@3x.png in Resources */,

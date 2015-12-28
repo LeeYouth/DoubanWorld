@@ -21,7 +21,6 @@
 @property (nonatomic, strong) NSMutableArray *sectionArray;
 @property (nonatomic, strong) NSMutableArray *allIndexArray;
 @property (nonatomic, strong) NSMutableArray *twoCityArray;
-@property (nonatomic, strong) NSMutableArray *hotCityArray;
 
 @property (nonatomic, strong) NSDictionary *citiesDic;
 
@@ -40,7 +39,6 @@
         self.sectionArray = [NSMutableArray arrayWithCapacity:1];
         self.allIndexArray = [NSMutableArray arrayWithCapacity:1];
         self.twoCityArray = [NSMutableArray arrayWithCapacity:1];
-        self.hotCityArray = [NSMutableArray arrayWithCapacity:1];
         self.citiesDic = [[NSDictionary alloc] init];
         
     }
@@ -65,17 +63,15 @@
     
     [_twoCityArray addObjectsFromArray:@[@"当前城市",@"热门城市"]];
     
+    
     [RecommendHttpTool getChinaCityInfo:^(NSDictionary *resDict, NSArray *firstArray, NSArray *secondArray) {
         _citiesDic = [resDict copy];
         _sectionArray = [firstArray copy];
         _allIndexArray = [secondArray copy];
-    }];
-    
-    [RecommendHttpTool getHotCitiesInfo:^(NSMutableArray *resultArray) {
-        _hotCityArray = [resultArray copy];
         [self.tableView reloadData];
+
     }];
-    
+
 }
 
 - (void)initTableView{
@@ -157,13 +153,11 @@
         return cell;
     }else if(indexPath.section == 1){
         HotCityCell *cell = [HotCityCell cellWithTableView:tableView];
-        cell.hotCitiesArr = _hotCityArray;
         return cell;
     }else{
         CityIndexCell *cell = [CityIndexCell cellWithTableView:tableView];
         NSString *objKey = [LYCityHandler getCNCityNameWithSectionArr:_sectionArray cityDict:_citiesDic indexPath:indexPath];
         cell.cityName = objKey;
-        
         return cell;
     }
 }

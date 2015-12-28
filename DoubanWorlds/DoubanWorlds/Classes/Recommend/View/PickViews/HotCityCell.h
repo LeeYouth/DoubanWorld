@@ -14,7 +14,4 @@
 
 +(CGFloat)getCellHeight;
 
-
-@property (nonatomic ,strong) NSMutableArray *hotCitiesArr;
-
 @end

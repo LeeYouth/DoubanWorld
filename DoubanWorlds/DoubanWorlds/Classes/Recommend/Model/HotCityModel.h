@@ -20,5 +20,6 @@
 /** 城市英文名 */
 @property (nonatomic ,strong) NSString *uid;
 
+- (id)initWithDictionary:(NSDictionary *)dic;
 
 @end
