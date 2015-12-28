@@ -14,7 +14,6 @@
 		E611465A1C2D15F400CF0391 /* YLYTableViewIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146591C2D15F400CF0391 /* YLYTableViewIndexView.m */; };
 		E611465F1C2D1C3400CF0391 /* flotageBackgroud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611465E1C2D1C3400CF0391 /* flotageBackgroud@2x.png */; };
 		E61146611C2D220400CF0391 /* outLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61146601C2D220400CF0391 /* outLandCityGroup.plist */; };
-		E61146641C2D2EE900CF0391 /* ChinaCityHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146631C2D2EE900CF0391 /* ChinaCityHeadView.m */; };
 		E61146671C2D31AE00CF0391 /* HotCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146661C2D31AE00CF0391 /* HotCityModel.m */; };
 		E611466F1C2D349A00CF0391 /* SKTag.m in Sources */ = {isa = PBXBuildFile; fileRef = E611466A1C2D349A00CF0391 /* SKTag.m */; };
 		E61146701C2D349A00CF0391 /* SKTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E611466C1C2D349A00CF0391 /* SKTagButton.m */; };
@@ -103,8 +102,6 @@
 		E61146591C2D15F400CF0391 /* YLYTableViewIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLYTableViewIndexView.m; sourceTree = "<group>"; };
 		E611465E1C2D1C3400CF0391 /* flotageBackgroud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flotageBackgroud@2x.png"; sourceTree = "<group>"; };
 		E61146601C2D220400CF0391 /* outLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = outLandCityGroup.plist; sourceTree = "<group>"; };
-		E61146621C2D2EE900CF0391 /* ChinaCityHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaCityHeadView.h; sourceTree = "<group>"; };
-		E61146631C2D2EE900CF0391 /* ChinaCityHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaCityHeadView.m; sourceTree = "<group>"; };
 		E61146651C2D31AE00CF0391 /* HotCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCityModel.h; sourceTree = "<group>"; };
 		E61146661C2D31AE00CF0391 /* HotCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCityModel.m; sourceTree = "<group>"; };
 		E61146691C2D349A00CF0391 /* SKTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTag.h; sourceTree = "<group>"; };
@@ -251,8 +248,6 @@
 				E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */,
 				E61146521C2CE39600CF0391 /* CityIndexCell.h */,
 				E61146531C2CE39600CF0391 /* CityIndexCell.m */,
-				E61146621C2D2EE900CF0391 /* ChinaCityHeadView.h */,
-				E61146631C2D2EE900CF0391 /* ChinaCityHeadView.m */,
 			);
 			path = PickViews;
 			sourceTree = "<group>";
@@ -931,7 +926,6 @@
 				E611AACD1C2A362D00A1107C /* LDRefreshHeaderView.m in Sources */,
 				E697A48D1C2A72280039A839 /* SVProgressHUDManager.m in Sources */,
 				E611465A1C2D15F400CF0391 /* YLYTableViewIndexView.m in Sources */,
-				E61146641C2D2EE900CF0391 /* ChinaCityHeadView.m in Sources */,
 				E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */,
 				E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */,
 				E65486591C30C4ED00A47EC1 /* BaseViewController.m in Sources */,
