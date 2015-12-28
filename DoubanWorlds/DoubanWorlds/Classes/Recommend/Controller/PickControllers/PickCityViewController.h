@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PickCityViewController : UIViewController
+@interface PickCityViewController : BaseViewController
 
 @end

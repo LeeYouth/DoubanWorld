@@ -30,6 +30,7 @@
 
 #define TheThemeColor KColor(63, 184, 56)
 
+#define iOS7        ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
 
 

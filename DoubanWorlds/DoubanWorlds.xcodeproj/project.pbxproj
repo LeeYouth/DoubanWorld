@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E61146471C2CD25000CF0391 /* PickCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146461C2CD25000CF0391 /* PickCityViewController.m */; };
 		E61146491C2CD45900CF0391 /* inLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61146481C2CD45900CF0391 /* inLandCityGroup.plist */; };
 		E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */; };
 		E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146531C2CE39600CF0391 /* CityIndexCell.m */; };
@@ -45,6 +44,10 @@
 		E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BE1C2A7D1B00AC0750 /* ActivityOwnerModel.m */; };
 		E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13C21C2A8BF700AC0750 /* HotActivityCell.m */; };
 		E64A13C61C2A918C00AC0750 /* AppTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13C51C2A918C00AC0750 /* AppTools.m */; };
+		E65486591C30C4ED00A47EC1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486581C30C4ED00A47EC1 /* BaseViewController.m */; };
+		E65486611C30C82200A47EC1 /* PickChinaCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = E654865C1C30C82200A47EC1 /* PickChinaCityController.m */; };
+		E65486621C30C82200A47EC1 /* PickCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E654865E1C30C82200A47EC1 /* PickCityViewController.m */; };
+		E65486631C30C82200A47EC1 /* PickOverseasController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486601C30C82200A47EC1 /* PickOverseasController.m */; };
 		E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4791C2A3F7D0039A839 /* HttpTools.m */; };
 		E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A47C1C2A3FA80039A839 /* RecommendHttpTool.m */; };
 		E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4821C2A72280039A839 /* SVIndefiniteAnimatedView.m */; };
@@ -89,8 +92,6 @@
 		339FE046F528EA539C511ED1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C275BF2A64F19DF9E13FE9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7A78E1E9DF9917575AB4B510 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E61146451C2CD25000CF0391 /* PickCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickCityViewController.h; sourceTree = "<group>"; };
-		E61146461C2CD25000CF0391 /* PickCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickCityViewController.m; sourceTree = "<group>"; };
 		E61146481C2CD45900CF0391 /* inLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = inLandCityGroup.plist; path = Resources/inLandCityGroup.plist; sourceTree = "<group>"; };
 		E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
@@ -145,6 +146,14 @@
 		E64A13C21C2A8BF700AC0750 /* HotActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotActivityCell.m; sourceTree = "<group>"; };
 		E64A13C41C2A918C00AC0750 /* AppTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTools.h; sourceTree = "<group>"; };
 		E64A13C51C2A918C00AC0750 /* AppTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTools.m; sourceTree = "<group>"; };
+		E65486571C30C4ED00A47EC1 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		E65486581C30C4ED00A47EC1 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		E654865B1C30C82200A47EC1 /* PickChinaCityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickChinaCityController.h; sourceTree = "<group>"; };
+		E654865C1C30C82200A47EC1 /* PickChinaCityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickChinaCityController.m; sourceTree = "<group>"; };
+		E654865D1C30C82200A47EC1 /* PickCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickCityViewController.h; sourceTree = "<group>"; };
+		E654865E1C30C82200A47EC1 /* PickCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickCityViewController.m; sourceTree = "<group>"; };
+		E654865F1C30C82200A47EC1 /* PickOverseasController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickOverseasController.h; sourceTree = "<group>"; };
+		E65486601C30C82200A47EC1 /* PickOverseasController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickOverseasController.m; sourceTree = "<group>"; };
 		E697A4781C2A3F7D0039A839 /* HttpTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTools.h; sourceTree = "<group>"; };
 		E697A4791C2A3F7D0039A839 /* HttpTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTools.m; sourceTree = "<group>"; };
 		E697A47B1C2A3FA80039A839 /* RecommendHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHttpTool.h; sourceTree = "<group>"; };
@@ -318,6 +327,19 @@
 			path = RecommendCells;
 			sourceTree = "<group>";
 		};
+		E654865A1C30C82200A47EC1 /* PickControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E654865B1C30C82200A47EC1 /* PickChinaCityController.h */,
+				E654865C1C30C82200A47EC1 /* PickChinaCityController.m */,
+				E654865D1C30C82200A47EC1 /* PickCityViewController.h */,
+				E654865E1C30C82200A47EC1 /* PickCityViewController.m */,
+				E654865F1C30C82200A47EC1 /* PickOverseasController.h */,
+				E65486601C30C82200A47EC1 /* PickOverseasController.m */,
+			);
+			path = PickControllers;
+			sourceTree = "<group>";
+		};
 		E697A4801C2A72280039A839 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +456,8 @@
 				E6E2B3F81C2943F5003F2C4B /* MainNavgationController.m */,
 				E6E2B3F91C2943F5003F2C4B /* MainTabbarController.h */,
 				E6E2B3FA1C2943F5003F2C4B /* MainTabbarController.m */,
+				E65486571C30C4ED00A47EC1 /* BaseViewController.h */,
+				E65486581C30C4ED00A47EC1 /* BaseViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -567,10 +591,9 @@
 		E6E2B40C1C2944FE003F2C4B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E654865A1C30C82200A47EC1 /* PickControllers */,
 				E6E2B41C1C2945A3003F2C4B /* RecommendViewController.h */,
 				E6E2B41D1C2945A3003F2C4B /* RecommendViewController.m */,
-				E61146451C2CD25000CF0391 /* PickCityViewController.h */,
-				E61146461C2CD25000CF0391 /* PickCityViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -911,6 +934,10 @@
 				E61146641C2D2EE900CF0391 /* ChinaCityHeadView.m in Sources */,
 				E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */,
 				E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */,
+				E65486591C30C4ED00A47EC1 /* BaseViewController.m in Sources */,
+				E65486621C30C82200A47EC1 /* PickCityViewController.m in Sources */,
+				E65486631C30C82200A47EC1 /* PickOverseasController.m in Sources */,
+				E65486611C30C82200A47EC1 /* PickChinaCityController.m in Sources */,
 				E611AACC1C2A362D00A1107C /* LDRefreshFooterView.m in Sources */,
 				E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */,
 				E61146671C2D31AE00CF0391 /* HotCityModel.m in Sources */,
@@ -918,7 +945,6 @@
 				E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */,
 				E6E2B4001C2943F5003F2C4B /* MainTabbarController.m in Sources */,
 				E6E2B41B1C294597003F2C4B /* NearbyViewController.m in Sources */,
-				E61146471C2CD25000CF0391 /* PickCityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
