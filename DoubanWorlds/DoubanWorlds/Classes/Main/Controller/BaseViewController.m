@@ -30,7 +30,14 @@
 -(void)creatLeftBtn{
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(superArrowButtonClick) normalImage:@"stock_navtitle_leftback" highlightedImage:@"stock_navtitle_leftback"];
+    UIBarButtonItem *buttonItem = [UIBarButtonItem itemWithImage:@"nav_arrow" higlightedImage:@"nav_arrow" target:self action:@selector(superArrowButtonClick)];
+        
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer.width = -20;
+    self.navigationItem.leftBarButtonItems = @[negativeSpacer, buttonItem];
+
+    
+//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(superArrowButtonClick) normalImage:@"nav_arrow" highlightedImage:@"nav_arrow"];
 }
 
 - (void)superArrowButtonClick{
