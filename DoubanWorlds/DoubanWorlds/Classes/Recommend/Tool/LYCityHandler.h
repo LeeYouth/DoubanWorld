@@ -9,8 +9,21 @@
 #import <Foundation/Foundation.h>
 
 @interface LYCityHandler : NSObject
+
 /**
- *  获取city的名字
+ *  获取中国city的名字
+ *
+ *  @param sectionArr 分区数组
+ *  @param cityDict   每个分区对应城市字典
+ *  @param indexPath  cell的indexPath
+ *
+ *  @return 返回cell对应城市
+ */
+
++(NSString *)getCNCityNameWithSectionArr:(NSArray *)sectionArr cityDict:(NSDictionary *)cityDict indexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  获取外国city的名字
  *
  *  @param sectionArr 分区数组
  *  @param cityDict   每个分区对应城市字典
@@ -21,7 +34,18 @@
 +(NSString *)getCityNameWithSectionArr:(NSArray *)sectionArr cityDict:(NSDictionary *)cityDict indexPath:(NSIndexPath *)indexPath;
 
 /**
- *  获取city的ID
+ *  获取中国city的ID
+ *
+ *  @param sectionArr 分区数组
+ *  @param cityDict   每个分区对应城市字典
+ *  @param indexPath  cell的indexPath
+ *
+ *  @return 返回cell对应ID
+ */
++(NSString *)getCNCityIDWithSectionArr:(NSArray *)sectionArr cityDict:(NSDictionary *)cityDict indexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  获取国外city的ID
  *
  *  @param sectionArr 分区数组
  *  @param cityDict   每个分区对应城市字典

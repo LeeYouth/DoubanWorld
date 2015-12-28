@@ -36,5 +36,10 @@ typedef void (^CityInfoBlock)(NSDictionary *resDict,NSArray *firstArray,NSArray 
  */
 +(void)getOverseasCityInfo:(CityInfoBlock)cityInfoBlock;
 
+/**
+ *  获取热门城市列表
+ */
++(void)getHotCitiesInfo:(ArrayBlock)arrayBlock;
+
 
 @end

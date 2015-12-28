@@ -23,7 +23,7 @@
     if (self) {
         
         self.frame = CGRectMake(0, 0, SCREEN_WIDTH, 25);
-        self.backgroundColor = KColor(235, 235, 241);
+        self.backgroundColor = KColor(244, 244, 244);
         
         [self setupUI];
     }

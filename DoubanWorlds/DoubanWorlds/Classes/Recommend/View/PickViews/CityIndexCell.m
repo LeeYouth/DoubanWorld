@@ -50,7 +50,7 @@
         
         [_cityIndexLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_left).offset(HMStatusCellMargin);
-            make.top.equalTo(self.contentView).offset(10);
+            make.top.equalTo(self.contentView).offset(HMStatusCellMargin);
             make.width.mas_equalTo(@(SCREEN_WIDTH - 30));
             make.height.mas_equalTo(@20);
         }];
@@ -73,7 +73,7 @@
 
 
 +(CGFloat)getCellHeight{
-    return 40;
+    return 50;
 }
 
 

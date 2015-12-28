@@ -51,6 +51,8 @@
 		E65486711C30CA3500A47EC1 /* UIView+i7Rotate360.m in Sources */ = {isa = PBXBuildFile; fileRef = E654866A1C30CA3500A47EC1 /* UIView+i7Rotate360.m */; };
 		E65486731C30CA3500A47EC1 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E654866E1C30CA3500A47EC1 /* UIView+ViewController.m */; };
 		E65486741C30CA3500A47EC1 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486701C30CA3500A47EC1 /* UIViewExt.m */; };
+		E65486771C30D34200A47EC1 /* LocationCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486761C30D34200A47EC1 /* LocationCityCell.m */; };
+		E654867A1C30D35600A47EC1 /* HotCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486791C30D35600A47EC1 /* HotCityCell.m */; };
 		E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4791C2A3F7D0039A839 /* HttpTools.m */; };
 		E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A47C1C2A3FA80039A839 /* RecommendHttpTool.m */; };
 		E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4821C2A72280039A839 /* SVIndefiniteAnimatedView.m */; };
@@ -163,6 +165,10 @@
 		E654866E1C30CA3500A47EC1 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
 		E654866F1C30CA3500A47EC1 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		E65486701C30CA3500A47EC1 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		E65486751C30D34200A47EC1 /* LocationCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCityCell.h; sourceTree = "<group>"; };
+		E65486761C30D34200A47EC1 /* LocationCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCityCell.m; sourceTree = "<group>"; };
+		E65486781C30D35600A47EC1 /* HotCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCityCell.h; sourceTree = "<group>"; };
+		E65486791C30D35600A47EC1 /* HotCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCityCell.m; sourceTree = "<group>"; };
 		E697A4781C2A3F7D0039A839 /* HttpTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTools.h; sourceTree = "<group>"; };
 		E697A4791C2A3F7D0039A839 /* HttpTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTools.m; sourceTree = "<group>"; };
 		E697A47B1C2A3FA80039A839 /* RecommendHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHttpTool.h; sourceTree = "<group>"; };
@@ -260,6 +266,10 @@
 				E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */,
 				E61146521C2CE39600CF0391 /* CityIndexCell.h */,
 				E61146531C2CE39600CF0391 /* CityIndexCell.m */,
+				E65486751C30D34200A47EC1 /* LocationCityCell.h */,
+				E65486761C30D34200A47EC1 /* LocationCityCell.m */,
+				E65486781C30D35600A47EC1 /* HotCityCell.h */,
+				E65486791C30D35600A47EC1 /* HotCityCell.m */,
 			);
 			path = PickViews;
 			sourceTree = "<group>";
@@ -337,10 +347,10 @@
 		E654865A1C30C82200A47EC1 /* PickControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E654865B1C30C82200A47EC1 /* PickChinaCityController.h */,
-				E654865C1C30C82200A47EC1 /* PickChinaCityController.m */,
 				E654865D1C30C82200A47EC1 /* PickCityViewController.h */,
 				E654865E1C30C82200A47EC1 /* PickCityViewController.m */,
+				E654865B1C30C82200A47EC1 /* PickChinaCityController.h */,
+				E654865C1C30C82200A47EC1 /* PickChinaCityController.m */,
 				E654865F1C30C82200A47EC1 /* PickOverseasController.h */,
 				E65486601C30C82200A47EC1 /* PickOverseasController.m */,
 			);
@@ -945,6 +955,7 @@
 				E6E2B4181C294582003F2C4B /* MeViewController.m in Sources */,
 				E6E2B3FF1C2943F5003F2C4B /* MainNavgationController.m in Sources */,
 				E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */,
+				E65486771C30D34200A47EC1 /* LocationCityCell.m in Sources */,
 				E697A48C1C2A72280039A839 /* SVProgressHUD.m in Sources */,
 				E6E2B4211C2945BE003F2C4B /* SearchViewController.m in Sources */,
 				E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */,
@@ -952,6 +963,7 @@
 				E64A13C61C2A918C00AC0750 /* AppTools.m in Sources */,
 				E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */,
 				E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */,
+				E654867A1C30D35600A47EC1 /* HotCityCell.m in Sources */,
 				E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */,
 				E6E2B3B41C2942F4003F2C4B /* main.m in Sources */,
 				E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */,

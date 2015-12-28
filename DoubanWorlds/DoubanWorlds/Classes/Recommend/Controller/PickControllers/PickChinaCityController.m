@@ -12,12 +12,17 @@
 #import "SectionHeaderView.h"
 #import "LYCityHandler.h"
 #import "YLYTableViewIndexView.h"
+#import "LocationCityCell.h"
+#import "HotCityCell.h"
 
 
 @interface PickChinaCityController ()<YLYTableViewIndexDelegate>
 
 @property (nonatomic, strong) NSMutableArray *sectionArray;
 @property (nonatomic, strong) NSMutableArray *allIndexArray;
+@property (nonatomic, strong) NSMutableArray *twoCityArray;
+@property (nonatomic, strong) NSMutableArray *hotCityArray;
+
 @property (nonatomic, strong) NSDictionary *citiesDic;
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -34,6 +39,8 @@
         
         self.sectionArray = [NSMutableArray arrayWithCapacity:1];
         self.allIndexArray = [NSMutableArray arrayWithCapacity:1];
+        self.twoCityArray = [NSMutableArray arrayWithCapacity:1];
+        self.hotCityArray = [NSMutableArray arrayWithCapacity:1];
         self.citiesDic = [[NSDictionary alloc] init];
         
     }
@@ -56,24 +63,18 @@
 #pragma - 国内数据
 - (void)requestChinaData{
     
+    [_twoCityArray addObjectsFromArray:@[@"当前城市",@"热门城市"]];
+    
     [RecommendHttpTool getChinaCityInfo:^(NSDictionary *resDict, NSArray *firstArray, NSArray *secondArray) {
         _citiesDic = [resDict copy];
         _sectionArray = [firstArray copy];
         _allIndexArray = [secondArray copy];
     }];
     
-    [self.tableView reloadData];
-    
-}
-#pragma mark - 国外数据
-- (void)requestOverseasData{
-    [RecommendHttpTool getOverseasCityInfo:^(NSDictionary *resDict, NSArray *firstArray, NSArray *secondArray) {
-        _citiesDic = [resDict copy];
-        _sectionArray = [firstArray copy];
-        _allIndexArray = [secondArray copy];
+    [RecommendHttpTool getHotCitiesInfo:^(NSMutableArray *resultArray) {
+        _hotCityArray = [resultArray copy];
+        [self.tableView reloadData];
     }];
-    
-    [self.tableView reloadData];
     
 }
 
@@ -113,51 +114,77 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return _allIndexArray.count;
+    return _allIndexArray.count + 2;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     SectionHeaderView *headerView = [[SectionHeaderView alloc] init];
-    headerView.text = [_sectionArray objectAtIndex:section];
+    if (section <= 1) {
+        headerView.text = [_twoCityArray objectAtIndex:section];
+    }else{
+        headerView.text = [_sectionArray objectAtIndex:section - 2];
+    }
     return headerView;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return [SectionHeaderView getSectionHeadHeight];
 }
-- (NSArray *)sectionIndexsAtIndexes:(NSIndexSet *)indexes{
-    return _sectionArray;
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // 返回cell条数
-    return [LYCityHandler getOneSectionCountWithSectionArr:_sectionArray cityDict:_citiesDic section:section];
+    if (section <= 1) {
+        return 1;
+    }else{
+        return [LYCityHandler getOneSectionCountWithSectionArr:_sectionArray cityDict:_citiesDic section:section - 2];
+    }
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [CityIndexCell getCellHeight];
+    if (indexPath.section == 0) {
+        return [LocationCityCell getCellHeight];
+    }else if(indexPath.section == 1){
+        return [HotCityCell getCellHeight];
+    }else{
+        return [CityIndexCell getCellHeight];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CityIndexCell *cell = [CityIndexCell cellWithTableView:tableView];
-    NSString *objKey = [LYCityHandler getCityNameWithSectionArr:_sectionArray cityDict:_citiesDic indexPath:indexPath];
-    cell.cityName = objKey;
-    return cell;
-    
+    if (indexPath.section == 0) {
+        LocationCityCell *cell = [LocationCityCell cellWithTableView:tableView];
+        return cell;
+    }else if(indexPath.section == 1){
+        HotCityCell *cell = [HotCityCell cellWithTableView:tableView];
+        cell.hotCitiesArr = _hotCityArray;
+        return cell;
+    }else{
+        CityIndexCell *cell = [CityIndexCell cellWithTableView:tableView];
+        NSString *objKey = [LYCityHandler getCNCityNameWithSectionArr:_sectionArray cityDict:_citiesDic indexPath:indexPath];
+        cell.cityName = objKey;
+        
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSString *objValue = [LYCityHandler getCityIDWithSectionArr:_sectionArray cityDict:_citiesDic indexPath:indexPath];
-    NSLog(@"---------选择的城市ID = %@",objValue);
-    
+    if (indexPath.section <= 1) {
+        
+    }else{
+        NSString *objValue = [LYCityHandler getCNCityIDWithSectionArr:_sectionArray cityDict:_citiesDic indexPath:indexPath];
+        NSString *objKey = [LYCityHandler getCNCityNameWithSectionArr:_sectionArray cityDict:_citiesDic indexPath:indexPath];
+        NSLog(@"---------选择的城市name =%@ ,ID = %@",objKey,objValue);
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark -YLYTableViewIndexDelegate
 - (void)tableViewIndex:(YLYTableViewIndexView *)tableViewIndex didSelectSectionAtIndex:(NSInteger)index withTitle:(NSString *)title{
     if ([_tableView numberOfSections] > index && index > -1){   // for safety, should always be YES
-        [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:index]
+        [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:index + 2]
                           atScrollPosition:UITableViewScrollPositionTop
                                   animated:NO];
         self.flotageLabel.text = title;

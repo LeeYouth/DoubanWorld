@@ -17,7 +17,8 @@
 
 //1.获取最近一周内的某个城市的热点活动
 #define Recommend_URL [NSString stringWithFormat:@"%@/v2/event/list",DoubanWorld_BaseURL]
-
+//2.获取热门城市列表
+#define HotCities_URL [NSString stringWithFormat:@"%@/v2/loc/list",DoubanWorld_BaseURL]
 
 
 #endif

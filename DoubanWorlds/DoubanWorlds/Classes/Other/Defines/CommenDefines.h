@@ -30,10 +30,13 @@
 
 #define TheThemeColor KColor(63, 184, 56)
 
-#define iOS7        ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
+#define iPHone6 ([UIScreen mainScreen].bounds.size.height > 568) ? YES : NO
 
-
+#define HotCityButtonWith ([UIScreen mainScreen].bounds.size.height > 568) ? 100.f : 80.f
+#define HotCityButtonHeight 36.f
+#define HotCityButtonMargin 7.f
 
 
 

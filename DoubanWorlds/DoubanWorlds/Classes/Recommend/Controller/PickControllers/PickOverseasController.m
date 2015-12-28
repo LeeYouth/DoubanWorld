@@ -136,7 +136,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSString *objValue = [LYCityHandler getCityIDWithSectionArr:_sectionArray cityDict:_citiesDic indexPath:indexPath];
-    NSLog(@"---------选择的城市ID = %@",objValue);
+    NSString *objKey = [LYCityHandler getCityNameWithSectionArr:_sectionArray cityDict:_citiesDic indexPath:indexPath];
+    NSLog(@"---------选择的城市name =%@ ,ID = %@",objKey,objValue);
     
 }
 

@@ -43,7 +43,7 @@
     //2.所有分区
     NSArray *sections = [cityGroupDic allKeys];
     sections = [sections sortedArrayUsingSelector:@selector(compare:)]; // 对该数组里边的元素进行升序排序
-    //3.每个分区对应的所有城市
+    //3.所有城市
     NSArray *indexs = [cityGroupDic allValues];
     
     if (cityInfoBlock) {
@@ -60,13 +60,36 @@
     //2.所有分区
     NSArray *sections = [cityGroupDic allKeys];
     sections = [sections sortedArrayUsingSelector:@selector(compare:)]; // 对该数组里边的元素进行升序排序
-    //3.每个分区对应的所有城市
+    //3.所有城市
     NSArray *indexs = [cityGroupDic allValues];
     
     if (cityInfoBlock) {
         cityInfoBlock(cityGroupDic,sections,indexs);
     }
 }
+
++(void)getHotCitiesInfo:(ArrayBlock)arrayBlock{
+    NSLog(@"getHotCitiesInfoURL = %@",HotCities_URL);
+    [HttpTools getWithURL:HotCities_URL params:nil success:^(id json) {
+        NSLog(@"getHotCitiesInfoList = %@",json);
+        NSMutableArray *resultArr = [[NSMutableArray alloc] init];
+        if ([json[@"locs"] isKindOfClass:[NSArray class]]) {
+            NSArray *resArray = json[@"locs"];
+            for (NSDictionary *dict in resArray) {
+                RecommendModel *model = [[RecommendModel alloc] initWithDictionary:dict];
+                [resultArr addObject:model];
+            }
+        }
+        if (arrayBlock) {
+            arrayBlock(resultArr);
+        }
+    } failure:^(NSError *error) {
+        [SVProgressHUDManager networkError];
+    }];
+
+    
+}
+
 
 
 @end
