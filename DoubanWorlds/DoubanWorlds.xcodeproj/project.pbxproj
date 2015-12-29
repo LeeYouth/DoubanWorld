@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E61146491C2CD45900CF0391 /* inLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61146481C2CD45900CF0391 /* inLandCityGroup.plist */; };
 		E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */; };
 		E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146531C2CE39600CF0391 /* CityIndexCell.m */; };
 		E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146561C2CEA2800CF0391 /* LYCityHandler.m */; };
 		E611465A1C2D15F400CF0391 /* YLYTableViewIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146591C2D15F400CF0391 /* YLYTableViewIndexView.m */; };
 		E611465F1C2D1C3400CF0391 /* flotageBackgroud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611465E1C2D1C3400CF0391 /* flotageBackgroud@2x.png */; };
-		E61146611C2D220400CF0391 /* outLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61146601C2D220400CF0391 /* outLandCityGroup.plist */; };
 		E61146671C2D31AE00CF0391 /* HotCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146661C2D31AE00CF0391 /* HotCityModel.m */; };
 		E611466F1C2D349A00CF0391 /* SKTag.m in Sources */ = {isa = PBXBuildFile; fileRef = E611466A1C2D349A00CF0391 /* SKTag.m */; };
 		E61146701C2D349A00CF0391 /* SKTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E611466C1C2D349A00CF0391 /* SKTagButton.m */; };
@@ -53,12 +51,9 @@
 		E65486741C30CA3500A47EC1 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486701C30CA3500A47EC1 /* UIViewExt.m */; };
 		E65486771C30D34200A47EC1 /* LocationCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486761C30D34200A47EC1 /* LocationCityCell.m */; };
 		E654867A1C30D35600A47EC1 /* HotCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486791C30D35600A47EC1 /* HotCityCell.m */; };
-		E654867C1C3131AB00A47EC1 /* hotcityCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = E654867B1C3131AB00A47EC1 /* hotcityCode.plist */; };
 		E654867E1C313A5600A47EC1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E654867D1C313A5600A47EC1 /* MapKit.framework */; };
 		E65486801C313AA600A47EC1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E654867F1C313AA600A47EC1 /* CoreLocation.framework */; };
 		E65486831C313EDC00A47EC1 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E65486821C313EDC00A47EC1 /* LocationManager.m */; };
-		E65486851C31416200A47EC1 /* AllCityName in Resources */ = {isa = PBXBuildFile; fileRef = E65486841C31416200A47EC1 /* AllCityName */; };
-		E65486891C3141D500A47EC1 /* AllCityID in Resources */ = {isa = PBXBuildFile; fileRef = E65486881C3141D500A47EC1 /* AllCityID */; };
 		E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4791C2A3F7D0039A839 /* HttpTools.m */; };
 		E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A47C1C2A3FA80039A839 /* RecommendHttpTool.m */; };
 		E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4821C2A72280039A839 /* SVIndefiniteAnimatedView.m */; };
@@ -79,6 +74,11 @@
 		E6E2B4211C2945BE003F2C4B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4201C2945BE003F2C4B /* SearchViewController.m */; };
 		E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4241C294714003F2C4B /* AppDelegate.m */; };
 		E6E51D5C1C2BE29800DABA5D /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */; };
+		E6F7535E1C32383400E570C2 /* AllCityID in Resources */ = {isa = PBXBuildFile; fileRef = E6F753591C32383400E570C2 /* AllCityID */; };
+		E6F7535F1C32383400E570C2 /* AllCityName in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535A1C32383400E570C2 /* AllCityName */; };
+		E6F753601C32383400E570C2 /* hotcityCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535B1C32383400E570C2 /* hotcityCode.plist */; };
+		E6F753611C32383400E570C2 /* inLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535C1C32383400E570C2 /* inLandCityGroup.plist */; };
+		E6F753621C32383400E570C2 /* outLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535D1C32383400E570C2 /* outLandCityGroup.plist */; };
 		EDE4EBA20E98E5C3B8D88A19 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 339FE046F528EA539C511ED1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -103,7 +103,6 @@
 		339FE046F528EA539C511ED1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C275BF2A64F19DF9E13FE9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7A78E1E9DF9917575AB4B510 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E61146481C2CD45900CF0391 /* inLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = inLandCityGroup.plist; path = Resources/inLandCityGroup.plist; sourceTree = "<group>"; };
 		E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
 		E61146521C2CE39600CF0391 /* CityIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityIndexCell.h; sourceTree = "<group>"; };
@@ -113,7 +112,6 @@
 		E61146581C2D15F400CF0391 /* YLYTableViewIndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLYTableViewIndexView.h; sourceTree = "<group>"; };
 		E61146591C2D15F400CF0391 /* YLYTableViewIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLYTableViewIndexView.m; sourceTree = "<group>"; };
 		E611465E1C2D1C3400CF0391 /* flotageBackgroud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flotageBackgroud@2x.png"; sourceTree = "<group>"; };
-		E61146601C2D220400CF0391 /* outLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = outLandCityGroup.plist; sourceTree = "<group>"; };
 		E61146651C2D31AE00CF0391 /* HotCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCityModel.h; sourceTree = "<group>"; };
 		E61146661C2D31AE00CF0391 /* HotCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCityModel.m; sourceTree = "<group>"; };
 		E61146691C2D349A00CF0391 /* SKTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTag.h; sourceTree = "<group>"; };
@@ -175,13 +173,10 @@
 		E65486761C30D34200A47EC1 /* LocationCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCityCell.m; sourceTree = "<group>"; };
 		E65486781C30D35600A47EC1 /* HotCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCityCell.h; sourceTree = "<group>"; };
 		E65486791C30D35600A47EC1 /* HotCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCityCell.m; sourceTree = "<group>"; };
-		E654867B1C3131AB00A47EC1 /* hotcityCode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotcityCode.plist; sourceTree = "<group>"; };
 		E654867D1C313A5600A47EC1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E654867F1C313AA600A47EC1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E65486811C313EDC00A47EC1 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		E65486821C313EDC00A47EC1 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
-		E65486841C31416200A47EC1 /* AllCityName */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllCityName; sourceTree = "<group>"; };
-		E65486881C3141D500A47EC1 /* AllCityID */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllCityID; sourceTree = "<group>"; };
 		E697A4781C2A3F7D0039A839 /* HttpTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTools.h; sourceTree = "<group>"; };
 		E697A4791C2A3F7D0039A839 /* HttpTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTools.m; sourceTree = "<group>"; };
 		E697A47B1C2A3FA80039A839 /* RecommendHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHttpTool.h; sourceTree = "<group>"; };
@@ -225,6 +220,11 @@
 		E6E2B4281C2948AB003F2C4B /* URLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLDefines.h; sourceTree = "<group>"; };
 		E6E51D5A1C2BE29800DABA5D /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		E6F753591C32383400E570C2 /* AllCityID */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllCityID; sourceTree = "<group>"; };
+		E6F7535A1C32383400E570C2 /* AllCityName */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllCityName; sourceTree = "<group>"; };
+		E6F7535B1C32383400E570C2 /* hotcityCode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotcityCode.plist; sourceTree = "<group>"; };
+		E6F7535C1C32383400E570C2 /* inLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = inLandCityGroup.plist; sourceTree = "<group>"; };
+		E6F7535D1C32383400E570C2 /* outLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = outLandCityGroup.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +307,7 @@
 		E611A09D1C2A315C00A1107C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E6F753581C32383400E570C2 /* PlistRes */,
 				E611465E1C2D1C3400CF0391 /* flotageBackgroud@2x.png */,
 				E611AA941C2A31D500A1107C /* tabbarIcons */,
 			);
@@ -733,11 +734,6 @@
 		E6E2B4151C294514003F2C4B /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				E654867B1C3131AB00A47EC1 /* hotcityCode.plist */,
-				E65486841C31416200A47EC1 /* AllCityName */,
-				E65486881C3141D500A47EC1 /* AllCityID */,
-				E61146601C2D220400CF0391 /* outLandCityGroup.plist */,
-				E61146481C2CD45900CF0391 /* inLandCityGroup.plist */,
 				E6E51D591C2BE29800DABA5D /* category */,
 				E611A09D1C2A315C00A1107C /* Resources */,
 				E6E2B4261C2948AB003F2C4B /* Defines */,
@@ -769,6 +765,18 @@
 				E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */,
 			);
 			path = category;
+			sourceTree = "<group>";
+		};
+		E6F753581C32383400E570C2 /* PlistRes */ = {
+			isa = PBXGroup;
+			children = (
+				E6F753591C32383400E570C2 /* AllCityID */,
+				E6F7535A1C32383400E570C2 /* AllCityName */,
+				E6F7535B1C32383400E570C2 /* hotcityCode.plist */,
+				E6F7535C1C32383400E570C2 /* inLandCityGroup.plist */,
+				E6F7535D1C32383400E570C2 /* outLandCityGroup.plist */,
+			);
+			path = PlistRes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -878,17 +886,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E611AAAD1C2A31D500A1107C /* tabbar_mainframe@2x.png in Resources */,
+				E6F753611C32383400E570C2 /* inLandCityGroup.plist in Resources */,
 				E611AAAC1C2A31D500A1107C /* tabbar_discoverHL@3x.png in Resources */,
 				E611AAAF1C2A31D500A1107C /* tabbar_mainframeHL@2x.png in Resources */,
 				E611AAA71C2A31D500A1107C /* tabbar_contactsHL@2x.png in Resources */,
 				E611AAB01C2A31D500A1107C /* tabbar_mainframeHL@3x.png in Resources */,
 				E611AAB41C2A31D500A1107C /* tabbar_meHL@3x.png in Resources */,
-				E65486851C31416200A47EC1 /* AllCityName in Resources */,
+				E6F7535F1C32383400E570C2 /* AllCityName in Resources */,
 				E6E2B3C21C2942F4003F2C4B /* LaunchScreen.storyboard in Resources */,
-				E61146491C2CD45900CF0391 /* inLandCityGroup.plist in Resources */,
-				E65486891C3141D500A47EC1 /* AllCityID in Resources */,
-				E654867C1C3131AB00A47EC1 /* hotcityCode.plist in Resources */,
+				E6F753601C32383400E570C2 /* hotcityCode.plist in Resources */,
+				E6F7535E1C32383400E570C2 /* AllCityID in Resources */,
 				E6E2B3BF1C2942F4003F2C4B /* Assets.xcassets in Resources */,
+				E6F753621C32383400E570C2 /* outLandCityGroup.plist in Resources */,
 				E611AACF1C2A362D00A1107C /* tableview_pull_refresh@3x.png in Resources */,
 				E611AAA61C2A31D500A1107C /* tabbar_contacts@3x.png in Resources */,
 				E611AAB11C2A31D500A1107C /* tabbar_me@2x.png in Resources */,
@@ -901,7 +910,6 @@
 				E611AAA81C2A31D500A1107C /* tabbar_contactsHL@3x.png in Resources */,
 				E611AAAA1C2A31D500A1107C /* tabbar_discover@3x.png in Resources */,
 				E611AAB31C2A31D500A1107C /* tabbar_meHL@2x.png in Resources */,
-				E61146611C2D220400CF0391 /* outLandCityGroup.plist in Resources */,
 				E611AAA51C2A31D500A1107C /* tabbar_contacts@2x.png in Resources */,
 				E697A48B1C2A72280039A839 /* SVProgressHUD.bundle in Resources */,
 			);
