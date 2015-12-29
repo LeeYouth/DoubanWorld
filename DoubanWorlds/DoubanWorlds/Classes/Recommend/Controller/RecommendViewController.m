@@ -45,36 +45,64 @@
     
     [self addRefreshView];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pushPickViewController)];
     
     [self requestData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityButtonClick:) name:kCityButtonClick object:nil];
+    
+    [self test];
 }
 
--(void)requestData{
+- (void)test{
+    
+    //定位到的城市
+    UIButton *_locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_locationBtn setTitle:@"北京" forState:UIControlStateNormal];
+//    _locationBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 8);
+    [_locationBtn setTitleColor:TheThemeColor forState:UIControlStateNormal];
+    [_locationBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    [_locationBtn setImage:[UIImage imageNamed:@"AlbumLocationIconHL"] forState:UIControlStateNormal];
+    [_locationBtn addTarget:self action:@selector(pushPickViewController) forControlEvents:UIControlEventTouchUpInside];
+    
+    _locationBtn.frame = CGRectMake(0, 0, 65, 40);
+    
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:_locationBtn];
+    
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSpacer.width = -20;
+    self.navigationItem.leftBarButtonItems = @[negativeSpacer, buttonItem];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pushPickViewController)];
+
+
+
+}
+
+- (void)requestData{
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:kIsCityButtonClick]) {//是否点击选择了城市
-        NSString *ID = [[NSUserDefaults standardUserDefaults] objectForKey:kCityButtonClick];
+        NSString *cName = [[NSUserDefaults standardUserDefaults] objectForKey:kCityButtonClick];
+        NSString *ID = [LYCityHandler getCityIDByName:cName];
         self.locID = ID;
         [self refreshDataLocID:ID];
     }else{
         NSString *defaultsName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
 
-        if ([defaultsName checkConvertNull])
+        if ([NSString checkConvertNull:defaultsName])//第一次登录
         {
             LocationManager *manager = [LocationManager sharedFOLClient];
-            __weak RecommendViewController *weekSelf = self;
             [manager currentLocation:^(CLLocation *currentLocation, NSString *cityName) {
                 NSLog(@"currentLocation = %@,cityName = %@",currentLocation,cityName);
-                NSString *ID = [LYCityHandler getCityIDByName:cityName];
-                NSLog(@"cityID = %@",ID);
                 
-                weekSelf.locID = [ID copy];
-                [weekSelf refreshDataLocID:ID];
-                
-                [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:kCurrentLocation];
             }];
+            
+            NSString *cityName = @"北京";
+            NSString *ID = [LYCityHandler getCityIDByName:cityName];
+            NSLog(@"cityID = %@",ID);
+            
+            self.locID = [ID copy];
+            [self refreshDataLocID:ID];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:kCurrentLocation];
 
         }else
         {
@@ -113,14 +141,14 @@
         self.locID = [ID copy];
         [self refreshDataLocID:ID];
         
-        [[NSUserDefaults standardUserDefaults] setValue:ID forKey:kCityButtonClick];
+        [[NSUserDefaults standardUserDefaults] setValue:cname forKey:kCityButtonClick];
 
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kIsCityButtonClick];
     }
 }
 
 
--(void)pushPickViewController{
+- (void)pushPickViewController{
     PickCityViewController *pickVC = [[PickCityViewController alloc] init];
     [self.navigationController pushViewController:pickVC animated:YES];
 }

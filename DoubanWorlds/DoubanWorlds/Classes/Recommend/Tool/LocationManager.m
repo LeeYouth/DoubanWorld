@@ -64,8 +64,8 @@ static LocationManager  *manager;
     
     if (status == kCLAuthorizationStatusNotDetermined) { // 如果授权状态还没有被决定就弹出提示框
         if ([_locMgr respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-            [_locMgr requestWhenInUseAuthorization];
-//            [_locMgr requestAlwaysAuthorization];
+//            [_locMgr requestWhenInUseAuthorization];
+            [_locMgr requestAlwaysAuthorization];
         }
         
          //也可以判断当前系统版本是否大于8.0

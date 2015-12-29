@@ -36,7 +36,7 @@
  *
  *  @return 为空YES,不为空NO
  */
-- (BOOL)checkConvertNull;
++ (BOOL)checkConvertNull:(NSString *)object;
 
 
 

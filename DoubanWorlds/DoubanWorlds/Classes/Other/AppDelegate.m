@@ -25,7 +25,6 @@
     MainTabbarController *mainVC = [[MainTabbarController alloc]init];
     self.window.rootViewController = mainVC;
     
-    
     [self.window makeKeyAndVisible];
     
     return YES;

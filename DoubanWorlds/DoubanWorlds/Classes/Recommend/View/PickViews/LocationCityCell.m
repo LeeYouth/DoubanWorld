@@ -85,7 +85,7 @@
 }
 
 -(void)locationBtnAction:(UIButton *)sender{
-    if ([self.locName checkConvertNull]) {
+    if ([NSString checkConvertNull:self.locName]) {
 
     }else{
         NSString *cityName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
