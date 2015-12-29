@@ -13,12 +13,14 @@
 #import "HotActivityCell.h"
 #import "PickCityViewController.h"
 #import "LocationManager.h"
+#import "LYCityHandler.h"
 
 @interface RecommendViewController ()
 {
     NSInteger _startNum;
 }
 
+@property (nonatomic, copy) NSString *locID;//当前城市ID
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *resultArray;
 
@@ -43,13 +45,17 @@
     
     [self addRefreshView];
     
-    [self refreshData];
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pushPickViewController)];
     
     LocationManager *manager = [LocationManager sharedFOLClient];
+    __weak RecommendViewController *weekSelf = self;
     [manager currentLocation:^(CLLocation *currentLocation, NSString *cityName) {
-        NSLog(@"-------------%@,,,,,,,%@",currentLocation,cityName);
+        NSLog(@"currentLocation = %@,cityName = %@",currentLocation,cityName);
+        NSString *ID = [LYCityHandler getCityIDByName:cityName];
+        NSLog(@"cityID = %@",ID);
+
+        weekSelf.locID = [ID copy];
+        [weekSelf refreshDataLocID:ID];
     }];
     
 }
@@ -69,7 +75,7 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
-    _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.height, [UIScreen mainScreen].bounds.size.height - 64)];
+    _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64 - 44)];
     _tableView.delegate        = (id<UITableViewDelegate>)self;
     _tableView.dataSource      = (id<UITableViewDataSource>) self;
     _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
@@ -80,24 +86,17 @@
 - (void)addRefreshView {
     
     __weak __typeof(self) weakSelf = self;
-    
     //下拉刷新
     _tableView.refreshHeader = [_tableView addRefreshHeaderWithHandler:^ {
-        [weakSelf refreshData];
+        [weakSelf refreshDataLocID:weakSelf.locID];
     }];
-    
-    //上拉加载更多
-    _tableView.refreshFooter = [_tableView addRefreshFooterWithHandler:^ {
-        [weakSelf loadMoreData];
-    }];
-    //   _tableView.refreshFooter.autoLoadMore = NO;
 }
 
-- (void)refreshData {
+- (void)refreshDataLocID:(NSString *)cityID {
     __weak __typeof(self)weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        [RecommendHttpTool getRecommendList:_startNum loc:@"108288" arrayBlock:^(NSMutableArray *resultArray) {
+        [RecommendHttpTool getRecommendList:_startNum loc:cityID arrayBlock:^(NSMutableArray *resultArray) {
             _resultArray = resultArray;
             [weakSelf.tableView reloadData];
 
@@ -108,21 +107,6 @@
     });
 }
 
-
-- (void)loadMoreData {
-    __weak __typeof(self)weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-//        _startNum++;
-//        [RecommendHttpTool getRecommendList:_startNum loc:@"108288" arrayBlock:^(NSMutableArray *resultArray) {
-//            [_resultArray addObjectsFromArray:resultArray];
-//            [weakSelf.tableView reloadData];
-//        }];
-        [weakSelf.tableView.refreshFooter endRefresh];
-        
-//        weakSelf.tableView.refreshFooter.loadMoreEnabled = NO;
-    });
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _resultArray.count;

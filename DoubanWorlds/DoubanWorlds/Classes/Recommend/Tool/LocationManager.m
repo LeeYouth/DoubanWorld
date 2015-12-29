@@ -105,7 +105,7 @@ static LocationManager  *manager;
             if ([cityName isEqualToString:@"不能发现城市"]) {
                 cityName = [cityUID stringByReplacingOccurrencesOfString:@"市" withString:@""];
             }
-            
+
             CLLocation *currentLocation = [dic objectForKey:@"location"];
             if (_locationBlock) {
                 _locationBlock(currentLocation,cityName);
