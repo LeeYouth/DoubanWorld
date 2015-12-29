@@ -14,10 +14,12 @@
 #import "PickCityViewController.h"
 #import "LocationManager.h"
 #import "LYCityHandler.h"
+#import "UIBarButtonItem+Extension.h"
 
 @interface RecommendViewController ()
 {
     NSInteger _startNum;
+    UIButton *_locationBtn;
 }
 
 @property (nonatomic, copy) NSString *locID;//当前城市ID
@@ -45,35 +47,31 @@
     
     [self addRefreshView];
     
-    
+    [self initLeftButton];
+
     [self requestData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityButtonClick:) name:kCityButtonClick object:nil];
     
-    [self test];
 }
 
-- (void)test{
+- (void)initLeftButton{
     
     //定位到的城市
-    UIButton *_locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_locationBtn setTitle:@"北京" forState:UIControlStateNormal];
-//    _locationBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 8);
-    [_locationBtn setTitleColor:TheThemeColor forState:UIControlStateNormal];
+    [_locationBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [_locationBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-    [_locationBtn setImage:[UIImage imageNamed:@"AlbumLocationIconHL"] forState:UIControlStateNormal];
+    [_locationBtn setImage:[UIImage imageNamed:@"LuckyMoney_ChangeArrow"] forState:UIControlStateNormal];
     [_locationBtn addTarget:self action:@selector(pushPickViewController) forControlEvents:UIControlEventTouchUpInside];
-    
-    _locationBtn.frame = CGRectMake(0, 0, 65, 40);
+    _locationBtn.frame = CGRectMake(0, 0, 70, 40);
+    [_locationBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+    [_locationBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
     
     UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:_locationBtn];
-    
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     negativeSpacer.width = -20;
     self.navigationItem.leftBarButtonItems = @[negativeSpacer, buttonItem];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pushPickViewController)];
-
-
 
 }
 
@@ -84,6 +82,9 @@
         NSString *ID = [LYCityHandler getCityIDByName:cName];
         self.locID = ID;
         [self refreshDataLocID:ID];
+        
+        [self setLeftBtnTitle:cName];
+
     }else{
         NSString *defaultsName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
 
@@ -103,6 +104,8 @@
             [self refreshDataLocID:ID];
             
             [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:kCurrentLocation];
+            
+            [self setLeftBtnTitle:cityName];
 
         }else
         {
@@ -130,14 +133,25 @@
                 }
                 
             }];
+            
+            [self setLeftBtnTitle:[LYCityHandler getCityNameByUID:self.locID]];
+
         }
     }
 }
+
+#pragma mark - 设置左边按钮
+- (void)setLeftBtnTitle:(NSString *)title{
+    [_locationBtn setTitle:title forState:UIControlStateNormal];
+    
+}
 #pragma mark - 城市按钮点击
--(void)cityButtonClick:(NSNotification *)note{
+- (void)cityButtonClick:(NSNotification *)note{
     NSString *cname = note.userInfo[kCityButtonClick];
     if (cname) {
         NSString *ID = [LYCityHandler getCityIDByName:cname];
+        [_locationBtn setTitle:cname forState:UIControlStateNormal];
+
         self.locID = [ID copy];
         [self refreshDataLocID:ID];
         
