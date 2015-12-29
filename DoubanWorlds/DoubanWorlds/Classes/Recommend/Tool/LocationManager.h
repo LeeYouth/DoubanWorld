@@ -20,6 +20,6 @@ typedef void (^LocationBlock)(CLLocation *currentLocation,NSString *cityName);
  *
  *  @param addressBlock addressBlock description
  */
-- (void) getAddress:(LocationBlock)locationBlock;
+- (void) currentLocation:(LocationBlock)locationBlock;
 
 @end

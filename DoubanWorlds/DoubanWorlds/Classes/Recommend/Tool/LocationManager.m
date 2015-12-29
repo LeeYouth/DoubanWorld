@@ -49,7 +49,7 @@ static LocationManager  *manager;
 
 }
 
-- (void) getAddress:(LocationBlock)locationBlock
+- (void) currentLocation:(LocationBlock)locationBlock
 {
     self.locationBlock = [locationBlock copy];
     [self locationAuthorizationJudge];
