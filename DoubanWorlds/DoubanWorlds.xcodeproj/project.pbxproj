@@ -79,6 +79,7 @@
 		E6F753601C32383400E570C2 /* hotcityCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535B1C32383400E570C2 /* hotcityCode.plist */; };
 		E6F753611C32383400E570C2 /* inLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535C1C32383400E570C2 /* inLandCityGroup.plist */; };
 		E6F753621C32383400E570C2 /* outLandCityGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535D1C32383400E570C2 /* outLandCityGroup.plist */; };
+		E6F753651C3238CF00E570C2 /* LYConstans.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F753641C3238CF00E570C2 /* LYConstans.m */; };
 		EDE4EBA20E98E5C3B8D88A19 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 339FE046F528EA539C511ED1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -225,6 +226,8 @@
 		E6F7535B1C32383400E570C2 /* hotcityCode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotcityCode.plist; sourceTree = "<group>"; };
 		E6F7535C1C32383400E570C2 /* inLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = inLandCityGroup.plist; sourceTree = "<group>"; };
 		E6F7535D1C32383400E570C2 /* outLandCityGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = outLandCityGroup.plist; sourceTree = "<group>"; };
+		E6F753631C3238CF00E570C2 /* LYConstans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYConstans.h; sourceTree = "<group>"; };
+		E6F753641C3238CF00E570C2 /* LYConstans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYConstans.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -752,6 +755,8 @@
 			children = (
 				E6E2B4271C2948AB003F2C4B /* CommenDefines.h */,
 				E6E2B4281C2948AB003F2C4B /* URLDefines.h */,
+				E6F753631C3238CF00E570C2 /* LYConstans.h */,
+				E6F753641C3238CF00E570C2 /* LYConstans.m */,
 			);
 			path = Defines;
 			sourceTree = "<group>";
@@ -1011,6 +1016,7 @@
 				E65486731C30CA3500A47EC1 /* UIView+ViewController.m in Sources */,
 				E65486741C30CA3500A47EC1 /* UIViewExt.m in Sources */,
 				E611465A1C2D15F400CF0391 /* YLYTableViewIndexView.m in Sources */,
+				E6F753651C3238CF00E570C2 /* LYConstans.m in Sources */,
 				E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */,
 				E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */,
 				E65486591C30C4ED00A47EC1 /* BaseViewController.m in Sources */,

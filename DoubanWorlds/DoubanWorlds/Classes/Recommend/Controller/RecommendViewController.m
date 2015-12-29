@@ -47,19 +47,32 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pushPickViewController)];
     
+    [self requestData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityButtonClick:) name:kCityButtonClick object:nil];
+}
+
+-(void)requestData{
     LocationManager *manager = [LocationManager sharedFOLClient];
     __weak RecommendViewController *weekSelf = self;
     [manager currentLocation:^(CLLocation *currentLocation, NSString *cityName) {
         NSLog(@"currentLocation = %@,cityName = %@",currentLocation,cityName);
         NSString *ID = [LYCityHandler getCityIDByName:cityName];
         NSLog(@"cityID = %@",ID);
-
+        
         weekSelf.locID = [ID copy];
         [weekSelf refreshDataLocID:ID];
     }];
-    
 }
-
+#pragma mark - 城市按钮点击
+-(void)cityButtonClick:(NSNotification *)note{
+    NSString *cname = note.userInfo[kCityButtonClick];
+    if (cname) {
+        NSString *ID = [LYCityHandler getCityIDByName:cname];
+        self.locID = [ID copy];
+        [self refreshDataLocID:ID];
+    }
+}
 
 
 -(void)pushPickViewController{

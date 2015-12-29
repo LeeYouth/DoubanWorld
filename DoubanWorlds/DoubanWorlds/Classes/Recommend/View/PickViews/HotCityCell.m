@@ -82,7 +82,7 @@
 
 -(void)locationBtnAction:(UIButton *)sender{
     HotCityModel *cityModel = _hotCitiesArr[sender.tag];
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kCityButtonClick object:nil userInfo:@{kCityButtonClick : cityModel.name}];
 }
 
 

@@ -45,13 +45,16 @@
 
 -(void)initUI{
 
+    
+    NSString *cityName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
+    
     //定位到的城市
     UIButton *locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     locationBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
     locationBtn.layer.borderWidth = 0.4;
     locationBtn.layer.cornerRadius = 5;
     locationBtn.backgroundColor = [UIColor whiteColor];
-    [locationBtn setTitle:@"北京" forState:UIControlStateNormal];
+    [locationBtn setTitle:cityName forState:UIControlStateNormal];
     locationBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 8);
     [locationBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [locationBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
@@ -68,7 +71,8 @@
 }
 
 -(void)locationBtnAction:(UIButton *)sender{
-    
+    NSString *cityName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kCityButtonClick object:nil userInfo:@{kCityButtonClick : cityName}];
 }
 
 +(CGFloat)getCellHeight{

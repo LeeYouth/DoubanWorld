@@ -105,16 +105,19 @@ static LocationManager  *manager;
             if ([cityName isEqualToString:@"不能发现城市"]) {
                 cityName = [cityUID stringByReplacingOccurrencesOfString:@"市" withString:@""];
             }
-            
-//            [[NSUserDefaults standardUserDefaults] setObject:<#(nullable id)#> forKey:<#(nonnull NSString *)#>]
-
             CLLocation *currentLocation = [dic objectForKey:@"location"];
+            
+            NSString *defaultsName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
+            if ([defaultsName isEqualToString:cityName]) {
+                
+            }else{
+                [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:kCurrentLocation];
+            }
             if (_locationBlock) {
                 _locationBlock(currentLocation,cityName);
             }
         }
     }];
-    
 }
 
 

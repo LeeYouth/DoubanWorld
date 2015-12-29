@@ -37,6 +37,11 @@
     }
     return self;
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.flotageLabel.hidden = YES;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,8 +54,16 @@
     
     [self initIndexView];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityButtonClick:) name:kCityButtonClick object:nil];
 }
 
+#pragma mark - 城市按钮点击
+-(void)cityButtonClick:(NSNotification *)note{
+    NSString *cname = note.userInfo[kCityButtonClick];
+    if (cname) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
 #pragma mark - 国外数据
 - (void)requestOverseasData{
     [RecommendHttpTool getOverseasCityInfo:^(NSDictionary *resDict, NSArray *firstArray, NSArray *secondArray) {
@@ -66,7 +79,7 @@
 - (void)initTableView{
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
     _tableView.delegate        = (id<UITableViewDelegate>)self;
     _tableView.dataSource      = (id<UITableViewDataSource>) self;
     _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
@@ -139,6 +152,9 @@
     NSString *objKey = [LYCityHandler getCityNameWithSectionArr:_sectionArray cityDict:_citiesDic indexPath:indexPath];
     NSLog(@"---------选择的城市name =%@ ,ID = %@",objKey,objValue);
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:kCityButtonClick object:nil userInfo:@{kCityButtonClick : objKey}];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
 }
 
 #pragma mark -YLYTableViewIndexDelegate

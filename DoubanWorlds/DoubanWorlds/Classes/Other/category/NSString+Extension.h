@@ -29,6 +29,15 @@
  *  @return 占用的宽高
  */
 - (CGSize)attrStrSizeWithFont:(UIFont *)font andmaxSize:(CGSize)maxSize lineSpacing:(CGFloat)lineSpacing;
+/**
+ *  检测一个是否唯恐
+ *
+ *  @param object 输入
+ *
+ *  @return 为空YES,不为空NO
+ */
+- (BOOL)checkConvertNull:(NSString *)object;
+
 
 
 @end
