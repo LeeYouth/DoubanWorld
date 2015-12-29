@@ -57,7 +57,7 @@
     
 }
 
--(void)pushSearchViewController{
+- (void)pushSearchViewController{
     SearchCityController *searchVC = [[SearchCityController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchVC];
     nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;    // 设置动画效果
@@ -87,7 +87,7 @@
 
 }
 
--(void)loadControllers{
+- (void)loadControllers{
     
     _viewControllers = [[NSMutableArray alloc] init];
     
@@ -101,7 +101,7 @@
     
 }
 
--(void)loadScrollView{
+- (void)loadScrollView{
     
     NSInteger viewCounts = _viewControllers.count;
     
@@ -127,7 +127,7 @@
 }
 
 #pragma mark - UIScrollViewDelegate
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSInteger pageIndex = (NSInteger)scrollView.contentOffset.x/SCREEN_WIDTH;
     [_segmentedControl setSelectedSegmentIndex:pageIndex];
 }

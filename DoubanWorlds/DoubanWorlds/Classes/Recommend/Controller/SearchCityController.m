@@ -9,18 +9,30 @@
 #import "SearchCityController.h"
 #import "YLYSearchBar.h"
 #import "CityIndexCell.h"
+#import "ChineseInclude.h"
+#import "PinYinForObjc.h"
+#import "LYCityHandler.h"
 
 @interface SearchCityController ()
 {
     YLYSearchBar *_searchTF;
+    UIView *_warningView;
 }
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *searchResultArray;
-
+@property (nonatomic, strong) NSMutableArray *searchResults;
 @end
 
 @implementation SearchCityController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,9 +44,11 @@
     
     [self initSearchBar];
     
+    [self initWarningLabel];
+    
 }
 
--(void)initTableView{
+- (void)initTableView{
     //搜索tableView
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.dataSource = (id<UITableViewDataSource>)self;
@@ -45,7 +59,7 @@
     
 }
 
--(void)initSearchBar{
+- (void)initSearchBar{
     CGFloat searchViewW = SCREEN_WIDTH;
     CGFloat searchViewH = 44;
     UIView *searchView = [[UIView alloc] init];
@@ -88,8 +102,22 @@
     [_searchTF becomeFirstResponder];
 }
 
+- (void)initWarningLabel{
+    UIView *bgView = [[UIView alloc] init];
+    bgView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    bgView.backgroundColor = [UIColor whiteColor];
+    UILabel *warningL = [[UILabel alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 100)/2, (SCREEN_HEIGHT - 40)/2 - 100, 100, 40)];
+    warningL.text = @"无结果";
+    warningL.font = [UIFont systemFontOfSize:25];
+    warningL.textColor = [UIColor grayColor];
+    [bgView addSubview:warningL];
+    [self.view addSubview:bgView];
+    _warningView = bgView;
+    _warningView.hidden = YES;
+}
+
 #pragma mark - 取消操作
--(void)cancelAction{
+- (void)cancelAction{
     
     CATransition *animation = [CATransition animation];
     animation.duration = 0.5;
@@ -106,48 +134,79 @@
 
 
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [CityIndexCell getCellHeight];
 }
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _searchResults.count;
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CityIndexCell *cell = [CityIndexCell cellWithTableView:tableView];
-    cell.cityName = @"北京";
+    cell.cityName = _searchResults[indexPath.row];
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    [self cancelAction];
+    NSString *cityName = _searchResults[indexPath.row];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:kCityButtonClick object:nil userInfo:@{kCityButtonClick : cityName}];
+    });
 }
 
 
-#pragma mark - textField字符改变的监听方法
+#pragma mark - textField字符改变的监听方法UITextFieldDelegate
 - (void)textFieldDidChange:(UITextField *)textField{
     NSLog(@"textFiled string = %@",_searchTF.text);
     
-    if (textField.text.length > 0) {
-
-    }else
-    {
-
-    }
+    [self searchCityWithText:textField.text];
 }
-#pragma mark - UITextFieldDelegate
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [_searchTF resignFirstResponder];
-    if (textField.text.length <=0) {
+
+#pragma mark - 匹配关键字
+- (void)searchCityWithText:(NSString *)searchText{
+    
+    _searchResults = [[NSMutableArray alloc]init];
+
+    if (searchText.length > 0 && [ChineseInclude isIncludeChineseInString:searchText]) {//有中文
         
-    }else{
-        
-      
+        NSArray *nameArr = [LYCityHandler getAllCityName];
+        for (NSString *cName in nameArr) {
+            NSRange titleResult=[cName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (titleResult.length > 0) {
+                [_searchResults addObject:cName];
+            }
+        }
+    }else if(searchText.length > 0 && ![ChineseInclude isIncludeChineseInString:searchText]){//英文
+        NSArray *nameArr = [LYCityHandler getAllCityName];
+        for (NSString *cName in nameArr) {
+            if ([ChineseInclude isIncludeChineseInString:cName]) {//有中文
+                NSString *tempStr = [PinYinForObjc chineseConvertToPinYinHead:cName];//名字的首字母
+                NSRange titleResult=[tempStr rangeOfString:searchText options:NSCaseInsensitiveSearch];
+                if (titleResult.length > 0) {
+                    [_searchResults addObject:cName];
+                }
+            }else{//英文
+                NSRange titleResult = [cName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+                if (titleResult.length > 0) {
+                    [_searchResults addObject:cName];
+                }
+            }
+        }
     }
     
-    return YES;
+    if (_searchResults.count > 0) {
+        _warningView.hidden = YES;
+    }else{
+        _warningView.hidden = NO;
+    }
+    
+    [_tableView reloadData];
+
 }
 
 

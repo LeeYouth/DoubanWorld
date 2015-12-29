@@ -11,3 +11,5 @@
 NSString * kCurrentLocation =@"kCurrentLocation";
 
 NSString * kCityButtonClick =@"kCityButtonClick";
+
+NSString * kIsCityButtonClick =@"kIsCityButtonClick";

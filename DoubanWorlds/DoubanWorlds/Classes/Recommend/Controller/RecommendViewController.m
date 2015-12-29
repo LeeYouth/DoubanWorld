@@ -53,16 +53,57 @@
 }
 
 -(void)requestData{
-    LocationManager *manager = [LocationManager sharedFOLClient];
-    __weak RecommendViewController *weekSelf = self;
-    [manager currentLocation:^(CLLocation *currentLocation, NSString *cityName) {
-        NSLog(@"currentLocation = %@,cityName = %@",currentLocation,cityName);
-        NSString *ID = [LYCityHandler getCityIDByName:cityName];
-        NSLog(@"cityID = %@",ID);
-        
-        weekSelf.locID = [ID copy];
-        [weekSelf refreshDataLocID:ID];
-    }];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kIsCityButtonClick]) {//是否点击选择了城市
+        NSString *ID = [[NSUserDefaults standardUserDefaults] objectForKey:kCityButtonClick];
+        self.locID = ID;
+        [self refreshDataLocID:ID];
+    }else{
+        NSString *defaultsName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
+
+        if ([defaultsName checkConvertNull])
+        {
+            LocationManager *manager = [LocationManager sharedFOLClient];
+            __weak RecommendViewController *weekSelf = self;
+            [manager currentLocation:^(CLLocation *currentLocation, NSString *cityName) {
+                NSLog(@"currentLocation = %@,cityName = %@",currentLocation,cityName);
+                NSString *ID = [LYCityHandler getCityIDByName:cityName];
+                NSLog(@"cityID = %@",ID);
+                
+                weekSelf.locID = [ID copy];
+                [weekSelf refreshDataLocID:ID];
+                
+                [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:kCurrentLocation];
+            }];
+
+        }else
+        {
+            NSString *defaultsName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
+            NSString *ID = [LYCityHandler getCityIDByName:defaultsName];
+            self.locID = [ID copy];
+            [self refreshDataLocID:ID];
+            
+            LocationManager *manager = [LocationManager sharedFOLClient];
+            __weak RecommendViewController *weekSelf = self;
+            [manager currentLocation:^(CLLocation *currentLocation, NSString *cityName) {
+                NSLog(@"currentLocation = %@,cityName = %@",currentLocation,cityName);
+                if ([defaultsName isEqualToString:cityName])
+                {
+                    
+                }else
+                {
+                    NSString *ID = [LYCityHandler getCityIDByName:cityName];
+                    NSLog(@"cityID = %@",ID);
+                    
+                    weekSelf.locID = [ID copy];
+                    [weekSelf refreshDataLocID:ID];
+                    
+                    [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:kCurrentLocation];
+                }
+                
+            }];
+        }
+    }
 }
 #pragma mark - 城市按钮点击
 -(void)cityButtonClick:(NSNotification *)note{
@@ -71,6 +112,10 @@
         NSString *ID = [LYCityHandler getCityIDByName:cname];
         self.locID = [ID copy];
         [self refreshDataLocID:ID];
+        
+        [[NSUserDefaults standardUserDefaults] setValue:ID forKey:kCityButtonClick];
+
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kIsCityButtonClick];
     }
 }
 

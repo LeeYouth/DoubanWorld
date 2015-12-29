@@ -134,4 +134,12 @@
     return cityIDArray[cityID];
 }
 
++ (NSArray *)getAllCityName{
+    NSString *allCityName = [[NSBundle mainBundle] pathForResource:@"AllCityName" ofType:@""];
+    NSError *error = nil;
+    NSString *name = [[NSString alloc] initWithContentsOfFile:allCityName encoding:NSUTF8StringEncoding error:&error];
+    NSArray *cityNameArray = [name componentsSeparatedByString:@"city="];
+    return cityNameArray;
+}
+
 @end

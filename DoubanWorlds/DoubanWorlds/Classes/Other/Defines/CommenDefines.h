@@ -39,7 +39,7 @@
 #define HotCityButtonHeight 36.f
 #define HotCityButtonMargin 10.f
 
-#define SearchBarHeight 40.f
+#define SearchBarHeight 44.f
 
 
 

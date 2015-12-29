@@ -12,3 +12,5 @@
 extern NSString *kCurrentLocation; //获取到的当前位置
 
 extern NSString *kCityButtonClick;//城市按钮点击
+
+extern NSString *kIsCityButtonClick;//城市按钮是否点击了

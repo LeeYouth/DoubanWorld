@@ -107,12 +107,6 @@ static LocationManager  *manager;
             }
             CLLocation *currentLocation = [dic objectForKey:@"location"];
             
-            NSString *defaultsName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
-            if ([defaultsName isEqualToString:cityName]) {
-                
-            }else{
-                [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:kCurrentLocation];
-            }
             if (_locationBlock) {
                 _locationBlock(currentLocation,cityName);
             }

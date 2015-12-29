@@ -70,5 +70,6 @@
 
 +(NSString *)getCityIDByName:(NSString *)cityName;
 
++(NSArray *)getAllCityName;
 
 @end

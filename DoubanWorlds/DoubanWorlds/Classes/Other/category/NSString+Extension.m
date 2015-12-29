@@ -29,8 +29,8 @@
                                            context:nil].size; // context上下文。包括一些信息，例如如何调整字间距以及缩放。该对象包含的信息将用于文本绘制。该参数可为nil
     return sizeToFit;
 }
-- (BOOL)checkConvertNull:(NSString *)object{
-    if ([object isEqual:[NSNull null]] || [object isKindOfClass:[NSNull class]] ||object==nil || [object isEqualToString:@""]) {
+- (BOOL)checkConvertNull{
+    if ([self isEqual:[NSNull null]] || [self isKindOfClass:[NSNull class]] ||self==nil || [self isEqualToString:@""]) {
         return YES;
     }else{
         return NO;
