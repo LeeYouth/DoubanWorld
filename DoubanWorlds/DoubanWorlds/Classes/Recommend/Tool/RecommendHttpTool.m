@@ -18,7 +18,7 @@
     NSString *urlString = [NSString stringWithFormat:@"%@?start=%ld&loc=%@&count=10",Recommend_URL,startNum,loc];
     NSLog(@"RecommendListURL = %@",urlString);
     [HttpTools getWithURL:urlString params:nil success:^(id json) {
-        NSLog(@"getRecommendList = %@",json);
+//        NSLog(@"getRecommendList = %@",json);
         NSMutableArray *resultArr = [[NSMutableArray alloc] init];
         if ([json[@"events"] isKindOfClass:[NSArray class]]) {
             NSArray *resArray = json[@"events"];
@@ -71,23 +71,6 @@
 
 +(void)getHotCitiesInfo:(ArrayBlock)arrayBlock{
     NSLog(@"getHotCitiesInfoURL = %@",HotCities_URL);
-//    [HttpTools getWithURL:HotCities_URL params:nil success:^(id json) {
-//        NSLog(@"getHotCitiesInfoList = %@",json);
-//        
-//        NSMutableArray *resultArr = [[NSMutableArray alloc] init];
-//        if ([json[@"locs"] isKindOfClass:[NSArray class]]) {
-//            NSArray *resArray = json[@"locs"];
-//            for (NSDictionary *dict in resArray) {
-//                HotCityModel *model = [[HotCityModel alloc] initWithDictionary:dict];
-//                [resultArr addObject:model];
-//            }
-//        }
-//        if (arrayBlock) {
-//            arrayBlock(resultArr);
-//        }
-//    } failure:^(NSError *error) {
-//        [SVProgressHUDManager networkError];
-//    }];
     //1.所有分区对应的字典
     NSString *inlandPlistURL = [[NSBundle mainBundle] pathForResource:@"hotcityCode" ofType:@"plist"];
     NSArray *hotCityArr = [[NSArray alloc] initWithContentsOfFile:inlandPlistURL];

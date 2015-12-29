@@ -9,19 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@protocol LocationManagerDelegate <NSObject>
+typedef void (^LocationBlock)(CLLocation *currentLocation,NSString *cityName);
 
-@optional
--(void)currentCityName:(NSString *)cityName cityID:(NSString *)cityID;
+@interface LocationManager : NSObject
 
-@end
++ (LocationManager *)sharedFOLClient;
 
-@interface LocationManager : NSObject<CLLocationManagerDelegate>
-
-@property (nonatomic ,strong) CLLocationManager  *locationManager;
-
-- (void)currentLocation;
-
-@property (nonatomic ,assign) id<LocationManagerDelegate>delegate;
+/**
+ *  获取地址
+ *
+ *  @param addressBlock addressBlock description
+ */
+- (void) getAddress:(LocationBlock)locationBlock;
 
 @end

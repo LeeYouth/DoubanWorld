@@ -9,6 +9,7 @@
 #import "PickCityViewController.h"
 #import "PickOverseasController.h"
 #import "PickChinaCityController.h"
+#import "LocationManager.h"
 
 
 @interface PickCityViewController ()
@@ -37,10 +38,11 @@
     
     [self loadScrollView];
     
-       
+    LocationManager *manager = [LocationManager sharedFOLClient];
+    [manager getAddress:^(CLLocation *currentLocation, NSString *cityName) {
+        NSLog(@"-------------%@,,,,,,,%@",currentLocation,cityName);
+    }];
 }
-
-
 
 
 - (void)loadSegmentedControl{

@@ -9,68 +9,98 @@
 #import "LocationManager.h"
 #import "LYCityHandler.h"
 
+static LocationManager  *manager;
+
+@interface LocationManager ()<CLLocationManagerDelegate>
+
+@property (nonatomic, strong) LocationBlock locationBlock;
+@property (strong, nonatomic) CLLocationManager  *locMgr;
+
+@end
+
 @implementation LocationManager
 
-
-
-- (void)currentLocation{
-    _locationManager = [[CLLocationManager alloc]init];
-    _locationManager.delegate = self;
-    [_locationManager requestAlwaysAuthorization];
-    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    _locationManager.distanceFilter = kCLDistanceFilterNone;
-    if(iOS8)
-    {
-        [_locationManager requestWhenInUseAuthorization];
-    }
-    [_locationManager startUpdatingLocation];
-
-}
-
-
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    switch (status) {
-        case kCLAuthorizationStatusDenied :
-        {
-            // 提示用户出错原因，可按住Option键点击 KCLErrorDenied的查看更多出错信息，可打印error.code值查找原因所在
-            UIAlertView *tempA = [[UIAlertView alloc]initWithTitle:@"提醒" message:@"请在设置-隐私-定位服务中开启定位功能！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [tempA show];
-        }
-            break;
-        case kCLAuthorizationStatusNotDetermined :
-            // Note: Xcode6才有的方法，所以会有警告
-            if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)])
-            {
-                NSLog(@"调用");
-                [self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)];
-            }
-            break;
-        case kCLAuthorizationStatusRestricted:
-        {
-            // 提示用户出错原因，可按住Option键点击 KCLErrorDenied的查看更多出错信息，可打印error.code值查找原因所在
-            [SVProgressHUDManager showErrorWithStatus:@"定位服务无法使用！"];
-            
-        }
-        default:
-            
-            break;
-    }
-}
-//获得当前位置的经纬度,和当期城市信息
-- (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
++ (LocationManager *)sharedFOLClient
 {
+    @synchronized(self){
+        static dispatch_once_t pred;
+        dispatch_once(&pred, ^{
+            manager = [[self alloc] init];
+        });
+    }
+    return manager;
+}
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        
+        [self initlocMgr];
+    }
+    return self;
+}
+
+- (void )initlocMgr {
+    _locMgr = [[CLLocationManager alloc] init];
+    _locMgr.delegate = self;
+    // 定位精度
+    _locMgr.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    // 距离过滤器，当移动距离小于这个值时不会收到回调
+//    _locMgr.distanceFilter = 50;
+
+}
+
+- (void) getAddress:(LocationBlock)locationBlock
+{
+    self.locationBlock = [locationBlock copy];
+    [self locationAuthorizationJudge];
+}
+
+-(void)startLocating{
+    [self locationAuthorizationJudge];
+}
+
+/**
+ *  判断定位授权
+ */
+- (void)locationAuthorizationJudge {
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    
+    NSString *locationServicesEnabled = [CLLocationManager locationServicesEnabled] ? @"YES" : @"NO";
+    NSLog(@"location services enabled = %@", locationServicesEnabled);
+    
+    if (status == kCLAuthorizationStatusNotDetermined) { // 如果授权状态还没有被决定就弹出提示框
+        if ([_locMgr respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [_locMgr requestWhenInUseAuthorization];
+//            [_locMgr requestAlwaysAuthorization];
+        }
+        
+         //也可以判断当前系统版本是否大于8.0
+//        if ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0) {
+//            [self.locMgr requestWhenInUseAuthorization];
+//        }
+    } else if (status == kCLAuthorizationStatusDenied) { // 如果授权状态是拒绝就给用户提示
+        [SVProgressHUDManager showErrorWithStatus:@"请前往设置-隐私-定位中打开定位服务"];
+    } else if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusAuthorizedAlways) { // 如果授权状态可以使用就开始获取用户位置
+        [_locMgr startUpdatingLocation];
+    }
+}
+
+/**
+ *  只要定位到位置，就会调用，调用频率频繁
+ */
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *location = [locations lastObject];
-    NSLog(@"location x = %f,y = %f",location.coordinate.latitude,location.coordinate.longitude);
+    NSLog(@"我的位置是 - %@", location);
+//    [self showInMapWithCoordinate:location.coordinate];
+    // 根据不同需要停止更新位置
+    [_locMgr stopUpdatingLocation];
     CLGeocoder *gecoder = [[CLGeocoder alloc] init];
     [gecoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         CLPlacemark *placeMark = [placemarks objectAtIndex:0];
-        NSLog(@"placeMark = %@",placeMark);
         if (placeMark != nil) {
             NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:10];
             [dic setObject:placeMark forKey:@"placeMark"];
             [dic setObject:location forKey:@"location"];
-            NSLog(@"dic = %@",dic);
-            
             NSString *cityUID;
             CLPlacemark *placeMark  = [dic objectForKey:@"placeMark"];
             if (placeMark.locality == nil) {
@@ -79,18 +109,19 @@
                 cityUID = placeMark.locality;
             }
             
-            
             NSString *cityName = [LYCityHandler getCityNameByUID:cityUID];
             if ([cityName isEqualToString:@"不能发现城市"]) {
                 cityName = [cityUID stringByReplacingOccurrencesOfString:@"市" withString:@""];
             }
             
-            if (self.delegate &&  [_delegate respondsToSelector:@selector(currentCityName:cityID:)]) {
-                [_delegate currentCityName:cityName cityID:[dic objectForKey:@"location"]];
+            CLLocation *currentLocation = [dic objectForKey:@"location"];
+            if (_locationBlock) {
+                _locationBlock(currentLocation,cityName);
             }
-            NSLog(@"cityName = %@,location = %@",cityName,_locationManager);
         }
     }];
+    
 }
+
 
 @end

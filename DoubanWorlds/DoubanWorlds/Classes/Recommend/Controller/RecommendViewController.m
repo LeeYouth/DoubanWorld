@@ -14,7 +14,7 @@
 #import "PickCityViewController.h"
 #import "LocationManager.h"
 
-@interface RecommendViewController ()<LocationManagerDelegate>
+@interface RecommendViewController ()
 {
     NSInteger _startNum;
 }
@@ -47,16 +47,11 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pushPickViewController)];
     
-    LocationManager *manager = [[LocationManager alloc] init];
-    manager.delegate = self;
-    [manager currentLocation];
-    
+ 
     
 }
 
--(void)currentCityName:(NSString *)cityName cityID:(NSString *)cityID{
-    NSLog(@"currentCityName = %@ currentCityID = %@",cityName,cityID);
-}
+
 
 -(void)pushPickViewController{
     PickCityViewController *pickVC = [[PickCityViewController alloc] init];
