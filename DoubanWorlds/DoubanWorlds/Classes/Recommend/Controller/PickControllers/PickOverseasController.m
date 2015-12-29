@@ -79,10 +79,10 @@
 - (void)initTableView{
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
+    _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64 - SearchBarHeight)];
     _tableView.delegate        = (id<UITableViewDelegate>)self;
     _tableView.dataSource      = (id<UITableViewDataSource>) self;
-    _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _tableView.backgroundColor = KBackgroundColor;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_tableView];

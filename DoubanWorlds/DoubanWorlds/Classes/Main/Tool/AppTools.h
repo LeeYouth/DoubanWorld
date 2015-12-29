@@ -25,7 +25,7 @@
  *
  *  @return 返回属性化的字符
  */
-+(NSAttributedString *)setLineSpacingWith:(NSString *)contentText lineSpacing:(CGFloat)lineSpacing;
++ (NSAttributedString *)setLineSpacingWith:(NSString *)contentText lineSpacing:(CGFloat)lineSpacing;
 /**
  *  格式化一个数量
  *
@@ -33,6 +33,9 @@
  *
  *  @return 返回格式化的数量
  */
-+(NSString *)formatCount:(NSString *)count;
++ (NSString *)formatCount:(NSString *)count;
+
++ (UIImage *)imageWithColor:(UIColor *)color;
+
 
 @end

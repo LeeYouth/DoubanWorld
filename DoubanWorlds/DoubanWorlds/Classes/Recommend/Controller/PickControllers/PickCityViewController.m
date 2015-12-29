@@ -10,7 +10,7 @@
 #import "PickOverseasController.h"
 #import "PickChinaCityController.h"
 #import "LocationManager.h"
-
+#import "SearchCityController.h"
 
 @interface PickCityViewController ()
 
@@ -38,7 +38,33 @@
     
     [self loadScrollView];
     
+        
+    UISearchBar *mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SearchBarHeight)];
+    mySearchBar.placeholder = @"输入城市名查询";
+    mySearchBar.userInteractionEnabled = YES;
+    mySearchBar.backgroundImage = [UIImage imageNamed:@"searchBarBackImage"];
     
+    UITextField *txfSearchField = [mySearchBar valueForKey:@"_searchField"];
+    txfSearchField.backgroundColor = KBackgroundColor;
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, SCREEN_WIDTH, SearchBarHeight);
+    [btn addTarget:self action:@selector(pushSearchViewController) forControlEvents:UIControlEventTouchUpInside];
+    [mySearchBar addSubview:btn];
+    [self.view addSubview:mySearchBar];
+
+    
+}
+
+-(void)pushSearchViewController{
+    SearchCityController *searchVC = [[SearchCityController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchVC];
+    nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;    // 设置动画效果
+    
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
 }
 
 
@@ -92,7 +118,7 @@
     
     for (int i = 0; i < viewCounts; i++) {
         UIViewController *listCtrl = self.viewControllers[i];
-        listCtrl.view.frame = CGRectMake(SCREEN_WIDTH*i, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        listCtrl.view.frame = CGRectMake(SCREEN_WIDTH*i, SearchBarHeight, SCREEN_WIDTH, SCREEN_HEIGHT);
         [self.backgroundScrollView addSubview:listCtrl.view];
     }
     

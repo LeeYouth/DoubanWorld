@@ -36,7 +36,7 @@
     if (self) {
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = KColor(244, 244, 244);
+        self.backgroundColor = KBackgroundColor;
         
         [RecommendHttpTool getHotCitiesInfo:^(NSMutableArray *resultArray) {
             _hotCitiesArr = resultArray;

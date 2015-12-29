@@ -34,7 +34,7 @@
     if (self) {
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = KColor(244, 244, 244);
+        self.backgroundColor = KBackgroundColor;
         
                 
         [self initUI];
