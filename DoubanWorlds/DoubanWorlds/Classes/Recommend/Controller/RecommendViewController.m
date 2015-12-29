@@ -47,7 +47,10 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pushPickViewController)];
     
- 
+    LocationManager *manager = [LocationManager sharedFOLClient];
+    [manager currentLocation:^(CLLocation *currentLocation, NSString *cityName) {
+        NSLog(@"-------------%@,,,,,,,%@",currentLocation,cityName);
+    }];
     
 }
 

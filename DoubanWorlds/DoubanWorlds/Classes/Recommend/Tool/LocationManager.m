@@ -39,6 +39,7 @@ static LocationManager  *manager;
     return self;
 }
 
+#pragma mark - 初始化定位
 - (void )initlocMgr {
     _locMgr = [[CLLocationManager alloc] init];
     _locMgr.delegate = self;
@@ -46,7 +47,6 @@ static LocationManager  *manager;
     _locMgr.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     // 距离过滤器，当移动距离小于这个值时不会收到回调
 //    _locMgr.distanceFilter = 50;
-
 }
 
 - (void) currentLocation:(LocationBlock)locationBlock
@@ -55,13 +55,7 @@ static LocationManager  *manager;
     [self locationAuthorizationJudge];
 }
 
--(void)startLocating{
-    [self locationAuthorizationJudge];
-}
-
-/**
- *  判断定位授权
- */
+#pragma mark - 判断定位授权
 - (void)locationAuthorizationJudge {
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     
@@ -85,9 +79,7 @@ static LocationManager  *manager;
     }
 }
 
-/**
- *  只要定位到位置，就会调用，调用频率频繁
- */
+#pragma mark - 只要定位到位置，就会调用，调用频率频繁(CLLocationManagerDelegate)
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *location = [locations lastObject];
     NSLog(@"我的位置是 - %@", location);

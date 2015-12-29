@@ -38,10 +38,7 @@
     
     [self loadScrollView];
     
-    LocationManager *manager = [LocationManager sharedFOLClient];
-    [manager currentLocation:^(CLLocation *currentLocation, NSString *cityName) {
-        NSLog(@"-------------%@,,,,,,,%@",currentLocation,cityName);
-    }];
+    
 }
 
 
