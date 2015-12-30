@@ -69,6 +69,7 @@
 		E6CF5CEA1C33D11D002F0D92 /* DetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF5CE91C33D11D002F0D92 /* DetailHeadView.m */; };
 		E6CF5CEC1C33D70C002F0D92 /* worlds_placeholderImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6CF5CEB1C33D70C002F0D92 /* worlds_placeholderImage.jpg */; };
 		E6CF5CEF1C33D7B8002F0D92 /* DetailFirstRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF5CEE1C33D7B8002F0D92 /* DetailFirstRowCell.m */; };
+		E6CF5CF21C33EF04002F0D92 /* DetialSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF5CF11C33EF04002F0D92 /* DetialSecondCell.m */; };
 		E6E2B3B41C2942F4003F2C4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B3B31C2942F4003F2C4B /* main.m */; };
 		E6E2B3BF1C2942F4003F2C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */; };
 		E6E2B3C21C2942F4003F2C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E2B3C01C2942F4003F2C4B /* LaunchScreen.storyboard */; };
@@ -222,6 +223,8 @@
 		E6CF5CEB1C33D70C002F0D92 /* worlds_placeholderImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = worlds_placeholderImage.jpg; sourceTree = "<group>"; };
 		E6CF5CED1C33D7B8002F0D92 /* DetailFirstRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFirstRowCell.h; sourceTree = "<group>"; };
 		E6CF5CEE1C33D7B8002F0D92 /* DetailFirstRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFirstRowCell.m; sourceTree = "<group>"; };
+		E6CF5CF01C33EF04002F0D92 /* DetialSecondCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetialSecondCell.h; sourceTree = "<group>"; };
+		E6CF5CF11C33EF04002F0D92 /* DetialSecondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetialSecondCell.m; sourceTree = "<group>"; };
 		E6E2B3AF1C2942F4003F2C4B /* DoubanWorlds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanWorlds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E2B3B31C2942F4003F2C4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
@@ -491,6 +494,8 @@
 				E6CF5CE91C33D11D002F0D92 /* DetailHeadView.m */,
 				E6CF5CED1C33D7B8002F0D92 /* DetailFirstRowCell.h */,
 				E6CF5CEE1C33D7B8002F0D92 /* DetailFirstRowCell.m */,
+				E6CF5CF01C33EF04002F0D92 /* DetialSecondCell.h */,
+				E6CF5CF11C33EF04002F0D92 /* DetialSecondCell.m */,
 			);
 			path = DeatailViews;
 			sourceTree = "<group>";
@@ -1171,6 +1176,7 @@
 				E65486671C30C9A700A47EC1 /* UIBarButtonItem+Extension.m in Sources */,
 				E6CF5CDD1C3377DF002F0D92 /* BLRColorComponents.m in Sources */,
 				E61146671C2D31AE00CF0391 /* HotCityModel.m in Sources */,
+				E6CF5CF21C33EF04002F0D92 /* DetialSecondCell.m in Sources */,
 				E61146711C2D349A00CF0391 /* SKTagView.m in Sources */,
 				E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */,
 				E6E2B4001C2943F5003F2C4B /* MainTabbarController.m in Sources */,
