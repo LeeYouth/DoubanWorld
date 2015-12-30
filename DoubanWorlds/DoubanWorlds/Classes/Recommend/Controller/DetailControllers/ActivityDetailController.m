@@ -14,6 +14,7 @@
 #import "DetailFirstRowCell.h"
 #import "DetialSecondCell.h"
 #import "DetailContentCell.h"
+#import "MapViewController.h"
 
 @interface ActivityDetailController ()
 
@@ -117,18 +118,22 @@
         DetailFirstRowCell *firstCell = [DetailFirstRowCell cellWithTableView:tableView];
         firstCell.model = _activityModel;
         return firstCell;
-    }else if(indexPath.row == 1){
+    }else if(indexPath.row == 1 || indexPath.row == 2){
         DetialSecondCell *secondCell = [DetialSecondCell cellWithTableView:tableView];
         secondCell.model = _activityModel;
-        secondCell.isHidden = NO;
-        secondCell.title = @"即时讨论";
+        switch (indexPath.row) {
+            case 1:
+                secondCell.title = @"即时讨论";
+                break;
+            case 2:
+                secondCell.title = @"地址";
+                break;
+                
+            default:
+                break;
+        }
+        
         return secondCell;
-    }else if(indexPath.row == 2){
-        DetialSecondCell *thirdCell = [DetialSecondCell cellWithTableView:tableView];
-        thirdCell.model = _activityModel;
-        thirdCell.isHidden = YES;
-        thirdCell.title = @"地址";
-        return thirdCell;
     }else if(indexPath.row == 3){
         DetailContentCell *contentCell = [DetailContentCell cellWithTableView:tableView];
         contentCell.model = _activityModel;
@@ -143,7 +148,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    if (indexPath.row == 2) {
+        MapViewController *mapVC = [[MapViewController alloc] init];
+        [self.navigationController pushViewController:mapVC animated:YES];
+    }
 }
 
 

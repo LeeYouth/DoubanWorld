@@ -71,6 +71,7 @@
 		E6CF5CEF1C33D7B8002F0D92 /* DetailFirstRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF5CEE1C33D7B8002F0D92 /* DetailFirstRowCell.m */; };
 		E6CF5CF21C33EF04002F0D92 /* DetialSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF5CF11C33EF04002F0D92 /* DetialSecondCell.m */; };
 		E6CF5CF51C33F65B002F0D92 /* DetailContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF5CF41C33F65B002F0D92 /* DetailContentCell.m */; };
+		E6CF5CF81C33FB1C002F0D92 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF5CF71C33FB1C002F0D92 /* MapViewController.m */; };
 		E6E2B3B41C2942F4003F2C4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B3B31C2942F4003F2C4B /* main.m */; };
 		E6E2B3BF1C2942F4003F2C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */; };
 		E6E2B3C21C2942F4003F2C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E2B3C01C2942F4003F2C4B /* LaunchScreen.storyboard */; };
@@ -228,6 +229,8 @@
 		E6CF5CF11C33EF04002F0D92 /* DetialSecondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetialSecondCell.m; sourceTree = "<group>"; };
 		E6CF5CF31C33F65B002F0D92 /* DetailContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailContentCell.h; sourceTree = "<group>"; };
 		E6CF5CF41C33F65B002F0D92 /* DetailContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailContentCell.m; sourceTree = "<group>"; };
+		E6CF5CF61C33FB1C002F0D92 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		E6CF5CF71C33FB1C002F0D92 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		E6E2B3AF1C2942F4003F2C4B /* DoubanWorlds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanWorlds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E2B3B31C2942F4003F2C4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
@@ -918,6 +921,8 @@
 			children = (
 				E6F753861C328F7D00E570C2 /* ActivityDetailController.h */,
 				E6F753871C328F7D00E570C2 /* ActivityDetailController.m */,
+				E6CF5CF61C33FB1C002F0D92 /* MapViewController.h */,
+				E6CF5CF71C33FB1C002F0D92 /* MapViewController.m */,
 			);
 			path = DetailControllers;
 			sourceTree = "<group>";
@@ -1161,6 +1166,7 @@
 				E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */,
 				E611AACD1C2A362D00A1107C /* LDRefreshHeaderView.m in Sources */,
 				E65486711C30CA3500A47EC1 /* UIView+i7Rotate360.m in Sources */,
+				E6CF5CF81C33FB1C002F0D92 /* MapViewController.m in Sources */,
 				E697A48D1C2A72280039A839 /* SVProgressHUDManager.m in Sources */,
 				E65486731C30CA3500A47EC1 /* UIView+ViewController.m in Sources */,
 				E65486741C30CA3500A47EC1 /* UIViewExt.m in Sources */,

@@ -79,16 +79,16 @@
 
 -(void)setttingViewAtuoLayout{
     
-    int magin = 20;
+    int magin = 40;
     
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.with.top.mas_equalTo(@(magin));
+        make.left.with.top.mas_equalTo(@10);
         make.size.mas_equalTo(CGSizeMake(magin, magin));
     }];
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_iconImageView.mas_right).offset(HMStatusCellMargin);
-        make.top.equalTo(_iconImageView);
+        make.left.equalTo(_iconImageView.mas_right);
+        make.top.equalTo(@20);
         make.size.mas_equalTo(CGSizeMake(100, 20));
     }];
     
@@ -111,8 +111,6 @@
 -(void)setModel:(RecommendModel *)model{
     _model = model;
     
-    _iconImageView.backgroundColor = [UIColor redColor];
-    
     _discussCount.text = [NSString stringWithFormat:@"%@人",model.wisher_count];
     
 }
@@ -121,17 +119,16 @@
     _title = title;
     
     _titleLabel.text = title;
-}
-
--(void)setIsHidden:(BOOL)isHidden{
-    _isHidden = isHidden;
     
-    if (isHidden) {
-        _discussCount.hidden = YES;
-    }else{
+    if ([title isEqualToString:@"即时讨论"]) {
+        _iconImageView.image = [UIImage imageNamed:@"FavoritesActionSheetTextIcon"];
         _discussCount.hidden = NO;
+    }else{
+        _iconImageView.image = [UIImage imageNamed:@"FavoritesActionSheetLocatinIcon"];
+        _discussCount.hidden = YES;
     }
 }
+
 
 
 +(CGFloat)getCellHeight{

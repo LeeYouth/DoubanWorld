@@ -18,6 +18,5 @@
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 
 @property (nonatomic ,copy) NSString *title;
-@property (nonatomic ,assign) BOOL isHidden;
 
 @end

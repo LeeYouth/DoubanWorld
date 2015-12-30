@@ -40,7 +40,7 @@
     if (self) {
         
         self.backgroundColor = [UIColor whiteColor];
-        //        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         
         [self initUI];
@@ -104,6 +104,7 @@
     
     CGFloat w = SCREEN_WIDTH - 2*HMStatusCellMargin;
     
+    int padding = 10;
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(@20);
         make.left.mas_equalTo(@(magin));
@@ -111,7 +112,7 @@
     }];
     
     [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_titleLabel.mas_bottom);
+        make.top.equalTo(_titleLabel.mas_bottom).offset(padding);
         make.left.with.right.equalTo(_titleLabel);
     }];
     
@@ -173,7 +174,9 @@
     NSString *timeString = [NSString stringWithFormat:@"%@人参加/%@ ~ %@/%@",model.participant_count,beginTime,endTime,addressString];
     CGSize addressSize = [timeString attrStrSizeWithFont:[UIFont systemFontOfSize:IntroduceFont] andmaxSize:maxSize lineSpacing:2];
     
-    CGFloat allH = addressSize.height + titleSize.height + 2*magin + btnH + bottomHM;
+    int padding = 10;
+
+    CGFloat allH = addressSize.height + titleSize.height + 2*magin + btnH + bottomHM + padding;
 
     return allH;
 }
