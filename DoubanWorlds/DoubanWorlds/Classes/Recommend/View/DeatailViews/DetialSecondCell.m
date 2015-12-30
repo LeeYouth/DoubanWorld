@@ -18,6 +18,8 @@
     UILabel *_titleLabel;
     
     UILabel *_discussCount;
+    
+    UIView *_lineView;
 }
 
 @end
@@ -68,6 +70,10 @@
     _discussCount.font = [UIFont systemFontOfSize:13.f];
     [self.contentView addSubview:_discussCount];
     
+    _lineView = [[UIView alloc] init];
+    _lineView.backgroundColor = [AppTools colorWithHexString:@"#F0F0F0"];
+    [self.contentView addSubview:_lineView];
+    
     
 }
 
@@ -91,6 +97,14 @@
         make.left.mas_equalTo(@(X));
         make.top.equalTo(_titleLabel.mas_top);
         make.size.mas_equalTo(CGSizeMake(100, 20));
+    }];
+    
+    int offSet =  - 1;
+    
+    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH - HMStatusCellMargin, 1));
+        make.left.mas_equalTo(@(HMStatusCellMargin));
+        make.top.equalTo(self.contentView.mas_bottom).offset(offSet);
     }];
 }
 

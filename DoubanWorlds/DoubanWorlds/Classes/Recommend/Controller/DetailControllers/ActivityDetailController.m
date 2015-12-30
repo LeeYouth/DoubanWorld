@@ -13,6 +13,7 @@
 #import "DetailHeadView.h"
 #import "DetailFirstRowCell.h"
 #import "DetialSecondCell.h"
+#import "DetailContentCell.h"
 
 @interface ActivityDetailController ()
 
@@ -56,7 +57,7 @@
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.contentInset = UIEdgeInsetsMake(KActivityDetailHeadH, 0, 0, 0);
-//    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
     
     
@@ -96,7 +97,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -104,6 +105,8 @@
         return [DetailFirstRowCell getCellHeight:_activityModel];
     }else if(indexPath.row == 1 || indexPath.row == 2){
         return [DetialSecondCell getCellHeight];
+    }else if(indexPath.row == 3){
+        return [DetailContentCell getCellHeight:_activityModel];
     }else{
         return [DetailFirstRowCell getCellHeight:_activityModel];
     }
@@ -126,6 +129,10 @@
         thirdCell.isHidden = YES;
         thirdCell.title = @"地址";
         return thirdCell;
+    }else if(indexPath.row == 3){
+        DetailContentCell *contentCell = [DetailContentCell cellWithTableView:tableView];
+        contentCell.model = _activityModel;
+        return contentCell;
     }else{
         DetailFirstRowCell *firstCell = [DetailFirstRowCell cellWithTableView:tableView];
         firstCell.model = _activityModel;
