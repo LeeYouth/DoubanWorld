@@ -11,6 +11,7 @@
 #import "RecommendHttpTool.h"
 #import "BLRColorComponents.H"
 #import "DetailHeadView.h"
+#import "DetailFirstRowCell.h"
 
 @interface ActivityDetailController ()
 
@@ -32,6 +33,8 @@
     [super viewDidLoad];
     
     [self initTableView];
+    
+    [self.tableView reloadData];
     
 }
 
@@ -63,7 +66,7 @@
     [_tableView addSubview: _expandZoomImageView];
     
     UIColor *tintColor = [BLRColorComponents darkEffect].tintColor;
-    NSURL *imgURL = [NSURL URLWithString:_activityModel.image_hlarge];
+    NSURL *imgURL = [NSURL URLWithString:_activityModel.image];
     
     [[SDWebImageManager sharedManager] downloadImageWithURL:imgURL options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize){
          //处理下载进度
@@ -96,17 +99,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 40;
+    return [DetailFirstRowCell getCellHeight:_activityModel];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIndertifer = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndertifer];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndertifer];
-    }
-    cell.textLabel.text = _activityModel.content;
-    return cell;
+    DetailFirstRowCell *firstCell = [DetailFirstRowCell cellWithTableView:tableView];
+    firstCell.model = _activityModel;
+    return firstCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
