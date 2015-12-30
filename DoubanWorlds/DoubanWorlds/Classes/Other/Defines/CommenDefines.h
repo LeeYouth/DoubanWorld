@@ -41,6 +41,8 @@
 
 #define SearchBarHeight 44.f
 
+#define KActivityDetailHeadH 200.f
+
 
 
 

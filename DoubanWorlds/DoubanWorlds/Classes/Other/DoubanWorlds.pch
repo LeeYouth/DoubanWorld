@@ -9,6 +9,8 @@
 #ifndef DoubanWorlds_pch
 #define DoubanWorlds_pch
 
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 #import "URLDefines.h"
 #import "CommenDefines.h"

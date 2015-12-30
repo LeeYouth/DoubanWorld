@@ -61,6 +61,11 @@
 		E697A48C1C2A72280039A839 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4851C2A72280039A839 /* SVProgressHUD.m */; };
 		E697A48D1C2A72280039A839 /* SVProgressHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4871C2A72280039A839 /* SVProgressHUDManager.m */; };
 		E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E697A4891C2A72280039A839 /* SVRadialGradientLayer.m */; };
+		E6CF5CDA1C33760A002F0D92 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF5CD91C33760A002F0D92 /* UIImage+ImageEffects.m */; };
+		E6CF5CDD1C3377DF002F0D92 /* BLRColorComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF5CDC1C3377DF002F0D92 /* BLRColorComponents.m */; };
+		E6CF5CE31C337CD5002F0D92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CF5CE21C337CD5002F0D92 /* CoreGraphics.framework */; };
+		E6CF5CE51C337CDD002F0D92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CF5CE41C337CDD002F0D92 /* UIKit.framework */; };
+		E6CF5CE71C337CE5002F0D92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CF5CE61C337CE5002F0D92 /* Foundation.framework */; };
 		E6E2B3B41C2942F4003F2C4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B3B31C2942F4003F2C4B /* main.m */; };
 		E6E2B3BF1C2942F4003F2C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */; };
 		E6E2B3C21C2942F4003F2C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E2B3C01C2942F4003F2C4B /* LaunchScreen.storyboard */; };
@@ -90,6 +95,7 @@
 		E6F7537D1C324AA700E570C2 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = E6F753751C324AA700E570C2 /* unicode_to_hanyu_pinyin.txt */; };
 		E6F753801C324F7500E570C2 /* SearchCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F7537F1C324F7500E570C2 /* SearchCityController.m */; };
 		E6F753841C3250E600E570C2 /* YLYSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F753831C3250E600E570C2 /* YLYSearchBar.m */; };
+		E6F753881C328F7D00E570C2 /* ActivityDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F753871C328F7D00E570C2 /* ActivityDetailController.m */; };
 		EDE4EBA20E98E5C3B8D88A19 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 339FE046F528EA539C511ED1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -201,6 +207,13 @@
 		E697A4871C2A72280039A839 /* SVProgressHUDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUDManager.m; sourceTree = "<group>"; };
 		E697A4881C2A72280039A839 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		E697A4891C2A72280039A839 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		E6CF5CD81C33760A002F0D92 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		E6CF5CD91C33760A002F0D92 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		E6CF5CDB1C3377DF002F0D92 /* BLRColorComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLRColorComponents.h; sourceTree = "<group>"; };
+		E6CF5CDC1C3377DF002F0D92 /* BLRColorComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLRColorComponents.m; sourceTree = "<group>"; };
+		E6CF5CE21C337CD5002F0D92 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E6CF5CE41C337CDD002F0D92 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E6CF5CE61C337CE5002F0D92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6E2B3AF1C2942F4003F2C4B /* DoubanWorlds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanWorlds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E2B3B31C2942F4003F2C4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
@@ -257,6 +270,8 @@
 		E6F7537F1C324F7500E570C2 /* SearchCityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCityController.m; sourceTree = "<group>"; };
 		E6F753821C3250E600E570C2 /* YLYSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLYSearchBar.h; sourceTree = "<group>"; };
 		E6F753831C3250E600E570C2 /* YLYSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLYSearchBar.m; sourceTree = "<group>"; };
+		E6F753861C328F7D00E570C2 /* ActivityDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailController.h; sourceTree = "<group>"; };
+		E6F753871C328F7D00E570C2 /* ActivityDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +279,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6CF5CE71C337CE5002F0D92 /* Foundation.framework in Frameworks */,
+				E6CF5CE51C337CDD002F0D92 /* UIKit.framework in Frameworks */,
+				E6CF5CE31C337CD5002F0D92 /* CoreGraphics.framework in Frameworks */,
 				E65486801C313AA600A47EC1 /* CoreLocation.framework in Frameworks */,
 				E654867E1C313A5600A47EC1 /* MapKit.framework in Frameworks */,
 				EDE4EBA20E98E5C3B8D88A19 /* libPods.a in Frameworks */,
@@ -299,6 +317,9 @@
 		B803767AC7524182D4DF4BF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6CF5CE61C337CE5002F0D92 /* Foundation.framework */,
+				E6CF5CE41C337CDD002F0D92 /* UIKit.framework */,
+				E6CF5CE21C337CD5002F0D92 /* CoreGraphics.framework */,
 				E654867F1C313AA600A47EC1 /* CoreLocation.framework */,
 				E654867D1C313A5600A47EC1 /* MapKit.framework */,
 				339FE046F528EA539C511ED1 /* libPods.a */,
@@ -443,6 +464,22 @@
 				E697A4891C2A72280039A839 /* SVRadialGradientLayer.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		E6CF5CD71C33760A002F0D92 /* UIImage+category */ = {
+			isa = PBXGroup;
+			children = (
+				E6CF5CD81C33760A002F0D92 /* UIImage+ImageEffects.h */,
+				E6CF5CD91C33760A002F0D92 /* UIImage+ImageEffects.m */,
+			);
+			path = "UIImage+category";
+			sourceTree = "<group>";
+		};
+		E6CF5CDE1C337A56002F0D92 /* DeatailViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeatailViews;
 			sourceTree = "<group>";
 		};
 		E6E2B3A61C2942F4003F2C4B = {
@@ -681,6 +718,7 @@
 		E6E2B40C1C2944FE003F2C4B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E6F753851C328F5100E570C2 /* DetailControllers */,
 				E654865A1C30C82200A47EC1 /* PickControllers */,
 				E6E2B41C1C2945A3003F2C4B /* RecommendViewController.h */,
 				E6E2B41D1C2945A3003F2C4B /* RecommendViewController.m */,
@@ -712,6 +750,8 @@
 				E61146561C2CEA2800CF0391 /* LYCityHandler.m */,
 				E65486811C313EDC00A47EC1 /* LocationManager.h */,
 				E65486821C313EDC00A47EC1 /* LocationManager.m */,
+				E6CF5CDB1C3377DF002F0D92 /* BLRColorComponents.h */,
+				E6CF5CDC1C3377DF002F0D92 /* BLRColorComponents.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -719,6 +759,7 @@
 		E6E2B40F1C2944FE003F2C4B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E6CF5CDE1C337A56002F0D92 /* DeatailViews */,
 				E6F753811C3250D800E570C2 /* SearchViews */,
 				E611464A1C2CD6C200CF0391 /* PickViews */,
 				E64A13C01C2A884300AC0750 /* RecommendCells */,
@@ -797,6 +838,7 @@
 		E6E51D591C2BE29800DABA5D /* category */ = {
 			isa = PBXGroup;
 			children = (
+				E6CF5CD71C33760A002F0D92 /* UIImage+category */,
 				E65486681C30CA3500A47EC1 /* UIView+Extension */,
 				E65486641C30C9A700A47EC1 /* UIBarButtonItem+Extension */,
 				E6E51D5A1C2BE29800DABA5D /* NSString+Extension.h */,
@@ -846,6 +888,15 @@
 				E6F753831C3250E600E570C2 /* YLYSearchBar.m */,
 			);
 			path = SearchViews;
+			sourceTree = "<group>";
+		};
+		E6F753851C328F5100E570C2 /* DetailControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6F753861C328F7D00E570C2 /* ActivityDetailController.h */,
+				E6F753871C328F7D00E570C2 /* ActivityDetailController.m */,
+			);
+			path = DetailControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1062,6 +1113,7 @@
 				E65486771C30D34200A47EC1 /* LocationCityCell.m in Sources */,
 				E697A48C1C2A72280039A839 /* SVProgressHUD.m in Sources */,
 				E6E2B4211C2945BE003F2C4B /* SearchViewController.m in Sources */,
+				E6CF5CDA1C33760A002F0D92 /* UIImage+ImageEffects.m in Sources */,
 				E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */,
 				E6E51D5C1C2BE29800DABA5D /* NSString+Extension.m in Sources */,
 				E64A13C61C2A918C00AC0750 /* AppTools.m in Sources */,
@@ -1079,6 +1131,7 @@
 				E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */,
 				E61146701C2D349A00CF0391 /* SKTagButton.m in Sources */,
 				E6F753781C324AA700E570C2 /* HanyuPinyinOutputFormat.m in Sources */,
+				E6F753881C328F7D00E570C2 /* ActivityDetailController.m in Sources */,
 				E697A47D1C2A3FA80039A839 /* RecommendHttpTool.m in Sources */,
 				E611AACD1C2A362D00A1107C /* LDRefreshHeaderView.m in Sources */,
 				E65486711C30CA3500A47EC1 /* UIView+i7Rotate360.m in Sources */,
@@ -1100,6 +1153,7 @@
 				E611AACC1C2A362D00A1107C /* LDRefreshFooterView.m in Sources */,
 				E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */,
 				E65486671C30C9A700A47EC1 /* UIBarButtonItem+Extension.m in Sources */,
+				E6CF5CDD1C3377DF002F0D92 /* BLRColorComponents.m in Sources */,
 				E61146671C2D31AE00CF0391 /* HotCityModel.m in Sources */,
 				E61146711C2D349A00CF0391 /* SKTagView.m in Sources */,
 				E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */,

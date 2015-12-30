@@ -14,7 +14,7 @@
 #import "PickCityViewController.h"
 #import "LocationManager.h"
 #import "LYCityHandler.h"
-#import "UIBarButtonItem+Extension.h"
+#import "ActivityDetailController.h"
 
 @interface RecommendViewController ()
 {
@@ -228,6 +228,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ActivityDetailController *detailVC = [[ActivityDetailController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:YES];
 
 }
 
