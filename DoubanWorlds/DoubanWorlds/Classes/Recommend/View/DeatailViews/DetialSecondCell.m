@@ -79,10 +79,10 @@
 
 -(void)setttingViewAtuoLayout{
     
-    int magin = 40;
+    int magin = 34;
     
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.with.top.mas_equalTo(@10);
+        make.left.with.top.mas_equalTo(@13);
         make.size.mas_equalTo(CGSizeMake(magin, magin));
     }];
     

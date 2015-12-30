@@ -102,7 +102,7 @@
     CGSize maxSize = CGSizeMake(w, MAXFLOAT);
     CGSize titleSize = [model.content attrStrSizeWithFont:[UIFont systemFontOfSize:ContentFont] andmaxSize:maxSize lineSpacing:4];
 
-    return 20*3 + titleSize.height;
+    return 20*4 + titleSize.height;
 }
 
 
