@@ -67,6 +67,7 @@
 		E6CF5CE51C337CDD002F0D92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CF5CE41C337CDD002F0D92 /* UIKit.framework */; };
 		E6CF5CE71C337CE5002F0D92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CF5CE61C337CE5002F0D92 /* Foundation.framework */; };
 		E6CF5CEA1C33D11D002F0D92 /* DetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF5CE91C33D11D002F0D92 /* DetailHeadView.m */; };
+		E6CF5CEC1C33D70C002F0D92 /* worlds_placeholderImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6CF5CEB1C33D70C002F0D92 /* worlds_placeholderImage.jpg */; };
 		E6E2B3B41C2942F4003F2C4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B3B31C2942F4003F2C4B /* main.m */; };
 		E6E2B3BF1C2942F4003F2C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */; };
 		E6E2B3C21C2942F4003F2C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E2B3C01C2942F4003F2C4B /* LaunchScreen.storyboard */; };
@@ -217,6 +218,7 @@
 		E6CF5CE61C337CE5002F0D92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6CF5CE81C33D11D002F0D92 /* DetailHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailHeadView.h; sourceTree = "<group>"; };
 		E6CF5CE91C33D11D002F0D92 /* DetailHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailHeadView.m; sourceTree = "<group>"; };
+		E6CF5CEB1C33D70C002F0D92 /* worlds_placeholderImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = worlds_placeholderImage.jpg; sourceTree = "<group>"; };
 		E6E2B3AF1C2942F4003F2C4B /* DoubanWorlds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanWorlds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E2B3B31C2942F4003F2C4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6E2B3BE1C2942F4003F2C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 		E611A09D1C2A315C00A1107C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E6CF5CEB1C33D70C002F0D92 /* worlds_placeholderImage.jpg */,
 				E6F753581C32383400E570C2 /* PlistRes */,
 				E611465E1C2D1C3400CF0391 /* flotageBackgroud@2x.png */,
 				E611AA941C2A31D500A1107C /* tabbarIcons */,
@@ -1013,6 +1016,7 @@
 				E611AAAD1C2A31D500A1107C /* tabbar_mainframe@2x.png in Resources */,
 				E6F753611C32383400E570C2 /* inLandCityGroup.plist in Resources */,
 				E611AAAC1C2A31D500A1107C /* tabbar_discoverHL@3x.png in Resources */,
+				E6CF5CEC1C33D70C002F0D92 /* worlds_placeholderImage.jpg in Resources */,
 				E611AAAF1C2A31D500A1107C /* tabbar_mainframeHL@2x.png in Resources */,
 				E611AAA71C2A31D500A1107C /* tabbar_contactsHL@2x.png in Resources */,
 				E611AAB01C2A31D500A1107C /* tabbar_mainframeHL@3x.png in Resources */,
