@@ -63,14 +63,15 @@
     [_tableView addSubview: _expandZoomImageView];
     
     UIColor *tintColor = [BLRColorComponents darkEffect].tintColor;
-    NSURL *imgURL = [NSURL URLWithString:_activityModel.image];
-    UIImageView *immm = [[UIImageView alloc] init];
-    [immm sd_setImageWithURL:imgURL];
-    UIImage *backImage = immm.image;
+    NSURL *imgURL = [NSURL URLWithString:_activityModel.image_hlarge];
+    
+    [[SDWebImageManager sharedManager] downloadImageWithURL:imgURL options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize){
+         //处理下载进度
+     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+         [_expandZoomImageView setImage:[image applyBlurWithCrop:CGRectMake(0, 0, SCREEN_HEIGHT, KActivityDetailHeadH) resize:CGSizeMake(SCREEN_WIDTH, KActivityDetailHeadH) blurRadius:[BLRColorComponents darkEffect].radius tintColor:tintColor saturationDeltaFactor:[BLRColorComponents darkEffect].saturationDeltaFactor maskImage:nil]];
+     }];
 
-    if (backImage) {
-        [_expandZoomImageView setImage:[backImage applyBlurWithCrop:CGRectMake(0, 0, SCREEN_HEIGHT, KActivityDetailHeadH) resize:CGSizeMake(SCREEN_WIDTH, KActivityDetailHeadH) blurRadius:[BLRColorComponents darkEffect].radius tintColor:tintColor saturationDeltaFactor:[BLRColorComponents darkEffect].saturationDeltaFactor maskImage:nil]];
-    }
+
     
     DetailHeadView *headView = [[DetailHeadView alloc] init];
     headView.frame = CGRectMake(0, -KActivityDetailHeadH , SCREEN_WIDTH, KActivityDetailHeadH );

@@ -41,7 +41,7 @@
 -(void)setActivityModel:(RecommendModel *)activityModel{
     _activityModel = activityModel;
     
-    [_headImageView sd_setImageWithURL:[NSURL URLWithString:activityModel.image]];
+    [_headImageView sd_setImageWithURL:[NSURL URLWithString:activityModel.image_hlarge]];
 }
 
 

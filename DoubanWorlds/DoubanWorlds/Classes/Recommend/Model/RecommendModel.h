@@ -43,7 +43,7 @@
 @property (nonatomic ,strong) NSString *album;
 /** 参与者数量 */
 @property (nonatomic ,strong) NSString *participant_count;
-/** 活动作者URL */
+/** 活动大图 */
 @property (nonatomic ,strong) NSString *image_hlarge;
 /** 活动地址 */
 @property (nonatomic ,strong) NSString *address;
