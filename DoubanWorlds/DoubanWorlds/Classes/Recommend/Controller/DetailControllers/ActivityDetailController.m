@@ -10,6 +10,7 @@
 #import "UIImage+ImageEffects.h"
 #import "RecommendHttpTool.h"
 #import "BLRColorComponents.H"
+#import "DetailHeadView.h"
 
 @interface ActivityDetailController ()
 
@@ -71,9 +72,9 @@
         [_expandZoomImageView setImage:[backImage applyBlurWithCrop:CGRectMake(0, 0, SCREEN_HEIGHT, KActivityDetailHeadH) resize:CGSizeMake(SCREEN_WIDTH, KActivityDetailHeadH) blurRadius:[BLRColorComponents darkEffect].radius tintColor:tintColor saturationDeltaFactor:[BLRColorComponents darkEffect].saturationDeltaFactor maskImage:nil]];
     }
     
-    UIView *headView = [[UIView alloc] init];
-    headView.backgroundColor = [UIColor clearColor];
+    DetailHeadView *headView = [[DetailHeadView alloc] init];
     headView.frame = CGRectMake(0, -KActivityDetailHeadH , SCREEN_WIDTH, KActivityDetailHeadH );
+    headView.activityModel = _activityModel;
     [_tableView addSubview: headView];
     
 }

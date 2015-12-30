@@ -25,7 +25,7 @@
 + (BLRColorComponents *) darkEffect {
     BLRColorComponents *components = [[BLRColorComponents alloc] init];
     
-    components.radius = 8;
+    components.radius = 3;
     components.tintColor = [UIColor colorWithRed:0.0f green:0.0 blue:0.0f alpha:.5f];
     components.saturationDeltaFactor = 3.0f;
     components.maskImage = nil;
