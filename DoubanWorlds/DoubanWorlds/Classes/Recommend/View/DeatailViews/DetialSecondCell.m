@@ -9,15 +9,15 @@
 #import "DetialSecondCell.h"
 #import "RecommendModel.h"
 
-#define IntroduceFont 13.f
+#define IntroduceFont 15.f
 #define TitleFont 20.f
 
 @interface DetialSecondCell ()
 {
     UIImageView *_iconImageView;
-    UILabel *_timeLabel;
+    UILabel *_titleLabel;
     
-    UIButton *_interestedBtn;
+    UILabel *_discussCount;
 }
 
 @end
@@ -40,7 +40,7 @@
     if (self) {
         
         self.backgroundColor = [UIColor whiteColor];
-        //        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
         
         [self initUI];
@@ -53,58 +53,75 @@
 
 -(void)initUI{
     
+    _iconImageView = [[UIImageView alloc] init];
+    [self.contentView addSubview:_iconImageView];
     
     _titleLabel = [[UILabel alloc] init];
-    _titleLabel.numberOfLines = 0;
     _titleLabel.textColor = [UIColor blackColor];
-    _titleLabel.backgroundColor = [UIColor clearColor];
-    _titleLabel.font = [UIFont boldSystemFontOfSize:TitleFont];
+    _titleLabel.font = [UIFont systemFontOfSize:IntroduceFont];
     [self.contentView addSubview:_titleLabel];
     
-    _timeLabel = [[UILabel alloc] init];
-    _timeLabel.numberOfLines = 0;
-    _timeLabel.textColor = [UIColor lightGrayColor];
-    _timeLabel.font = [UIFont systemFontOfSize:IntroduceFont];
-    [self.contentView addSubview:_timeLabel];
+    _discussCount = [[UILabel alloc] init];
+    _discussCount.textAlignment = NSTextAlignmentRight;
+    _discussCount.textColor = [UIColor lightGrayColor];
+    _discussCount.backgroundColor = [UIColor clearColor];
+    _discussCount.font = [UIFont systemFontOfSize:13.f];
+    [self.contentView addSubview:_discussCount];
     
-    _interestedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _interestedBtn.layer.cornerRadius = 8;
-    _interestedBtn.layer.borderColor = [UIColor orangeColor].CGColor;
-    _interestedBtn.layer.borderWidth = 1;
-    _interestedBtn.layer.masksToBounds = YES;
-    [_interestedBtn setTitle:@"感兴趣" forState:UIControlStateNormal];
-    [_interestedBtn setTitle:@"已感兴趣" forState:UIControlStateSelected];
-    [_interestedBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [_interestedBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
-    [_interestedBtn addTarget:self action:@selector(interestedBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentView addSubview:_interestedBtn];
     
 }
 
 -(void)setttingViewAtuoLayout{
     
-    int magin = HMStatusCellMargin;
+    int magin = 20;
     
-    CGFloat w = SCREEN_WIDTH - 2*HMStatusCellMargin;
+    [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.with.top.mas_equalTo(@(magin));
+        make.size.mas_equalTo(CGSizeMake(magin, magin));
+    }];
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(@20);
-        make.left.mas_equalTo(@(magin));
-        make.width.mas_equalTo(@(w));
+        make.left.equalTo(_iconImageView.mas_right).offset(HMStatusCellMargin);
+        make.top.equalTo(_iconImageView);
+        make.size.mas_equalTo(CGSizeMake(100, 20));
     }];
     
-    [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_titleLabel.mas_bottom);
-        make.left.with.right.equalTo(_titleLabel);
+    CGFloat X = SCREEN_WIDTH - 30 - 100;
+    [_discussCount mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(@(X));
+        make.top.equalTo(_titleLabel.mas_top);
+        make.size.mas_equalTo(CGSizeMake(100, 20));
     }];
+}
+
+-(void)setModel:(RecommendModel *)model{
+    _model = model;
     
-    [_interestedBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_timeLabel.mas_bottom).offset(magin);
-        make.left.equalTo(self.contentView).offset(magin);
-        make.right.equalTo(self.contentView).offset(-magin);
-        make.height.mas_equalTo(@40);
-    }];
+    _iconImageView.backgroundColor = [UIColor redColor];
     
+    _discussCount.text = [NSString stringWithFormat:@"%@人",model.wisher_count];
+    
+}
+
+-(void)setTitle:(NSString *)title{
+    _title = title;
+    
+    _titleLabel.text = title;
+}
+
+-(void)setIsHidden:(BOOL)isHidden{
+    _isHidden = isHidden;
+    
+    if (isHidden) {
+        _discussCount.hidden = YES;
+    }else{
+        _discussCount.hidden = NO;
+    }
+}
+
+
++(CGFloat)getCellHeight{
+    return 60;
 }
 
 

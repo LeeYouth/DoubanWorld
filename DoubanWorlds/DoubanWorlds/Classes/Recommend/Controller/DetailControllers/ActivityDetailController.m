@@ -12,6 +12,7 @@
 #import "BLRColorComponents.H"
 #import "DetailHeadView.h"
 #import "DetailFirstRowCell.h"
+#import "DetialSecondCell.h"
 
 @interface ActivityDetailController ()
 
@@ -99,13 +100,37 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [DetailFirstRowCell getCellHeight:_activityModel];
+    if (indexPath.row == 0) {
+        return [DetailFirstRowCell getCellHeight:_activityModel];
+    }else if(indexPath.row == 1 || indexPath.row == 2){
+        return [DetialSecondCell getCellHeight];
+    }else{
+        return [DetailFirstRowCell getCellHeight:_activityModel];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DetailFirstRowCell *firstCell = [DetailFirstRowCell cellWithTableView:tableView];
-    firstCell.model = _activityModel;
-    return firstCell;
+    if (indexPath.row == 0) {
+        DetailFirstRowCell *firstCell = [DetailFirstRowCell cellWithTableView:tableView];
+        firstCell.model = _activityModel;
+        return firstCell;
+    }else if(indexPath.row == 1){
+        DetialSecondCell *secondCell = [DetialSecondCell cellWithTableView:tableView];
+        secondCell.model = _activityModel;
+        secondCell.isHidden = NO;
+        secondCell.title = @"即时讨论";
+        return secondCell;
+    }else if(indexPath.row == 2){
+        DetialSecondCell *thirdCell = [DetialSecondCell cellWithTableView:tableView];
+        thirdCell.model = _activityModel;
+        thirdCell.isHidden = YES;
+        thirdCell.title = @"地址";
+        return thirdCell;
+    }else{
+        DetailFirstRowCell *firstCell = [DetailFirstRowCell cellWithTableView:tableView];
+        firstCell.model = _activityModel;
+        return firstCell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -13,9 +13,11 @@
 
 @property (nonatomic ,strong) RecommendModel *model;
 
-+(CGFloat)getCellHeight:(RecommendModel *)model;
++(CGFloat)getCellHeight;
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 
+@property (nonatomic ,copy) NSString *title;
+@property (nonatomic ,assign) BOOL isHidden;
 
 @end
