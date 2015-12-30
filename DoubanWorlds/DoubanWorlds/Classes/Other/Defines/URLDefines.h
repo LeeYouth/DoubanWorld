@@ -19,6 +19,7 @@
 #define Recommend_URL [NSString stringWithFormat:@"%@/v2/event/list",DoubanWorld_BaseURL]
 //2.获取热门城市列表
 #define HotCities_URL [NSString stringWithFormat:@"%@/v2/loc/list",DoubanWorld_BaseURL]
-
+//3.获取活动详细信息
+#define ActivityInfo_URL [NSString stringWithFormat:@"%@/v2/event/",DoubanWorld_BaseURL]
 
 #endif

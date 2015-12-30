@@ -7,7 +7,9 @@
 //  活动详情页
 
 #import "BaseViewController.h"
-
+#import "RecommendModel.h"
 @interface ActivityDetailController : BaseViewController
+
+@property (nonatomic ,strong) RecommendModel *activityModel;//活动ID
 
 @end

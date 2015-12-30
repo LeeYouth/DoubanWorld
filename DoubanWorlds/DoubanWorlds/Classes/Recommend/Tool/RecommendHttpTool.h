@@ -7,8 +7,10 @@
 //  推荐网络请求封装
 
 #import <Foundation/Foundation.h>
+@class RecommendModel;
 
 typedef void (^CityInfoBlock)(NSDictionary *resDict,NSArray *firstArray,NSArray *secondArray);
+typedef void (^ActivityBlock)(RecommendModel *activityModel);
 
 @interface RecommendHttpTool : NSObject
 
@@ -40,6 +42,11 @@ typedef void (^CityInfoBlock)(NSDictionary *resDict,NSArray *firstArray,NSArray 
  *  获取热门城市列表
  */
 +(void)getHotCitiesInfo:(ArrayBlock)arrayBlock;
+
+/**
+ *  获取活动详细信息
+ */
++(void)getActivityInfo:(NSString *)activityID activityBlock:(ActivityBlock)activityBlock;
 
 
 @end

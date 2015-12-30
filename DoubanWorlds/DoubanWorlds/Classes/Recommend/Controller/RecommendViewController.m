@@ -229,7 +229,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    RecommendModel *model = [_resultArray objectAtIndex:indexPath.row];
+
     ActivityDetailController *detailVC = [[ActivityDetailController alloc] init];
+    detailVC.activityModel = model;
     [self.navigationController pushViewController:detailVC animated:YES];
 
 }

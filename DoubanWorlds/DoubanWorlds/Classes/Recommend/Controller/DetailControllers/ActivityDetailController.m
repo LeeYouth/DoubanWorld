@@ -7,8 +7,9 @@
 //
 
 #import "ActivityDetailController.h"
-#import "BLRColorComponents.h"
 #import "UIImage+ImageEffects.h"
+#import "RecommendHttpTool.h"
+#import "BLRColorComponents.H"
 
 @interface ActivityDetailController ()
 
@@ -19,13 +20,20 @@
 
 @implementation ActivityDetailController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.view.backgroundColor = [UIColor redColor];
     
     [self initTableView];
+    
 }
+
 
 - (void)initTableView{
     self.view.backgroundColor = [UIColor whiteColor];
@@ -42,9 +50,10 @@
     _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.contentInset = UIEdgeInsetsMake(KActivityDetailHeadH, 0, 0, 0);
 //    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
-    _tableView.contentInset = UIEdgeInsetsMake(KActivityDetailHeadH, 0, 0, 0);
+    
     
     _expandZoomImageView = [[UIImageView alloc] init];
     _expandZoomImageView.frame = CGRectMake(0, -KActivityDetailHeadH, SCREEN_WIDTH, KActivityDetailHeadH);
@@ -52,9 +61,15 @@
     _expandZoomImageView.contentMode = UIViewContentModeScaleAspectFill;
     [_tableView addSubview: _expandZoomImageView];
     
-    UIColor *tintColor = [UIColor colorWithWhite:0.11 alpha:0.73];
-    [_expandZoomImageView setImage:[[UIImage imageNamed:@"blog_homepage_headerbg"] applyBlurWithRadius:5 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil]];
+    UIColor *tintColor = [BLRColorComponents darkEffect].tintColor;
+    NSURL *imgURL = [NSURL URLWithString:_activityModel.image];
+    UIImageView *immm = [[UIImageView alloc] init];
+    [immm sd_setImageWithURL:imgURL];
+    UIImage *backImage = immm.image;
 
+    if (backImage) {
+        [_expandZoomImageView setImage:[backImage applyBlurWithCrop:CGRectMake(0, 0, SCREEN_HEIGHT, KActivityDetailHeadH) resize:CGSizeMake(SCREEN_WIDTH, KActivityDetailHeadH) blurRadius:[BLRColorComponents darkEffect].radius tintColor:tintColor saturationDeltaFactor:[BLRColorComponents darkEffect].saturationDeltaFactor maskImage:nil]];
+    }
     
     UIView *headView = [[UIView alloc] init];
     headView.backgroundColor = [UIColor clearColor];
@@ -65,7 +80,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat yOffset  = scrollView.contentOffset.y;
-    if (yOffset < -KActivityDetailHeadH - 64) {
+    if (yOffset < -KActivityDetailHeadH ) {
         CGRect f = self.expandZoomImageView.frame;
         f.origin.y = yOffset - 20;
         f.size.height =  -yOffset + 20;
@@ -75,7 +90,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -88,7 +103,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndertifer];
     }
-    cell.textLabel.text = @"测试数据---";
+    cell.textLabel.text = _activityModel.content;
     return cell;
 }
 

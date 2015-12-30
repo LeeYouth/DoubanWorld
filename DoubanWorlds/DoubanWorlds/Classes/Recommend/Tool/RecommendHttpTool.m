@@ -84,6 +84,29 @@
     }
 }
 
++(void)getActivityInfo:(NSString *)activityID activityBlock:(ActivityBlock)activityBlock{
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",ActivityInfo_URL,activityID];
+    NSLog(@"getActivityInfoURL = %@",urlString);
+    
+    [HttpTools getWithURL:urlString params:nil success:^(id json) {
+
+        if ([json isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *resDic = json;
+            RecommendModel *model = [[RecommendModel alloc] initWithDictionary:resDic];
+            if (activityBlock) {
+                activityBlock(model);
+            }
+        }
+        if (activityBlock) {
+            activityBlock([[RecommendModel alloc] init]);
+        }
+    } failure:^(NSError *error) {
+        [SVProgressHUDManager networkError];
+    }];
+
+}
+
 
 
 @end
