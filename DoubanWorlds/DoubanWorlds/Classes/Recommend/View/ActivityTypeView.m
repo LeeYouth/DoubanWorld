@@ -13,6 +13,7 @@
 @interface ActivityTypeView()
 {
     NSArray *_dataArray;
+    NSArray *_nameArray;
 }
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -27,6 +28,8 @@
         
         
         _dataArray = [[NSArray alloc] initWithObjects:@"音乐",@"戏剧",@"展览",@"讲座",@"聚会",@"运动",@"旅行",@"公益",@"电影", nil];
+        _nameArray = [[NSArray alloc] initWithObjects:@"type-polaroid-socialmatic",@"type-radio-4",@"type-sharpner",@"type-support",@"type-sunglasses",@"type-nike-dunk",@"type-snowman",@"power-plant",@"type-pan", nil];
+
         
         [_tableView reloadData];
     }
@@ -53,6 +56,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {    
     ActivityTypeCell *cell = [ActivityTypeCell cellWithTableView:tableView];
     cell.title = [_dataArray objectAtIndex:indexPath.row];
+    cell.imageName = [_nameArray objectAtIndex:indexPath.row];
     return cell;
 }
 

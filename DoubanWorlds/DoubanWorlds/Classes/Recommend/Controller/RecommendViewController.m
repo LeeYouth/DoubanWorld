@@ -256,12 +256,12 @@ static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
     //定位到的城市
     UIButton *titleLb = [UIButton buttonWithType:UIButtonTypeCustom];
     [titleLb setTitle:@"热门" forState:UIControlStateNormal];
-    [titleLb setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [titleLb.titleLabel setFont:[UIFont systemFontOfSize:15.f]];
+    [titleLb setTitleColor:TheThemeColor forState:UIControlStateNormal];
+    [titleLb.titleLabel setFont:[UIFont boldSystemFontOfSize:16.f]];
     [titleLb setImage:[UIImage imageNamed:@"LuckyMoney_ChangeArrow"] forState:UIControlStateNormal];
     [titleLb addTarget:self action:@selector(titleShowPopover) forControlEvents:UIControlEventTouchUpInside];
-    titleLb.frame = CGRectMake(0, 0, 70, 40);
-    [titleLb setImageEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+    titleLb.frame = CGRectMake(0, 0, 80, 40);
+    [titleLb setImageEdgeInsets:UIEdgeInsetsMake(0, 60, 0, 0)];
     [titleLb setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
     self.navigationItem.titleView = titleLb;
 

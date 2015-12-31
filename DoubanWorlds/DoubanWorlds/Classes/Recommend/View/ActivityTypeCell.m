@@ -37,7 +37,6 @@
         self.backgroundColor = [UIColor whiteColor];
         
         _iconImageView = [[UIImageView alloc] init];
-        _iconImageView.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:_iconImageView];
         
 
@@ -52,12 +51,12 @@
         [self.contentView addSubview:_lineView];
         
         [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(@10);
-            make.top.mas_equalTo(@5);
-            make.size.mas_equalTo(CGSizeMake(30, 30));
+            make.left.mas_equalTo(15);
+            make.top.mas_equalTo(@8);
+            make.size.mas_equalTo(CGSizeMake(24, 24));
         }];
         
-        int padding = 15 ;
+        int padding = 20 ;
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_iconImageView.mas_right).offset(padding);
             make.top.mas_equalTo(@10);
@@ -79,6 +78,11 @@
 -(void)setTitle:(NSString *)title{
     _title = title;
     _titleLabel.text = title;
+}
+
+-(void)setImageName:(NSString *)imageName{
+    _imageName = imageName;
+    _iconImageView.image = [UIImage imageNamed:imageName];
 }
 
 +(CGFloat)getCellHeight{
