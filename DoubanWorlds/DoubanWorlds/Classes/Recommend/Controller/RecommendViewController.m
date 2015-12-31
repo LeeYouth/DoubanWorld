@@ -30,7 +30,6 @@ static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
 }
 
 @property (nonatomic, copy) NSString *locID;//当前城市ID
-@property (nonatomic, copy) NSString *activeType;//当前活动类型
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *resultArray;
