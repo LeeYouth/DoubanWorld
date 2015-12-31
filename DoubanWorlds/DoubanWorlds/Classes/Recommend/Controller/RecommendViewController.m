@@ -15,7 +15,13 @@
 #import "LocationManager.h"
 #import "LYCityHandler.h"
 #import "ActivityDetailController.h"
+#import "DXPopover.h"
+#import "ActivityTypeView.h"
 
+static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
+    CGFloat diff = high - low;
+    return (((CGFloat)rand() / RAND_MAX) * diff) + low;
+}
 @interface RecommendViewController ()
 {
     NSInteger _startNum;
@@ -25,6 +31,7 @@
 @property (nonatomic, copy) NSString *locID;//当前城市ID
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *resultArray;
+@property (nonatomic, strong) DXPopover *popover;
 
 @end
 
@@ -52,6 +59,8 @@
     [self requestData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityButtonClick:) name:kCityButtonClick object:nil];
+    
+    [self setupNavTitleView];
     
 }
 
@@ -242,10 +251,62 @@
 
 
 
+-(void)setupNavTitleView{
+    
+    //定位到的城市
+    UIButton *titleLb = [UIButton buttonWithType:UIButtonTypeCustom];
+    [titleLb setTitle:@"热门" forState:UIControlStateNormal];
+    [titleLb setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [titleLb.titleLabel setFont:[UIFont systemFontOfSize:15.f]];
+    [titleLb setImage:[UIImage imageNamed:@"LuckyMoney_ChangeArrow"] forState:UIControlStateNormal];
+    [titleLb addTarget:self action:@selector(titleShowPopover) forControlEvents:UIControlEventTouchUpInside];
+    titleLb.frame = CGRectMake(0, 0, 70, 40);
+    [titleLb setImageEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+    [titleLb setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
+    self.navigationItem.titleView = titleLb;
 
+}
 
+-(void)titleShowPopover{
+    self.popover = [DXPopover new];
+    self.popover.maskType = DXPopoverMaskTypeBlack;
+    self.popover.contentInset = UIEdgeInsetsZero;
+    self.popover.backgroundColor = [UIColor whiteColor];
+//    CGSize arrowSize = self.popover.arrowSize;
+//    arrowSize.width += randomFloatBetweenLowAndHigh(3.0, 5.0);
+//    arrowSize.height += randomFloatBetweenLowAndHigh(3.0, 5.0);
+//    self.popover.arrowSize = arrowSize;
+    
+    ActivityTypeView *typeView = [[ActivityTypeView alloc] initWithFrame:CGRectMake(0, 0, 160, 300)];
+    typeView.backgroundColor = [UIColor clearColor];
+    
+    UIView *titleView = self.navigationItem.titleView;
+    CGPoint startPoint =
+    CGPointMake(CGRectGetMidX(titleView.frame), CGRectGetMaxY(titleView.frame) + 20);
+    
+    [self.popover showAtPoint:startPoint
+               popoverPostion:DXPopoverPositionDown
+              withContentView:typeView
+                       inView:self.tabBarController.view];
+    __weak typeof(self) weakSelf = self;
+    self.popover.didDismissHandler = ^{
+        [weakSelf bounceTargetView:titleView];
+    };
 
+}
 
+- (void)bounceTargetView:(UIView *)targetView {
+    targetView.transform = CGAffineTransformMakeScale(0.9, 0.9);
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+         usingSpringWithDamping:0.3
+          initialSpringVelocity:5
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         targetView.transform = CGAffineTransformIdentity;
+                     }
+                     completion:nil];
+}
 
 
 - (void)didReceiveMemoryWarning {

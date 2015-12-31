@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '70D2E77B39F8C1CA552F1E6E'
-               BlueprintName = 'AFNetworking'
+               BlueprintIdentifier = '2A7B7580E591DFB869186CB9'
+               BlueprintName = 'DXPopover'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libAFNetworking.a'>
+               BuildableName = 'libDXPopover.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

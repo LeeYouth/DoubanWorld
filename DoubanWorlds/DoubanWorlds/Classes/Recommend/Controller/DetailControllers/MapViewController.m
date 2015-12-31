@@ -40,14 +40,27 @@
     
     self.title = @"地图";
     
-    UIBarButtonItem *buttonItem = [UIBarButtonItem itemWithImage:@"nav_share" target:self action:@selector(openAction)];
+//    UIBarButtonItem *buttonItem = [UIBarButtonItem itemWithImage:@"nav_share" target:self action:@selector(openAction)];
+//    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+//    negativeSpacer.width = -10;
+//    self.navigationItem.rightBarButtonItems = @[negativeSpacer, buttonItem];
+    //定位到的城市
+    UIButton *navigation = [UIButton buttonWithType:UIButtonTypeCustom];
+    [navigation setTitle:@"导航" forState:UIControlStateNormal];
+    navigation.frame = CGRectMake(0, 0, 60, 40);
+    [navigation setTitleColor:TheThemeColor forState:UIControlStateNormal];
+    [navigation.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    [navigation addTarget:self action:@selector(openAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:navigation];
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    negativeSpacer.width = -10;
+    negativeSpacer.width = -20;
     self.navigationItem.rightBarButtonItems = @[negativeSpacer, buttonItem];
 }
 
 -(void)openAction{
-    ALActionSheetView *actionSheetView = [ALActionSheetView showActionSheetWithTitle:@"" cancelButtonTitle:@"取消" destructiveButtonTitle:@"" otherButtonTitles:@[@"打开Apple地图"] handler:^(ALActionSheetView *actionSheetView, NSInteger buttonIndex) {
+
+    ALActionSheetView *actionSheetView = [ALActionSheetView showActionSheetWithTitle:@"" cancelButtonTitle:@"取消" destructiveButtonTitle:@"" otherButtonTitles: @[@"苹果地图"] handler:^(ALActionSheetView *actionSheetView, NSInteger buttonIndex) {
         NSLog(@"%zd", buttonIndex);
         if (buttonIndex == 0) {
             [self openSystemMapKit];

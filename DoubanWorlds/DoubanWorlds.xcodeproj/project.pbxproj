@@ -38,6 +38,8 @@
 		E611AACF1C2A362D00A1107C /* tableview_pull_refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AAC91C2A362D00A1107C /* tableview_pull_refresh@3x.png */; };
 		E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E611AACB1C2A362D00A1107C /* UIScrollView+LDRefresh.m */; };
 		E61682061C34DE44008F77F2 /* ALActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = E61682051C34DE44008F77F2 /* ALActionSheetView.m */; };
+		E616820C1C35059D008F77F2 /* ActivityTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E616820B1C35059D008F77F2 /* ActivityTypeView.m */; };
+		E616820F1C35090E008F77F2 /* ActivityTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E616820E1C35090E008F77F2 /* ActivityTypeCell.m */; };
 		E64A13BC1C2A7BF500AC0750 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */; };
 		E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BE1C2A7D1B00AC0750 /* ActivityOwnerModel.m */; };
 		E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13C21C2A8BF700AC0750 /* HotActivityCell.m */; };
@@ -171,6 +173,10 @@
 		E611AAD11C2A370600A1107C /* LDRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDRefresh.h; sourceTree = "<group>"; };
 		E61682041C34DE44008F77F2 /* ALActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALActionSheetView.h; sourceTree = "<group>"; };
 		E61682051C34DE44008F77F2 /* ALActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALActionSheetView.m; sourceTree = "<group>"; };
+		E616820A1C35059D008F77F2 /* ActivityTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTypeView.h; sourceTree = "<group>"; };
+		E616820B1C35059D008F77F2 /* ActivityTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTypeView.m; sourceTree = "<group>"; };
+		E616820D1C35090E008F77F2 /* ActivityTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTypeCell.h; sourceTree = "<group>"; };
+		E616820E1C35090E008F77F2 /* ActivityTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTypeCell.m; sourceTree = "<group>"; };
 		E64A13BA1C2A7BF500AC0750 /* RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendModel.h; sourceTree = "<group>"; };
 		E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
 		E64A13BD1C2A7D1B00AC0750 /* ActivityOwnerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOwnerModel.h; sourceTree = "<group>"; };
@@ -794,6 +800,10 @@
 				E6F753811C3250D800E570C2 /* SearchViews */,
 				E611464A1C2CD6C200CF0391 /* PickViews */,
 				E64A13C01C2A884300AC0750 /* RecommendCells */,
+				E616820A1C35059D008F77F2 /* ActivityTypeView.h */,
+				E616820B1C35059D008F77F2 /* ActivityTypeView.m */,
+				E616820D1C35090E008F77F2 /* ActivityTypeCell.h */,
+				E616820E1C35090E008F77F2 /* ActivityTypeCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1145,6 +1155,7 @@
 				E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */,
 				E6F753801C324F7500E570C2 /* SearchCityController.m in Sources */,
 				E65486771C30D34200A47EC1 /* LocationCityCell.m in Sources */,
+				E616820C1C35059D008F77F2 /* ActivityTypeView.m in Sources */,
 				E697A48C1C2A72280039A839 /* SVProgressHUD.m in Sources */,
 				E6E2B4211C2945BE003F2C4B /* SearchViewController.m in Sources */,
 				E6CF5CDA1C33760A002F0D92 /* UIImage+ImageEffects.m in Sources */,
@@ -1198,6 +1209,7 @@
 				E61146711C2D349A00CF0391 /* SKTagView.m in Sources */,
 				E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */,
 				E6E2B4001C2943F5003F2C4B /* MainTabbarController.m in Sources */,
+				E616820F1C35090E008F77F2 /* ActivityTypeCell.m in Sources */,
 				E6E2B41B1C294597003F2C4B /* NearbyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

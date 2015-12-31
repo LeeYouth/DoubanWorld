@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DXPopover-DXPopover.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DXPopover.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>25601E19C929A29CABA6752D84A0EE32</key>
+		<key>15E71DC389AF81EB7D768EBA0F13A0C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,17 +52,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2C928CD16998BBF628013164148500C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B23E8D8AD6956D6654A81572BE5D72EC</key>
+		<key>5652E3045A90D87E67E726AD63ABC3D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B3AF91DE4C01BE034C1E50240CC749B5</key>
+		<key>89E982A3494EC43A563AAB1498F10C56</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD25B2157D8BCA944D6FF3EC2B073ECB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
