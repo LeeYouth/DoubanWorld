@@ -18,10 +18,7 @@
 #import "DXPopover.h"
 #import "ActivityTypeView.h"
 
-static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
-    CGFloat diff = high - low;
-    return (((CGFloat)rand() / RAND_MAX) * diff) + low;
-}
+
 @interface RecommendViewController ()
 {
     NSInteger _startNum;
