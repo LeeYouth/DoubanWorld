@@ -44,6 +44,18 @@
     return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 
++(UIBarButtonItem *)itemWithImage:(NSString *)image target:(id)target action:(SEL)action
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 40, 40);
+    UIImage *normal  = [UIImage imageNamed:image];
+    [btn setBackgroundImage:normal forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:image]forState:UIControlStateHighlighted];
+    btn.bounds = CGRectMake(0, 0, normal.size.width, normal.size.height);
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+
 +(UIBarButtonItem *)itemWithImage:(NSString *)image title:(NSString *)title target:(id)target action:(SEL)action
 {
     //定位到的城市

@@ -150,6 +150,9 @@
     
     if (indexPath.row == 2) {
         MapViewController *mapVC = [[MapViewController alloc] init];
+        mapVC.address = _activityModel.address;
+        mapVC.activityName = _activityModel.title;
+        mapVC.geo = _activityModel.geo;
         [self.navigationController pushViewController:mapVC animated:YES];
     }
 }

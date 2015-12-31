@@ -37,6 +37,7 @@
 		E611AACE1C2A362D00A1107C /* tableview_pull_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AAC81C2A362D00A1107C /* tableview_pull_refresh@2x.png */; };
 		E611AACF1C2A362D00A1107C /* tableview_pull_refresh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E611AAC91C2A362D00A1107C /* tableview_pull_refresh@3x.png */; };
 		E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E611AACB1C2A362D00A1107C /* UIScrollView+LDRefresh.m */; };
+		E61682061C34DE44008F77F2 /* ALActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = E61682051C34DE44008F77F2 /* ALActionSheetView.m */; };
 		E64A13BC1C2A7BF500AC0750 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */; };
 		E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BE1C2A7D1B00AC0750 /* ActivityOwnerModel.m */; };
 		E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13C21C2A8BF700AC0750 /* HotActivityCell.m */; };
@@ -168,6 +169,8 @@
 		E611AACA1C2A362D00A1107C /* UIScrollView+LDRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LDRefresh.h"; sourceTree = "<group>"; };
 		E611AACB1C2A362D00A1107C /* UIScrollView+LDRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LDRefresh.m"; sourceTree = "<group>"; };
 		E611AAD11C2A370600A1107C /* LDRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDRefresh.h; sourceTree = "<group>"; };
+		E61682041C34DE44008F77F2 /* ALActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALActionSheetView.h; sourceTree = "<group>"; };
+		E61682051C34DE44008F77F2 /* ALActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALActionSheetView.m; sourceTree = "<group>"; };
 		E64A13BA1C2A7BF500AC0750 /* RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendModel.h; sourceTree = "<group>"; };
 		E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
 		E64A13BD1C2A7D1B00AC0750 /* ActivityOwnerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOwnerModel.h; sourceTree = "<group>"; };
@@ -496,6 +499,8 @@
 		E6CF5CDE1C337A56002F0D92 /* DeatailViews */ = {
 			isa = PBXGroup;
 			children = (
+				E61682041C34DE44008F77F2 /* ALActionSheetView.h */,
+				E61682051C34DE44008F77F2 /* ALActionSheetView.m */,
 				E6CF5CE81C33D11D002F0D92 /* DetailHeadView.h */,
 				E6CF5CE91C33D11D002F0D92 /* DetailHeadView.m */,
 				E6CF5CED1C33D7B8002F0D92 /* DetailFirstRowCell.h */,
@@ -1187,6 +1192,7 @@
 				E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */,
 				E65486671C30C9A700A47EC1 /* UIBarButtonItem+Extension.m in Sources */,
 				E6CF5CDD1C3377DF002F0D92 /* BLRColorComponents.m in Sources */,
+				E61682061C34DE44008F77F2 /* ALActionSheetView.m in Sources */,
 				E61146671C2D31AE00CF0391 /* HotCityModel.m in Sources */,
 				E6CF5CF21C33EF04002F0D92 /* DetialSecondCell.m in Sources */,
 				E61146711C2D349A00CF0391 /* SKTagView.m in Sources */,

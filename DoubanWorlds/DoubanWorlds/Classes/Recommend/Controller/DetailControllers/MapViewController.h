@@ -10,4 +10,11 @@
 
 @interface MapViewController : BaseViewController
 
+@property (nonatomic ,copy) NSString *activityName;
+
+@property (nonatomic ,copy) NSString *address;
+
+@property (nonatomic ,strong) NSString *geo;
+
+
 @end
