@@ -9,6 +9,7 @@
 #import "ActivityTypeView.h"
 #import "ActivityTypeCell.h"
 
+#define TypeDict [[NSDictionary alloc] initWithObjects:@"all",@"music",@"drama",@"exhibition",@"salon",@"party", @"sports", @"travel", @"commonweal",@"film" forKeys:@"热门",@"音乐",@"戏剧",@"展览",@"讲座",@"聚会",@"运动",@"旅行",@"公益",@"电影" ]
 
 @interface ActivityTypeView()
 {
@@ -27,10 +28,9 @@
         [self initTableView:frame];
         
         
-        _dataArray = [[NSArray alloc] initWithObjects:@"音乐",@"戏剧",@"展览",@"讲座",@"聚会",@"运动",@"旅行",@"公益",@"电影", nil];
-        _nameArray = [[NSArray alloc] initWithObjects:@"type-polaroid-socialmatic",@"type-radio-4",@"type-sharpner",@"type-support",@"type-sunglasses",@"type-nike-dunk",@"type-snowman",@"power-plant",@"type-pan", nil];
+        _dataArray = [[NSArray alloc] initWithObjects:@"热门",@"音乐",@"戏剧",@"展览",@"讲座",@"聚会",@"运动",@"旅行",@"公益",@"电影", nil];
+        _nameArray = [[NSArray alloc] initWithObjects:@"type-meet",@"type-polaroid-socialmatic",@"type-radio-4",@"type-sharpner",@"type-support",@"type-sunglasses",@"type-nike-dunk",@"type-snowman",@"power-plant",@"type-pan", nil];
 
-        
         [_tableView reloadData];
     }
     return self;
@@ -62,6 +62,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSString *title = [_dataArray objectAtIndex:indexPath.row];
+
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjects:@[@"all",@"music",@"drama",@"exhibition",@"salon",@"party", @"sports", @"travel", @"commonweal",@"film"] forKeys:@[@"热门",@"音乐",@"戏剧",@"展览",@"讲座",@"聚会",@"运动",@"旅行",@"公益",@"电影"] ];
+
+    NSString *type = [dict objectForKey:title];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:type forKey:kCurrentActiveType];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:kTypeButtonClick object:nil userInfo:@{kTypeButtonClick : type}];
+    
     
 }
 

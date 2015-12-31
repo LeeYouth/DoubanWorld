@@ -26,9 +26,12 @@ static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
 {
     NSInteger _startNum;
     UIButton *_locationBtn;
+    UIButton *_titleLBtn;
 }
 
 @property (nonatomic, copy) NSString *locID;//当前城市ID
+@property (nonatomic, copy) NSString *activeType;//当前活动类型
+
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *resultArray;
 @property (nonatomic, strong) DXPopover *popover;
@@ -60,6 +63,9 @@ static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityButtonClick:) name:kCityButtonClick object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(typeButtonClick:) name:kTypeButtonClick object:nil];
+
+    
     [self setupNavTitleView];
     
 }
@@ -88,11 +94,11 @@ static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:kIsCityButtonClick]) {//是否点击选择了城市
         NSString *cName = [[NSUserDefaults standardUserDefaults] objectForKey:kCityButtonClick];
+
         NSString *ID = [LYCityHandler getCityIDByName:cName];
         self.locID = ID;
         [self refreshDataLocID:ID];
         
-        [self setLeftBtnTitle:cName];
 
     }else{
         NSString *defaultsName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
@@ -108,17 +114,20 @@ static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
             NSString *cityName = @"北京";
             NSString *ID = [LYCityHandler getCityIDByName:cityName];
             NSLog(@"cityID = %@",ID);
+            NSString *acType = @"all";
+            
+            [[NSUserDefaults standardUserDefaults] setObject:acType forKey:kCurrentActiveType];
+
             
             self.locID = [ID copy];
             [self refreshDataLocID:ID];
             
             [[NSUserDefaults standardUserDefaults] setObject:cityName forKey:kCurrentLocation];
-            
-            [self setLeftBtnTitle:cityName];
 
-        }else
+        }else//不是第一次登录
         {
             NSString *defaultsName = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentLocation];
+
             NSString *ID = [LYCityHandler getCityIDByName:defaultsName];
             self.locID = [ID copy];
             [self refreshDataLocID:ID];
@@ -142,9 +151,6 @@ static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
                 }
                 
             }];
-            
-            [self setLeftBtnTitle:[LYCityHandler getCityNameByUID:self.locID]];
-
         }
     }
 }
@@ -152,21 +158,40 @@ static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
 #pragma mark - 设置左边按钮
 - (void)setLeftBtnTitle:(NSString *)title{
     [_locationBtn setTitle:title forState:UIControlStateNormal];
-    
 }
+#pragma mark - 设置title
+- (void)setTitleBtnTitle:(NSString *)title{
+    [_titleLBtn setTitle:title forState:UIControlStateNormal];
+}
+
 #pragma mark - 城市按钮点击
 - (void)cityButtonClick:(NSNotification *)note{
     NSString *cname = note.userInfo[kCityButtonClick];
+
     if (cname) {
         NSString *ID = [LYCityHandler getCityIDByName:cname];
         [_locationBtn setTitle:cname forState:UIControlStateNormal];
 
         self.locID = [ID copy];
-        [self refreshDataLocID:ID];
+        
+        [self refreshDataLocID:self.locID];
         
         [[NSUserDefaults standardUserDefaults] setValue:cname forKey:kCityButtonClick];
 
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kIsCityButtonClick];
+    }
+}
+
+#pragma mark - 类型选择
+- (void)typeButtonClick:(NSNotification *)note{
+    [self.popover dismiss];
+
+    NSString *acType = note.userInfo[kTypeButtonClick];
+    
+    if (acType) {
+        NSString *cname = [LYCityHandler getCityNameByUID:self.locID];
+        [_locationBtn setTitle:cname forState:UIControlStateNormal];
+        [self refreshDataLocID:self.locID];
     }
 }
 
@@ -201,11 +226,16 @@ static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
     }];
 }
 
-- (void)refreshDataLocID:(NSString *)cityID {
+- (void)refreshDataLocID:(NSString *)cityID{
+    NSString *acType = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentActiveType];
+    [self setLeftBtnTitle:[LYCityHandler getCityNameByUID:cityID]];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjects:@[@"热门",@"音乐",@"戏剧",@"展览",@"讲座",@"聚会",@"运动",@"旅行",@"公益",@"电影"] forKeys:@[@"all",@"music",@"drama",@"exhibition",@"salon",@"party", @"sports", @"travel", @"commonweal",@"film"] ];
+    [self setTitleBtnTitle:[dict objectForKey:acType]];
     __weak __typeof(self)weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [RecommendHttpTool getRecommendList:_startNum loc:cityID arrayBlock:^(NSMutableArray *resultArray) {
+
+        [RecommendHttpTool getRecommendList:_startNum loc:self.locID type:acType arrayBlock:^(NSMutableArray *resultArray) {
+            
             _resultArray = resultArray;
             [weakSelf.tableView reloadData];
 
@@ -251,23 +281,27 @@ static CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high) {
 
 
 
--(void)setupNavTitleView{
+- (void)setupNavTitleView{
+    
+    NSString *acType = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentActiveType];
+
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjects:@[@"热门",@"音乐",@"戏剧",@"展览",@"讲座",@"聚会",@"运动",@"旅行",@"公益",@"电影"] forKeys:@[@"all",@"music",@"drama",@"exhibition",@"salon",@"party", @"sports", @"travel", @"commonweal",@"film"] ];
     
     //定位到的城市
-    UIButton *titleLb = [UIButton buttonWithType:UIButtonTypeCustom];
-    [titleLb setTitle:@"热门" forState:UIControlStateNormal];
-    [titleLb setTitleColor:TheThemeColor forState:UIControlStateNormal];
-    [titleLb.titleLabel setFont:[UIFont boldSystemFontOfSize:16.f]];
-    [titleLb setImage:[UIImage imageNamed:@"LuckyMoney_ChangeArrow"] forState:UIControlStateNormal];
-    [titleLb addTarget:self action:@selector(titleShowPopover) forControlEvents:UIControlEventTouchUpInside];
-    titleLb.frame = CGRectMake(0, 0, 80, 40);
-    [titleLb setImageEdgeInsets:UIEdgeInsetsMake(0, 60, 0, 0)];
-    [titleLb setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
-    self.navigationItem.titleView = titleLb;
+    _titleLBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_titleLBtn setTitle:[dict objectForKey:acType] forState:UIControlStateNormal];
+    [_titleLBtn setTitleColor:TheThemeColor forState:UIControlStateNormal];
+    [_titleLBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:16.f]];
+    [_titleLBtn setImage:[UIImage imageNamed:@"LuckyMoney_ChangeArrow"] forState:UIControlStateNormal];
+    [_titleLBtn addTarget:self action:@selector(titleShowPopover) forControlEvents:UIControlEventTouchUpInside];
+    _titleLBtn.frame = CGRectMake(0, 0, 80, 40);
+    [_titleLBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 60, 0, 0)];
+    [_titleLBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
+    self.navigationItem.titleView = _titleLBtn;
 
 }
 
--(void)titleShowPopover{
+- ( void)titleShowPopover{
     self.popover = [DXPopover new];
     self.popover.maskType = DXPopoverMaskTypeBlack;
     self.popover.contentInset = UIEdgeInsetsZero;

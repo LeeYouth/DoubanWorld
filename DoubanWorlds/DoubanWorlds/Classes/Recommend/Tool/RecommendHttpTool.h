@@ -20,7 +20,7 @@ typedef void (^ActivityBlock)(RecommendModel *activityModel);
 *  @param startNum 请求页数
 *  @param loc      地区信息
 */
-+(void)getRecommendList:(NSInteger)startNum loc:(NSString *)loc arrayBlock:(ArrayBlock)arrayBlock;
++(void)getRecommendList:(NSInteger)startNum loc:(NSString *)loc type:(NSString *)type arrayBlock:(ArrayBlock)arrayBlock;
 
 
 /**

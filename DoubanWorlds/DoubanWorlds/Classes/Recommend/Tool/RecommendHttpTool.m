@@ -13,9 +13,9 @@
 @implementation RecommendHttpTool
 
 #pragma mark - 获取活动列表(get请求
-+(void)getRecommendList:(NSInteger)startNum loc:(NSString *)loc arrayBlock:(ArrayBlock)arrayBlock{
++(void)getRecommendList:(NSInteger)startNum loc:(NSString *)loc type:(NSString *)type arrayBlock:(ArrayBlock)arrayBlock{
     
-    NSString *urlString = [NSString stringWithFormat:@"%@?start=%ld&loc=%@&count=10",Recommend_URL,startNum,loc];
+    NSString *urlString = [NSString stringWithFormat:@"%@?start=%ld&loc=%@&count=10&type=%@",Recommend_URL,startNum,loc,type];
     NSLog(@"RecommendListURL = %@",urlString);
     [HttpTools getWithURL:urlString params:nil success:^(id json) {
 //        NSLog(@"getRecommendList = %@",json);

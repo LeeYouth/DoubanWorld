@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *kCurrentActiveType;//当前活动类型
 
 extern NSString *kCurrentLocation; //获取到的当前位置
 
 extern NSString *kCityButtonClick;//城市按钮点击
 
+extern NSString *kTypeButtonClick;//类型选择
+
 extern NSString *kIsCityButtonClick;//城市按钮是否点击了
+
