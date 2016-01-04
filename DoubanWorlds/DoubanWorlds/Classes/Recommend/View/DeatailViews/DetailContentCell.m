@@ -9,8 +9,7 @@
 #import "DetailContentCell.h"
 #import "RecommendModel.h"
 
-#define IntroduceFont 14.f
-#define ContentFont 16.f
+#define ContentFont 17.f
 
 @interface DetailContentCell ()
 {
@@ -55,15 +54,14 @@
     _introL = [[UILabel alloc] init];
     _introL.text = @"简介";
     _introL.textColor = [UIColor lightGrayColor];
-    _introL.font = [UIFont systemFontOfSize:IntroduceFont];
+    _introL.font = [UIFont boldSystemFontOfSize:ContentFont];
     [self.contentView addSubview:_introL];
     
     _contentLabel = [[UILabel alloc] init];
-    _contentLabel.textAlignment = NSTextAlignmentRight;
     _contentLabel.textColor = [UIColor blackColor];
     _contentLabel.backgroundColor = [UIColor clearColor];
     _contentLabel.numberOfLines = 0;
-    _contentLabel.font = [UIFont systemFontOfSize:ContentFont];
+    _contentLabel.font = [UIFont boldSystemFontOfSize:ContentFont];
     [self.contentView addSubview:_contentLabel];
     
     
@@ -90,8 +88,8 @@
 
 -(void)setModel:(RecommendModel *)model{
     _model = model;
-    
-    _contentLabel.attributedText = [AppTools setLineSpacingWith:model.content lineSpacing:4];
+
+    _contentLabel.attributedText = [model.content linkAttriWithLineSpacing:4 urlColor:TheThemeColor];
 
 }
 

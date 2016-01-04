@@ -16,7 +16,7 @@
 #import "DetailContentCell.h"
 #import "MapViewController.h"
 
-@interface ActivityDetailController ()
+@interface ActivityDetailController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIImageView *expandZoomImageView;
@@ -40,7 +40,7 @@
     
     [self.tableView reloadData];
     
-    }
+}
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -73,9 +73,9 @@
 //    }
 //    
    
-    _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT )];
-    _tableView.delegate        = (id<UITableViewDelegate>)self;
-    _tableView.dataSource      = (id<UITableViewDataSource>) self;
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT )];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
     _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.backgroundColor = [UIColor clearColor];
@@ -111,10 +111,10 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat yOffset  = scrollView.contentOffset.y;
     if (yOffset < -KActivityDetailHeadH ) {
-        CGRect f = self.expandZoomImageView.frame;
+        CGRect f = _expandZoomImageView.frame;
         f.origin.y = yOffset - 20;
         f.size.height =  -yOffset + 20;
-        self.expandZoomImageView.frame = f;
+        _expandZoomImageView.frame = f;
     }
 }
 
@@ -179,5 +179,9 @@
     }
 }
 
+
+-(void)dealloc{
+    _tableView.delegate = nil;
+}
 
 @end

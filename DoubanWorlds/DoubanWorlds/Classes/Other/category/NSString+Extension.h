@@ -38,6 +38,21 @@
  */
 + (BOOL)checkConvertNull:(NSString *)object;
 
+/**
+ *  匹配所有网址
+ *
+ *  @return 网址数组
+ */
+- (NSArray *)arrayOfAllMatches;
+
+/**
+ *  含有URL的属性字符串
+ *
+ *  @param LineSpacing 间距
+ *
+ *  @return 含有URL的属性字符串
+ */
+-(NSMutableAttributedString *)linkAttriWithLineSpacing:(CGFloat)LineSpacing urlColor:(UIColor *)urlColor;
 
 
 @end

@@ -26,6 +26,7 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
+  - TTTAttributedLabel (1.13.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - Masonry
   - pop (~> 1.0)
   - SDWebImage (~> 3.7)
+  - TTTAttributedLabel
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -40,5 +42,6 @@ SPEC CHECKSUMS:
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
 COCOAPODS: 0.39.0

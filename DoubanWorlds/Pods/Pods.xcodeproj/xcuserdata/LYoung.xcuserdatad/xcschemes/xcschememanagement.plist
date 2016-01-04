@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TTTAttributedLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +57,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C928CD16998BBF628013164148500C1</key>
+		<key>2D39457208D42BDD055EC5902C801AC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,12 +67,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5652E3045A90D87E67E726AD63ABC3D5</key>
+		<key>6AB8774BE86CBCEE53F5FF6CEE76025E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89E982A3494EC43A563AAB1498F10C56</key>
+		<key>927FAD15A8927FF06F86BE3596733447</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BA5521566DC74CB4111AB006F851B773</key>
 		<dict>
 			<key>primary</key>
 			<true/>

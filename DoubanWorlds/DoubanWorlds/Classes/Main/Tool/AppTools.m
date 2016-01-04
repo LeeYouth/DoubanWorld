@@ -63,7 +63,7 @@
     
 }
 
-+(NSAttributedString *)setLineSpacingWith:(NSString *)contentText lineSpacing:(CGFloat)lineSpacing{
++(NSMutableAttributedString *)setLineSpacingWith:(NSString *)contentText lineSpacing:(CGFloat)lineSpacing{
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:contentText];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:lineSpacing];

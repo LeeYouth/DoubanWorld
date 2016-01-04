@@ -25,7 +25,7 @@
  *
  *  @return 返回属性化的字符
  */
-+ (NSAttributedString *)setLineSpacingWith:(NSString *)contentText lineSpacing:(CGFloat)lineSpacing;
++ (NSMutableAttributedString *)setLineSpacingWith:(NSString *)contentText lineSpacing:(CGFloat)lineSpacing;
 /**
  *  格式化一个数量
  *
