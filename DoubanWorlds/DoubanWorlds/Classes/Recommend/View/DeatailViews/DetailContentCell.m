@@ -10,6 +10,7 @@
 #import "RecommendModel.h"
 
 #define ContentFont 17.f
+#define ContentLineSpacing 5.f
 
 @interface DetailContentCell ()
 {
@@ -57,6 +58,7 @@
     _introL.font = [UIFont boldSystemFontOfSize:ContentFont];
     [self.contentView addSubview:_introL];
     
+    UITextView
     _contentLabel = [[UILabel alloc] init];
     _contentLabel.textColor = [UIColor blackColor];
     _contentLabel.backgroundColor = [UIColor clearColor];
@@ -89,7 +91,7 @@
 -(void)setModel:(RecommendModel *)model{
     _model = model;
 
-    _contentLabel.attributedText = [model.content linkAttriWithLineSpacing:4 urlColor:TheThemeColor];
+    _contentLabel.attributedText = [model.content linkAttriWithLineSpacing:ContentLineSpacing urlColor:TheThemeColor];
 
 }
 
@@ -98,7 +100,7 @@
     CGFloat w = SCREEN_WIDTH - 2*HMStatusCellMargin;
 
     CGSize maxSize = CGSizeMake(w, MAXFLOAT);
-    CGSize titleSize = [model.content attrStrSizeWithFont:[UIFont systemFontOfSize:ContentFont] andmaxSize:maxSize lineSpacing:4];
+    CGSize titleSize = [model.content attrStrSizeWithFont:[UIFont systemFontOfSize:ContentFont] andmaxSize:maxSize lineSpacing:ContentLineSpacing];
 
     return 20*4 + titleSize.height;
 }
