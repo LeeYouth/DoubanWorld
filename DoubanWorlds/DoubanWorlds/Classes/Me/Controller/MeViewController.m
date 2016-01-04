@@ -12,7 +12,6 @@
 #import "OAuthViewController.h"
 #import "AccountTool.h"
 #import "MeHttpTool.h"
-#import "LYAccount.h"
 
 @interface MeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -31,7 +30,9 @@
     [self initTableView];
     
     
-    [MeHttpTool getUserInfoWithID:[AccountTool currenAccount].douban_user_id];
+    [MeHttpTool userInfoSuccess:^(UserInfos *user) {
+        
+    }];
     
 }
 

@@ -45,6 +45,23 @@
 
 
 
+#pragma mark - 用户信息 -
+
+#define     USER_status          @"useraltstatus"
+#define     USER_alt             @"useralt"
+#define     USER_avatar          @"useravatar"
+#define     USER_created         @"usercreated"
+#define     USER_desc            @"userdesc"
+#define     USER_is_banned       @"useris_banned"
+#define     USER_is_suicide      @"useris_suicide"
+#define     USER_large_avatar    @"userlarge_avatar"
+#define     USER_loc_id          @"userloc_id"
+#define     USER_loc_name        @"userloc_name"
+#define     USER_name            @"username"
+#define     USER_signature       @"usersignature"
+#define     USER_type            @"usertype"
+#define     USER_uid             @"useruid"
+
 
 
 

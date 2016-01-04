@@ -58,6 +58,7 @@
 		E61682321C351A2E008F77F2 /* type-support.png in Resources */ = {isa = PBXBuildFile; fileRef = E61682201C351A2E008F77F2 /* type-support.png */; };
 		E61682331C351A2E008F77F2 /* type-traffic-light.png in Resources */ = {isa = PBXBuildFile; fileRef = E61682211C351A2E008F77F2 /* type-traffic-light.png */; };
 		E61682341C351A2E008F77F2 /* umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = E61682221C351A2E008F77F2 /* umbrella.png */; };
+		E639531D1C3A6A2A00AEC8E1 /* UserInfos.m in Sources */ = {isa = PBXBuildFile; fileRef = E639531C1C3A6A2A00AEC8E1 /* UserInfos.m */; };
 		E64A13BC1C2A7BF500AC0750 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */; };
 		E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BE1C2A7D1B00AC0750 /* ActivityOwnerModel.m */; };
 		E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13C21C2A8BF700AC0750 /* HotActivityCell.m */; };
@@ -217,6 +218,8 @@
 		E61682201C351A2E008F77F2 /* type-support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "type-support.png"; sourceTree = "<group>"; };
 		E61682211C351A2E008F77F2 /* type-traffic-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "type-traffic-light.png"; sourceTree = "<group>"; };
 		E61682221C351A2E008F77F2 /* umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = umbrella.png; sourceTree = "<group>"; };
+		E639531B1C3A6A2A00AEC8E1 /* UserInfos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfos.h; sourceTree = "<group>"; };
+		E639531C1C3A6A2A00AEC8E1 /* UserInfos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfos.m; sourceTree = "<group>"; };
 		E64A13BA1C2A7BF500AC0750 /* RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendModel.h; sourceTree = "<group>"; };
 		E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
 		E64A13BD1C2A7D1B00AC0750 /* ActivityOwnerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOwnerModel.h; sourceTree = "<group>"; };
@@ -757,6 +760,8 @@
 		E6E2B4031C2944FE003F2C4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E639531B1C3A6A2A00AEC8E1 /* UserInfos.h */,
+				E639531C1C3A6A2A00AEC8E1 /* UserInfos.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1268,6 +1273,7 @@
 				E6E964FB1C3A658800A1650C /* MeHttpTool.m in Sources */,
 				E6CF5CEA1C33D11D002F0D92 /* DetailHeadView.m in Sources */,
 				E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */,
+				E639531D1C3A6A2A00AEC8E1 /* UserInfos.m in Sources */,
 				E654867A1C30D35600A47EC1 /* HotCityCell.m in Sources */,
 				E6F753841C3250E600E570C2 /* YLYSearchBar.m in Sources */,
 				E6F753761C324AA700E570C2 /* ChineseInclude.m in Sources */,

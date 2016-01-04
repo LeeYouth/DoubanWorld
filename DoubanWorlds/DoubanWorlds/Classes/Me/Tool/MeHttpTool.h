@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@class UserInfos;
 
 @interface MeHttpTool : NSObject
+//block传值
+typedef void (^UserInfoSuccess)(UserInfos *user);
 
 
-+(void)getUserInfoWithID:(NSString *)userID;
++ (void)userInfoSuccess:(UserInfoSuccess)success;
 
 @end

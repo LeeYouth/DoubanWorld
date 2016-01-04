@@ -7,30 +7,31 @@
 //
 
 #import "MeHttpTool.h"
+#import "UserInfos.h"
+#import "LYAccount.h"
+#import "AccountTool.h"
 
 @implementation MeHttpTool
 
-+(void)getUserInfoWithID:(NSString *)userID{
++ (void)userInfoSuccess:(UserInfoSuccess)success{
+    NSString *userID = [AccountTool currenAccount].douban_user_id;
     NSString *url = [NSString stringWithFormat:@"%@%@",UserInfo_URL,userID];
     [HttpTools getWithURL:url params:nil success:^(id json) {
         NSLog(@"resultDict = %@",json);
+        if ([json isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dict = json;
+            UserInfos *user = [UserInfos sharedUserInfo];
+            user = [UserInfos userWithDictionary:dict];
+            [user saveData];//保存到本地
+            if (success) {
+                success(user);
+            }
+            
+        }
     } failure:^(NSError *error) {
         NSLog(@"resultDicterror = %@",error);
+        [SVProgressHUDManager showErrorWithStatus:@"网络错误"];
     }];
-//    alt = "http://www.douban.com/people/102268725/";
-//    avatar = "http://img4.douban.com/icon/user_normal.jpg";
-//    created = "2014-09-25 20:46:19";
-//    desc = "";
-//    id = 102268725;
-//    "is_banned" = 0;
-//    "is_suicide" = 0;
-//    "large_avatar" = "http://img3.douban.com/icon/user_large.jpg";
-//    "loc_id" = 108288;
-//    "loc_name" = "\U5317\U4eac";
-//    name = "\U602a\U5496LYoung";
-//    signature = "";
-//    type = user;
-//    uid = 102268725;
 }
 
 
