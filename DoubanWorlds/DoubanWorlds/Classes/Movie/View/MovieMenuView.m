@@ -43,7 +43,7 @@
 }
 -(void)addButtonTitle:(NSString *)title buttonIndex:(int)buttonIndex{
     UIButton *oneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [oneBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [oneBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [oneBtn setTitleColor:TheThemeColor forState:UIControlStateSelected];
     [oneBtn setTitle:title forState:UIControlStateNormal];
     [oneBtn setTitle:title forState:UIControlStateSelected];
@@ -52,7 +52,7 @@
     [oneBtn addTarget:self action:@selector(selectButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     oneBtn.tag  = buttonIndex;
     if (buttonIndex == 0) {
-        oneBtn.titleLabel.font = [UIFont systemFontOfSize:18.0];
+        oneBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
         oneBtn.selected = YES;
     }else{
         oneBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
@@ -75,9 +75,9 @@
     
     for (UIButton *otherBtn in _buttonArray) {
         if (sender.tag == otherBtn.tag) {
-            otherBtn.titleLabel.font = [UIFont systemFontOfSize:18.0];
+
         }else{
-            otherBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
+
             otherBtn.selected = NO;
         }
     }
