@@ -58,7 +58,6 @@
     _introL.font = [UIFont boldSystemFontOfSize:ContentFont];
     [self.contentView addSubview:_introL];
     
-    UITextView
     _contentLabel = [[UILabel alloc] init];
     _contentLabel.textColor = [UIColor blackColor];
     _contentLabel.backgroundColor = [UIColor clearColor];
