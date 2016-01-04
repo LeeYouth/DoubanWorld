@@ -64,7 +64,7 @@
 }
 
 #pragma mark - 设置头部
--(void)setTableHeadView{
+- (void)setTableHeadView{
     RecommendHeadView *headView = [[RecommendHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 70)];
     _tableView.tableHeaderView =headView;
 }

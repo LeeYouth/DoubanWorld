@@ -21,8 +21,16 @@
 
 @implementation MapViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor whiteColor]];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     
     [self initUI];

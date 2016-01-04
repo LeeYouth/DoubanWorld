@@ -32,6 +32,7 @@
     }
     return self;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -39,19 +40,40 @@
     
     [self.tableView reloadData];
     
+    }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if (iOS7) {
+        self.edgesForExtendedLayout = UIRectEdgeAll;
+        self.automaticallyAdjustsScrollViewInsets = YES;
+        self.extendedLayoutIncludesOpaqueBars = NO;
+    }
+    [self.navigationController.navigationBar setTranslucent:YES];
+
+    //为什么要加这个呢，shadowImage 是在ios6.0以后才可用的。但是发现5.0也可以用。不过如果你不判断有没有这个方法，
+    //而直接去调用可能会crash，所以判断下。作用：如果你设置了上面那句话，你会发现是透明了。但是会有一个阴影在，下面的方法就是去阴影
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(shadowImage)])
+    {
+        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    }
+    //以上面4句是必须的,但是习惯还是加了下面这句话
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+
 }
 
 
 - (void)initTableView{
     self.view.backgroundColor = [UIColor whiteColor];
     
-    if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
-    {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    
+//    if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
+//    {
+//        self.automaticallyAdjustsScrollViewInsets = NO;
+//    }
+//    
    
-    _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
+    _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT )];
     _tableView.delegate        = (id<UITableViewDelegate>)self;
     _tableView.dataSource      = (id<UITableViewDataSource>) self;
     _tableView.showsHorizontalScrollIndicator = NO;
