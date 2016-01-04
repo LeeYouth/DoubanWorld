@@ -10,7 +10,7 @@
 #import "MainNavgationController.h"
 #import "MeViewController.h"
 #import "RecommendViewController.h"
-#import "NearbyViewController.h"
+#import "MovieViewController.h"
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
 @implementation MainTabbarController
@@ -33,14 +33,14 @@
 - (void)addAllChildViewControllers{
 
     
-    NSArray *buttonImages = @[@"tabbar_mainframe", @"tabbar_discover", @"tabbar_contacts",@"tabbar_me"];
-    NSArray *buttonImagesSelected = @[@"tabbar_mainframeHL", @"tabbar_discoverHL", @"tabbar_contactsHL",@"tabbar_meHL"];
+    NSArray *buttonImages = @[@"tabbar_discover", @"tabbar_mainframe", @"tabbar_contacts",@"tabbar_me"];
+    NSArray *buttonImagesSelected = @[@"tabbar_discoverHL", @"tabbar_mainframeHL", @"tabbar_contactsHL",@"tabbar_meHL"];
     
     RecommendViewController *recommendVC = [[RecommendViewController alloc] init];
     [self addChildViewController:recommendVC title:@"同城" image:buttonImages[0] selectedImage:buttonImagesSelected[0]];
     
-    NearbyViewController *nearbyVC = [[NearbyViewController alloc] init];
-    [self addChildViewController:nearbyVC title:@"附近" image:buttonImages[1] selectedImage:buttonImagesSelected[1]];
+    MovieViewController *nearbyVC = [[MovieViewController alloc] init];
+    [self addChildViewController:nearbyVC title:@"电影" image:buttonImages[1] selectedImage:buttonImagesSelected[1]];
     
     MeViewController *meVC = [[MeViewController alloc] init];
     [self addChildViewController:meVC title:@"我" image:buttonImages[3] selectedImage:buttonImagesSelected[3]];

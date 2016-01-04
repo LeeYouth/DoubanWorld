@@ -88,6 +88,10 @@
 		E639537C1C3A7E3B00AEC8E1 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E63953791C3A7E3B00AEC8E1 /* DACircularProgressView.m */; };
 		E639537D1C3A7E3B00AEC8E1 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E639537B1C3A7E3B00AEC8E1 /* DALabeledCircularProgressView.m */; };
 		E639537F1C3A824600AEC8E1 /* detail_defultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E639537E1C3A824600AEC8E1 /* detail_defultImage.png */; };
+		E63953871C3A894500AEC8E1 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63953861C3A894500AEC8E1 /* MovieViewController.m */; };
+		E639538B1C3A8A0A00AEC8E1 /* HotMovieController.m in Sources */ = {isa = PBXBuildFile; fileRef = E639538A1C3A8A0A00AEC8E1 /* HotMovieController.m */; };
+		E639538E1C3A8A3500AEC8E1 /* NewFilmController.m in Sources */ = {isa = PBXBuildFile; fileRef = E639538D1C3A8A3500AEC8E1 /* NewFilmController.m */; };
+		E63953911C3A8ACD00AEC8E1 /* MovieMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E63953901C3A8ACD00AEC8E1 /* MovieMenuView.m */; };
 		E64A13BC1C2A7BF500AC0750 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */; };
 		E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13BE1C2A7D1B00AC0750 /* ActivityOwnerModel.m */; };
 		E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E64A13C21C2A8BF700AC0750 /* HotActivityCell.m */; };
@@ -131,7 +135,6 @@
 		E6E2B3FF1C2943F5003F2C4B /* MainNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B3F81C2943F5003F2C4B /* MainNavgationController.m */; };
 		E6E2B4001C2943F5003F2C4B /* MainTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B3FA1C2943F5003F2C4B /* MainTabbarController.m */; };
 		E6E2B4181C294582003F2C4B /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4171C294582003F2C4B /* MeViewController.m */; };
-		E6E2B41B1C294597003F2C4B /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B41A1C294597003F2C4B /* NearbyViewController.m */; };
 		E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B41D1C2945A3003F2C4B /* RecommendViewController.m */; };
 		E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4241C294714003F2C4B /* AppDelegate.m */; };
 		E6E51D5C1C2BE29800DABA5D /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */; };
@@ -308,6 +311,14 @@
 		E639537A1C3A7E3B00AEC8E1 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
 		E639537B1C3A7E3B00AEC8E1 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
 		E639537E1C3A824600AEC8E1 /* detail_defultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail_defultImage.png; sourceTree = "<group>"; };
+		E63953851C3A894500AEC8E1 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		E63953861C3A894500AEC8E1 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		E63953891C3A8A0A00AEC8E1 /* HotMovieController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotMovieController.h; sourceTree = "<group>"; };
+		E639538A1C3A8A0A00AEC8E1 /* HotMovieController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotMovieController.m; sourceTree = "<group>"; };
+		E639538C1C3A8A3500AEC8E1 /* NewFilmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFilmController.h; sourceTree = "<group>"; };
+		E639538D1C3A8A3500AEC8E1 /* NewFilmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFilmController.m; sourceTree = "<group>"; };
+		E639538F1C3A8ACD00AEC8E1 /* MovieMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieMenuView.h; sourceTree = "<group>"; };
+		E63953901C3A8ACD00AEC8E1 /* MovieMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieMenuView.m; sourceTree = "<group>"; };
 		E64A13BA1C2A7BF500AC0750 /* RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendModel.h; sourceTree = "<group>"; };
 		E64A13BB1C2A7BF500AC0750 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
 		E64A13BD1C2A7D1B00AC0750 /* ActivityOwnerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOwnerModel.h; sourceTree = "<group>"; };
@@ -388,8 +399,6 @@
 		E6E2B3FA1C2943F5003F2C4B /* MainTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabbarController.m; sourceTree = "<group>"; };
 		E6E2B4161C294582003F2C4B /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		E6E2B4171C294582003F2C4B /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
-		E6E2B4191C294597003F2C4B /* NearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyViewController.h; sourceTree = "<group>"; };
-		E6E2B41A1C294597003F2C4B /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
 		E6E2B41C1C2945A3003F2C4B /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		E6E2B41D1C2945A3003F2C4B /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		E6E2B4221C2946F5003F2C4B /* DoubanWorlds.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubanWorlds.pch; sourceTree = "<group>"; };
@@ -727,6 +736,61 @@
 			path = DACircularProgress;
 			sourceTree = "<group>";
 		};
+		E63953801C3A890500AEC8E1 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				E63953811C3A890500AEC8E1 /* Controller */,
+				E63953821C3A890500AEC8E1 /* Model */,
+				E63953831C3A890500AEC8E1 /* Tool */,
+				E63953841C3A890500AEC8E1 /* View */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		E63953811C3A890500AEC8E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E63953881C3A89F200AEC8E1 /* HotAndNew */,
+				E63953851C3A894500AEC8E1 /* MovieViewController.h */,
+				E63953861C3A894500AEC8E1 /* MovieViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E63953821C3A890500AEC8E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E63953831C3A890500AEC8E1 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		E63953841C3A890500AEC8E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E639538F1C3A8ACD00AEC8E1 /* MovieMenuView.h */,
+				E63953901C3A8ACD00AEC8E1 /* MovieMenuView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E63953881C3A89F200AEC8E1 /* HotAndNew */ = {
+			isa = PBXGroup;
+			children = (
+				E63953891C3A8A0A00AEC8E1 /* HotMovieController.h */,
+				E639538A1C3A8A0A00AEC8E1 /* HotMovieController.m */,
+				E639538C1C3A8A3500AEC8E1 /* NewFilmController.h */,
+				E639538D1C3A8A3500AEC8E1 /* NewFilmController.m */,
+			);
+			path = HotAndNew;
+			sourceTree = "<group>";
+		};
 		E64A13C01C2A884300AC0750 /* RecommendCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -880,10 +944,10 @@
 		E6E2B3F31C2943F5003F2C4B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E63953801C3A890500AEC8E1 /* Movie */,
 				E6E964EB1C3A5DD100A1650C /* OAuth(授权) */,
 				E6E2B4151C294514003F2C4B /* Other */,
 				E6E2B4011C2944FE003F2C4B /* Me */,
-				E6E2B4061C2944FE003F2C4B /* Nearby */,
 				E6E2B40B1C2944FE003F2C4B /* Recommend(推荐) */,
 				E6E2B3F41C2943F5003F2C4B /* Lib */,
 				E6E2B3F51C2943F5003F2C4B /* Main */,
@@ -1002,47 +1066,6 @@
 			sourceTree = "<group>";
 		};
 		E6E2B4051C2944FE003F2C4B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		E6E2B4061C2944FE003F2C4B /* Nearby */ = {
-			isa = PBXGroup;
-			children = (
-				E6E2B4071C2944FE003F2C4B /* Controller */,
-				E6E2B4081C2944FE003F2C4B /* Model */,
-				E6E2B4091C2944FE003F2C4B /* Tool */,
-				E6E2B40A1C2944FE003F2C4B /* View */,
-			);
-			path = Nearby;
-			sourceTree = "<group>";
-		};
-		E6E2B4071C2944FE003F2C4B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				E6E2B4191C294597003F2C4B /* NearbyViewController.h */,
-				E6E2B41A1C294597003F2C4B /* NearbyViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		E6E2B4081C2944FE003F2C4B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E6E2B4091C2944FE003F2C4B /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
-		E6E2B40A1C2944FE003F2C4B /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1513,6 +1536,7 @@
 				E654867A1C30D35600A47EC1 /* HotCityCell.m in Sources */,
 				E6F753841C3250E600E570C2 /* YLYSearchBar.m in Sources */,
 				E63953741C3A7DB800AEC8E1 /* UIView+ZLExtension.m in Sources */,
+				E639538B1C3A8A0A00AEC8E1 /* HotMovieController.m in Sources */,
 				E6F753761C324AA700E570C2 /* ChineseInclude.m in Sources */,
 				E65486831C313EDC00A47EC1 /* LocationManager.m in Sources */,
 				E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */,
@@ -1536,9 +1560,11 @@
 				E697A48D1C2A72280039A839 /* SVProgressHUDManager.m in Sources */,
 				E63953611C3A7D4E00AEC8E1 /* ZLPhotoPickerImageView.m in Sources */,
 				E65486731C30CA3500A47EC1 /* UIView+ViewController.m in Sources */,
+				E63953911C3A8ACD00AEC8E1 /* MovieMenuView.m in Sources */,
 				E63953351C3A7CE900AEC8E1 /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				E639535B1C3A7D4E00AEC8E1 /* ZLPhotoPickerGroupViewController.m in Sources */,
 				E65486741C30CA3500A47EC1 /* UIViewExt.m in Sources */,
+				E63953871C3A894500AEC8E1 /* MovieViewController.m in Sources */,
 				E611465A1C2D15F400CF0391 /* YLYTableViewIndexView.m in Sources */,
 				E63953581C3A7D4E00AEC8E1 /* ZLPhotoPickerGroup.m in Sources */,
 				E63953321C3A7CE900AEC8E1 /* ZLPhotoPickerBrowserPhoto.m in Sources */,
@@ -1555,6 +1581,7 @@
 				E6F753771C324AA700E570C2 /* ChineseToPinyinResource.m in Sources */,
 				E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */,
 				E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */,
+				E639538E1C3A8A3500AEC8E1 /* NewFilmController.m in Sources */,
 				E65486591C30C4ED00A47EC1 /* BaseViewController.m in Sources */,
 				E6CF5CEF1C33D7B8002F0D92 /* DetailFirstRowCell.m in Sources */,
 				E65486621C30C82200A47EC1 /* PickCityViewController.m in Sources */,
@@ -1577,7 +1604,6 @@
 				E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */,
 				E6E2B4001C2943F5003F2C4B /* MainTabbarController.m in Sources */,
 				E616820F1C35090E008F77F2 /* ActivityTypeCell.m in Sources */,
-				E6E2B41B1C294597003F2C4B /* NearbyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

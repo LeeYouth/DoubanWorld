@@ -48,5 +48,9 @@ typedef void (^ActivityBlock)(RecommendModel *activityModel);
  */
 +(void)getActivityInfo:(NSString *)activityID activityBlock:(ActivityBlock)activityBlock;
 
+/**
+ *  <#Description#>
+ */
+
 
 @end

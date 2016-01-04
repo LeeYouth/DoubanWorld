@@ -1,18 +1,18 @@
 //
-//  NearbyViewController.m
+//  NewFilmController.m
 //  DoubanWorlds
 //
-//  Created by LYoung on 15/12/22.
-//  Copyright © 2015年 LYoung. All rights reserved.
+//  Created by LYoung on 16/1/4.
+//  Copyright © 2016年 LYoung. All rights reserved.
 //
 
-#import "NearbyViewController.h"
+#import "NewFilmController.h"
 
-@interface NearbyViewController ()
+@interface NewFilmController ()
 
 @end
 
-@implementation NearbyViewController
+@implementation NewFilmController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
