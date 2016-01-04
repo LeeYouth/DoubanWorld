@@ -21,6 +21,7 @@
 
 /**  string 授权用户的UID */
 @property (nonatomic,copy) NSString *douban_user_id;
+
 - (id)initWithDict:(NSDictionary *)dic;
 
 @end
