@@ -17,12 +17,12 @@
 #import "ActivityDetailController.h"
 #import "DXPopover.h"
 #import "ActivityTypeView.h"
+#import "RecommendHeadView.h"
 
 
 @interface RecommendViewController ()
 {
     NSInteger _startNum;
-    UIButton *_locationBtn;
     UIButton *_titleLBtn;
 }
 
@@ -53,8 +53,6 @@
     
     [self addRefreshView];
     
-    [self initLeftButton];
-
     [self requestData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityButtonClick:) name:kCityButtonClick object:nil];
@@ -64,27 +62,15 @@
     
     [self setupNavTitleView];
     
+    [self setTableHeadView];
+    
 }
 
-- (void)initLeftButton{
-    
-    //定位到的城市
-    _locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_locationBtn setTitle:@"北京" forState:UIControlStateNormal];
-    [_locationBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [_locationBtn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-    [_locationBtn setImage:[UIImage imageNamed:@"LuckyMoney_ChangeArrow"] forState:UIControlStateNormal];
-    [_locationBtn addTarget:self action:@selector(pushPickViewController) forControlEvents:UIControlEventTouchUpInside];
-    _locationBtn.frame = CGRectMake(0, 0, 70, 40);
-    [_locationBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
-    [_locationBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
-    
-    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:_locationBtn];
-    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    negativeSpacer.width = -20;
-    self.navigationItem.leftBarButtonItems = @[negativeSpacer, buttonItem];
-
+-(void)setTableHeadView{
+    RecommendHeadView *headView = [[RecommendHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 70)];
+    _tableView.tableHeaderView =headView;
 }
+
 
 - (void)requestData{
     
@@ -151,10 +137,6 @@
     }
 }
 
-#pragma mark - 设置左边按钮
-- (void)setLeftBtnTitle:(NSString *)title{
-    [_locationBtn setTitle:title forState:UIControlStateNormal];
-}
 #pragma mark - 设置title
 - (void)setTitleBtnTitle:(NSString *)title{
     [_titleLBtn setTitle:title forState:UIControlStateNormal];
@@ -166,15 +148,11 @@
 
     if (cname) {
         NSString *ID = [LYCityHandler getCityIDByName:cname];
-        [_locationBtn setTitle:cname forState:UIControlStateNormal];
 
         self.locID = [ID copy];
         
         [self refreshDataLocID:self.locID];
         
-        [[NSUserDefaults standardUserDefaults] setValue:cname forKey:kCityButtonClick];
-
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kIsCityButtonClick];
     }
 }
 
@@ -185,8 +163,7 @@
     NSString *acType = note.userInfo[kTypeButtonClick];
     
     if (acType) {
-        NSString *cname = [LYCityHandler getCityNameByUID:self.locID];
-        [_locationBtn setTitle:cname forState:UIControlStateNormal];
+       
         [self refreshDataLocID:self.locID];
     }
 }
@@ -208,9 +185,11 @@
     _tableView                 = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64 - 44)];
     _tableView.delegate        = (id<UITableViewDelegate>)self;
     _tableView.dataSource      = (id<UITableViewDataSource>) self;
-    _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _tableView.backgroundColor = KBackgroundColor;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
+    
+
 }
 
 - (void)addRefreshView {
@@ -224,7 +203,7 @@
 
 - (void)refreshDataLocID:(NSString *)cityID{
     NSString *acType = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentActiveType];
-    [self setLeftBtnTitle:[LYCityHandler getCityNameByUID:cityID]];
+
     NSDictionary *dict = [[NSDictionary alloc] initWithObjects:@[@"热门",@"音乐",@"戏剧",@"展览",@"讲座",@"聚会",@"运动",@"旅行",@"公益",@"电影"] forKeys:@[@"all",@"music",@"drama",@"exhibition",@"salon",@"party", @"sports", @"travel", @"commonweal",@"film"] ];
     [self setTitleBtnTitle:[dict objectForKey:acType]];
     __weak __typeof(self)weakSelf = self;

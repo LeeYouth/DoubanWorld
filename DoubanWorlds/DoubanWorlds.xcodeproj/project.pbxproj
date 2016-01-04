@@ -106,6 +106,7 @@
 		E6E2B4211C2945BE003F2C4B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4201C2945BE003F2C4B /* SearchViewController.m */; };
 		E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4241C294714003F2C4B /* AppDelegate.m */; };
 		E6E51D5C1C2BE29800DABA5D /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */; };
+		E6E964DD1C39F30F00A1650C /* RecommendHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E964DC1C39F30F00A1650C /* RecommendHeadView.m */; };
 		E6F7535E1C32383400E570C2 /* AllCityID in Resources */ = {isa = PBXBuildFile; fileRef = E6F753591C32383400E570C2 /* AllCityID */; };
 		E6F7535F1C32383400E570C2 /* AllCityName in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535A1C32383400E570C2 /* AllCityName */; };
 		E6F753601C32383400E570C2 /* hotcityCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535B1C32383400E570C2 /* hotcityCode.plist */; };
@@ -306,6 +307,8 @@
 		E6E2B4281C2948AB003F2C4B /* URLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLDefines.h; sourceTree = "<group>"; };
 		E6E51D5A1C2BE29800DABA5D /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		E6E964DB1C39F30F00A1650C /* RecommendHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHeadView.h; sourceTree = "<group>"; };
+		E6E964DC1C39F30F00A1650C /* RecommendHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHeadView.m; sourceTree = "<group>"; };
 		E6F753591C32383400E570C2 /* AllCityID */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllCityID; sourceTree = "<group>"; };
 		E6F7535A1C32383400E570C2 /* AllCityName */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllCityName; sourceTree = "<group>"; };
 		E6F7535B1C32383400E570C2 /* hotcityCode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotcityCode.plist; sourceTree = "<group>"; };
@@ -500,6 +503,8 @@
 			children = (
 				E64A13C11C2A8BF700AC0750 /* HotActivityCell.h */,
 				E64A13C21C2A8BF700AC0750 /* HotActivityCell.m */,
+				E6E964DB1C39F30F00A1650C /* RecommendHeadView.h */,
+				E6E964DC1C39F30F00A1650C /* RecommendHeadView.m */,
 			);
 			path = RecommendCells;
 			sourceTree = "<group>";
@@ -1278,6 +1283,7 @@
 				E65486621C30C82200A47EC1 /* PickCityViewController.m in Sources */,
 				E65486631C30C82200A47EC1 /* PickOverseasController.m in Sources */,
 				E6F7537B1C324AA700E570C2 /* PinYinForObjc.m in Sources */,
+				E6E964DD1C39F30F00A1650C /* RecommendHeadView.m in Sources */,
 				E65486611C30C82200A47EC1 /* PickChinaCityController.m in Sources */,
 				E611AACC1C2A362D00A1107C /* LDRefreshFooterView.m in Sources */,
 				E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */,
