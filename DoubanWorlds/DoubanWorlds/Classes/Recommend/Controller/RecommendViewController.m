@@ -11,7 +11,6 @@
 #import "RecommendHttpTool.h"
 #import "RecommendModel.h"
 #import "HotActivityCell.h"
-#import "PickCityViewController.h"
 #import "LocationManager.h"
 #import "LYCityHandler.h"
 #import "ActivityDetailController.h"
@@ -62,10 +61,9 @@
     
     [self setupNavTitleView];
     
-    [self setTableHeadView];
-    
 }
 
+#pragma mark - 设置头部
 -(void)setTableHeadView{
     RecommendHeadView *headView = [[RecommendHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 70)];
     _tableView.tableHeaderView =headView;
@@ -168,12 +166,6 @@
     }
 }
 
-
-- (void)pushPickViewController{
-    PickCityViewController *pickVC = [[PickCityViewController alloc] init];
-    [self.navigationController pushViewController:pickVC animated:YES];
-}
-
 - (void)initTableView{
     self.view.backgroundColor = [UIColor whiteColor];
 
@@ -213,6 +205,8 @@
             
             _resultArray = resultArray;
             [weakSelf.tableView reloadData];
+            
+            [self setTableHeadView];
 
         }];
         [weakSelf.tableView.refreshHeader endRefresh];
