@@ -107,7 +107,6 @@
     [_tableView addSubview: headView];
     
 }
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat yOffset  = scrollView.contentOffset.y;
     if (yOffset < -KActivityDetailHeadH ) {
