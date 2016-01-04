@@ -38,13 +38,10 @@
     NSArray *buttonImagesSelected = @[@"tabbar_mainframeHL", @"tabbar_discoverHL", @"tabbar_contactsHL",@"tabbar_meHL"];
     
     RecommendViewController *recommendVC = [[RecommendViewController alloc] init];
-    [self addChildViewController:recommendVC title:@"推荐" image:buttonImages[0] selectedImage:buttonImagesSelected[0]];
+    [self addChildViewController:recommendVC title:@"同城" image:buttonImages[0] selectedImage:buttonImagesSelected[0]];
     
     NearbyViewController *nearbyVC = [[NearbyViewController alloc] init];
     [self addChildViewController:nearbyVC title:@"附近" image:buttonImages[1] selectedImage:buttonImagesSelected[1]];
-    
-    SearchViewController *searchVC = [[SearchViewController alloc] init];
-    [self addChildViewController:searchVC title:@"搜索" image:buttonImages[2] selectedImage:buttonImagesSelected[2]];
     
     MeViewController *meVC = [[MeViewController alloc] init];
     [self addChildViewController:meVC title:@"我" image:buttonImages[3] selectedImage:buttonImagesSelected[3]];
