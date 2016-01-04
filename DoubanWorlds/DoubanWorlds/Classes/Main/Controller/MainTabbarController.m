@@ -9,7 +9,6 @@
 #import "MainTabbarController.h"
 #import "MainNavgationController.h"
 #import "MeViewController.h"
-#import "SearchViewController.h"
 #import "RecommendViewController.h"
 #import "NearbyViewController.h"
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)

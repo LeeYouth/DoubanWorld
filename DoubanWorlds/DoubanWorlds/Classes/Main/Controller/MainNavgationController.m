@@ -14,6 +14,14 @@
 {
     [super viewDidLoad];
     
+//    UIImage *bgImage = nil;
+//    if (iOS7) {
+//        bgImage = [AppTools imageWithColor:TheThemeColor];
+//    } else {
+//        bgImage = [UIImage imageNamed:@"navBackgroundImg"];
+//    }
+//    bgImage = [bgImage stretchableImageWithLeftCapWidth:0.5 topCapHeight:0.5];
+//    [self.navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
    
     self.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
     

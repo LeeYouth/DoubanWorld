@@ -103,10 +103,13 @@
 		E6E2B4181C294582003F2C4B /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4171C294582003F2C4B /* MeViewController.m */; };
 		E6E2B41B1C294597003F2C4B /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B41A1C294597003F2C4B /* NearbyViewController.m */; };
 		E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B41D1C2945A3003F2C4B /* RecommendViewController.m */; };
-		E6E2B4211C2945BE003F2C4B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4201C2945BE003F2C4B /* SearchViewController.m */; };
 		E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2B4241C294714003F2C4B /* AppDelegate.m */; };
 		E6E51D5C1C2BE29800DABA5D /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */; };
 		E6E964DD1C39F30F00A1650C /* RecommendHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E964DC1C39F30F00A1650C /* RecommendHeadView.m */; };
+		E6E964F21C3A5DFD00A1650C /* OAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E964F11C3A5DFD00A1650C /* OAuthViewController.m */; };
+		E6E964F51C3A613A00A1650C /* LYAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E964F41C3A613A00A1650C /* LYAccount.m */; };
+		E6E964F81C3A61F600A1650C /* AccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E964F71C3A61F600A1650C /* AccountTool.m */; };
+		E6E964FB1C3A658800A1650C /* MeHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E964FA1C3A658800A1650C /* MeHttpTool.m */; };
 		E6F7535E1C32383400E570C2 /* AllCityID in Resources */ = {isa = PBXBuildFile; fileRef = E6F753591C32383400E570C2 /* AllCityID */; };
 		E6F7535F1C32383400E570C2 /* AllCityName in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535A1C32383400E570C2 /* AllCityName */; };
 		E6F753601C32383400E570C2 /* hotcityCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F7535B1C32383400E570C2 /* hotcityCode.plist */; };
@@ -298,8 +301,6 @@
 		E6E2B41A1C294597003F2C4B /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
 		E6E2B41C1C2945A3003F2C4B /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		E6E2B41D1C2945A3003F2C4B /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
-		E6E2B41F1C2945BE003F2C4B /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		E6E2B4201C2945BE003F2C4B /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		E6E2B4221C2946F5003F2C4B /* DoubanWorlds.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubanWorlds.pch; sourceTree = "<group>"; };
 		E6E2B4231C294714003F2C4B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6E2B4241C294714003F2C4B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -309,6 +310,14 @@
 		E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		E6E964DB1C39F30F00A1650C /* RecommendHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHeadView.h; sourceTree = "<group>"; };
 		E6E964DC1C39F30F00A1650C /* RecommendHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHeadView.m; sourceTree = "<group>"; };
+		E6E964F01C3A5DFD00A1650C /* OAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthViewController.h; sourceTree = "<group>"; };
+		E6E964F11C3A5DFD00A1650C /* OAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthViewController.m; sourceTree = "<group>"; };
+		E6E964F31C3A613A00A1650C /* LYAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYAccount.h; sourceTree = "<group>"; };
+		E6E964F41C3A613A00A1650C /* LYAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYAccount.m; sourceTree = "<group>"; };
+		E6E964F61C3A61F600A1650C /* AccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTool.h; sourceTree = "<group>"; };
+		E6E964F71C3A61F600A1650C /* AccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTool.m; sourceTree = "<group>"; };
+		E6E964F91C3A658800A1650C /* MeHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeHttpTool.h; sourceTree = "<group>"; };
+		E6E964FA1C3A658800A1650C /* MeHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeHttpTool.m; sourceTree = "<group>"; };
 		E6F753591C32383400E570C2 /* AllCityID */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllCityID; sourceTree = "<group>"; };
 		E6F7535A1C32383400E570C2 /* AllCityName */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AllCityName; sourceTree = "<group>"; };
 		E6F7535B1C32383400E570C2 /* hotcityCode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotcityCode.plist; sourceTree = "<group>"; };
@@ -647,11 +656,11 @@
 		E6E2B3F31C2943F5003F2C4B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E6E964EB1C3A5DD100A1650C /* OAuth(授权) */,
 				E6E2B4151C294514003F2C4B /* Other */,
 				E6E2B4011C2944FE003F2C4B /* Me */,
 				E6E2B4061C2944FE003F2C4B /* Nearby */,
 				E6E2B40B1C2944FE003F2C4B /* Recommend(推荐) */,
-				E6E2B4101C2944FE003F2C4B /* Search */,
 				E6E2B3F41C2943F5003F2C4B /* Lib */,
 				E6E2B3F51C2943F5003F2C4B /* Main */,
 			);
@@ -755,6 +764,8 @@
 		E6E2B4041C2944FE003F2C4B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				E6E964F91C3A658800A1650C /* MeHttpTool.h */,
+				E6E964FA1C3A658800A1650C /* MeHttpTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -875,47 +886,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		E6E2B4101C2944FE003F2C4B /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				E6E2B4111C2944FE003F2C4B /* Controller */,
-				E6E2B4121C2944FE003F2C4B /* Model */,
-				E6E2B4131C2944FE003F2C4B /* Tool */,
-				E6E2B4141C2944FE003F2C4B /* View */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		E6E2B4111C2944FE003F2C4B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				E6E2B41F1C2945BE003F2C4B /* SearchViewController.h */,
-				E6E2B4201C2945BE003F2C4B /* SearchViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		E6E2B4121C2944FE003F2C4B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E6E2B4131C2944FE003F2C4B /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
-		E6E2B4141C2944FE003F2C4B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		E6E2B4151C294514003F2C4B /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -953,6 +923,52 @@
 				E6E51D5B1C2BE29800DABA5D /* NSString+Extension.m */,
 			);
 			path = category;
+			sourceTree = "<group>";
+		};
+		E6E964EB1C3A5DD100A1650C /* OAuth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+				E6E964EC1C3A5DD100A1650C /* Controller */,
+				E6E964ED1C3A5DD100A1650C /* Model */,
+				E6E964EE1C3A5DD100A1650C /* Tool */,
+				E6E964EF1C3A5DD100A1650C /* View */,
+			);
+			name = "OAuth(授权)";
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		E6E964EC1C3A5DD100A1650C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E6E964F01C3A5DFD00A1650C /* OAuthViewController.h */,
+				E6E964F11C3A5DFD00A1650C /* OAuthViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E6E964ED1C3A5DD100A1650C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6E964F31C3A613A00A1650C /* LYAccount.h */,
+				E6E964F41C3A613A00A1650C /* LYAccount.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E6E964EE1C3A5DD100A1650C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E6E964F61C3A61F600A1650C /* AccountTool.h */,
+				E6E964F71C3A61F600A1650C /* AccountTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		E6E964EF1C3A5DD100A1650C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E6F753581C32383400E570C2 /* PlistRes */ = {
@@ -1239,16 +1255,17 @@
 				E6E2B3FF1C2943F5003F2C4B /* MainNavgationController.m in Sources */,
 				E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */,
 				E6F753801C324F7500E570C2 /* SearchCityController.m in Sources */,
+				E6E964F81C3A61F600A1650C /* AccountTool.m in Sources */,
 				E65486771C30D34200A47EC1 /* LocationCityCell.m in Sources */,
 				E616820C1C35059D008F77F2 /* ActivityTypeView.m in Sources */,
 				E697A48C1C2A72280039A839 /* SVProgressHUD.m in Sources */,
-				E6E2B4211C2945BE003F2C4B /* SearchViewController.m in Sources */,
 				E6CF5CDA1C33760A002F0D92 /* UIImage+ImageEffects.m in Sources */,
 				E697A47A1C2A3F7D0039A839 /* HttpTools.m in Sources */,
 				E6E51D5C1C2BE29800DABA5D /* NSString+Extension.m in Sources */,
 				E64A13C61C2A918C00AC0750 /* AppTools.m in Sources */,
 				E6CF5CF51C33F65B002F0D92 /* DetailContentCell.m in Sources */,
 				E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */,
+				E6E964FB1C3A658800A1650C /* MeHttpTool.m in Sources */,
 				E6CF5CEA1C33D11D002F0D92 /* DetailHeadView.m in Sources */,
 				E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */,
 				E654867A1C30D35600A47EC1 /* HotCityCell.m in Sources */,
@@ -1256,8 +1273,10 @@
 				E6F753761C324AA700E570C2 /* ChineseInclude.m in Sources */,
 				E65486831C313EDC00A47EC1 /* LocationManager.m in Sources */,
 				E697A48A1C2A72280039A839 /* SVIndefiniteAnimatedView.m in Sources */,
+				E6E964F21C3A5DFD00A1650C /* OAuthViewController.m in Sources */,
 				E6E2B3B41C2942F4003F2C4B /* main.m in Sources */,
 				E6F7537C1C324AA700E570C2 /* PinyinHelper.m in Sources */,
+				E6E964F51C3A613A00A1650C /* LYAccount.m in Sources */,
 				E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */,
 				E64A13BC1C2A7BF500AC0750 /* RecommendModel.m in Sources */,
 				E6E2B4251C294714003F2C4B /* AppDelegate.m in Sources */,
