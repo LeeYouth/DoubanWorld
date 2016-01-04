@@ -26,7 +26,6 @@
             if (success) {
                 success(user);
             }
-            
         }
     } failure:^(NSError *error) {
         NSLog(@"resultDicterror = %@",error);
