@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E60CD0351C3B984F001BD388 /* MovieHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0341C3B984F001BD388 /* MovieHttpTool.m */; };
+		E60CD03B1C3B9E4D001BD388 /* CastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD03A1C3B9E4D001BD388 /* CastModel.m */; };
+		E60CD03E1C3B9F18001BD388 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD03D1C3B9F18001BD388 /* MovieModel.m */; };
+		E60CD0411C3B9F6F001BD388 /* RatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0401C3B9F6F001BD388 /* RatingModel.m */; };
+		E60CD0441C3BA4C4001BD388 /* AvatarsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0431C3BA4C4001BD388 /* AvatarsModel.m */; };
 		E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */; };
 		E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146531C2CE39600CF0391 /* CityIndexCell.m */; };
 		E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146561C2CEA2800CF0391 /* LYCityHandler.m */; };
@@ -184,6 +189,16 @@
 		339FE046F528EA539C511ED1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C275BF2A64F19DF9E13FE9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7A78E1E9DF9917575AB4B510 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E60CD0331C3B984F001BD388 /* MovieHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieHttpTool.h; sourceTree = "<group>"; };
+		E60CD0341C3B984F001BD388 /* MovieHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieHttpTool.m; sourceTree = "<group>"; };
+		E60CD0391C3B9E4D001BD388 /* CastModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CastModel.h; sourceTree = "<group>"; };
+		E60CD03A1C3B9E4D001BD388 /* CastModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CastModel.m; sourceTree = "<group>"; };
+		E60CD03C1C3B9F18001BD388 /* MovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieModel.h; sourceTree = "<group>"; };
+		E60CD03D1C3B9F18001BD388 /* MovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieModel.m; sourceTree = "<group>"; };
+		E60CD03F1C3B9F6F001BD388 /* RatingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingModel.h; sourceTree = "<group>"; };
+		E60CD0401C3B9F6F001BD388 /* RatingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingModel.m; sourceTree = "<group>"; };
+		E60CD0421C3BA4C4001BD388 /* AvatarsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarsModel.h; sourceTree = "<group>"; };
+		E60CD0431C3BA4C4001BD388 /* AvatarsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarsModel.m; sourceTree = "<group>"; };
 		E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
 		E61146521C2CE39600CF0391 /* CityIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityIndexCell.h; sourceTree = "<group>"; };
@@ -761,6 +776,14 @@
 		E63953821C3A890500AEC8E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E60CD0421C3BA4C4001BD388 /* AvatarsModel.h */,
+				E60CD0431C3BA4C4001BD388 /* AvatarsModel.m */,
+				E60CD03F1C3B9F6F001BD388 /* RatingModel.h */,
+				E60CD0401C3B9F6F001BD388 /* RatingModel.m */,
+				E60CD0391C3B9E4D001BD388 /* CastModel.h */,
+				E60CD03A1C3B9E4D001BD388 /* CastModel.m */,
+				E60CD03C1C3B9F18001BD388 /* MovieModel.h */,
+				E60CD03D1C3B9F18001BD388 /* MovieModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -768,6 +791,8 @@
 		E63953831C3A890500AEC8E1 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				E60CD0331C3B984F001BD388 /* MovieHttpTool.h */,
+				E60CD0341C3B984F001BD388 /* MovieHttpTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1513,6 +1538,7 @@
 				E6E2B3FF1C2943F5003F2C4B /* MainNavgationController.m in Sources */,
 				E639537D1C3A7E3B00AEC8E1 /* DALabeledCircularProgressView.m in Sources */,
 				E639536B1C3A7D7C00AEC8E1 /* ZLCamera.m in Sources */,
+				E60CD03E1C3B9F18001BD388 /* MovieModel.m in Sources */,
 				E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */,
 				E6F753801C324F7500E570C2 /* SearchCityController.m in Sources */,
 				E6E964F81C3A61F600A1650C /* AccountTool.m in Sources */,
@@ -1564,8 +1590,10 @@
 				E63953911C3A8ACD00AEC8E1 /* MovieMenuView.m in Sources */,
 				E63953351C3A7CE900AEC8E1 /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				E639535B1C3A7D4E00AEC8E1 /* ZLPhotoPickerGroupViewController.m in Sources */,
+				E60CD0411C3B9F6F001BD388 /* RatingModel.m in Sources */,
 				E65486741C30CA3500A47EC1 /* UIViewExt.m in Sources */,
 				E63953871C3A894500AEC8E1 /* MovieViewController.m in Sources */,
+				E60CD0441C3BA4C4001BD388 /* AvatarsModel.m in Sources */,
 				E611465A1C2D15F400CF0391 /* YLYTableViewIndexView.m in Sources */,
 				E63953581C3A7D4E00AEC8E1 /* ZLPhotoPickerGroup.m in Sources */,
 				E63953321C3A7CE900AEC8E1 /* ZLPhotoPickerBrowserPhoto.m in Sources */,
@@ -1580,6 +1608,7 @@
 				E63953331C3A7CE900AEC8E1 /* ZLPhotoRect.m in Sources */,
 				E639536C1C3A7D7C00AEC8E1 /* ZLCameraImageView.m in Sources */,
 				E6F753771C324AA700E570C2 /* ChineseToPinyinResource.m in Sources */,
+				E60CD03B1C3B9E4D001BD388 /* CastModel.m in Sources */,
 				E697A48E1C2A72280039A839 /* SVRadialGradientLayer.m in Sources */,
 				E6E2B41E1C2945A3003F2C4B /* RecommendViewController.m in Sources */,
 				E639538E1C3A8A3500AEC8E1 /* NewFilmController.m in Sources */,
@@ -1591,6 +1620,7 @@
 				E6E964DD1C39F30F00A1650C /* RecommendHeadView.m in Sources */,
 				E63953361C3A7CE900AEC8E1 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				E65486611C30C82200A47EC1 /* PickChinaCityController.m in Sources */,
+				E60CD0351C3B984F001BD388 /* MovieHttpTool.m in Sources */,
 				E611AACC1C2A362D00A1107C /* LDRefreshFooterView.m in Sources */,
 				E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */,
 				E63953591C3A7D4E00AEC8E1 /* ZLNavigationController.m in Sources */,

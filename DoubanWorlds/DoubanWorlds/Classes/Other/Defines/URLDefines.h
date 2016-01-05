@@ -28,5 +28,7 @@
 #define ActivityInfo_URL [NSString stringWithFormat:@"%@/v2/event/",DoubanWorld_BaseURL]
 //4.获取用户信息
 #define UserInfo_URL [NSString stringWithFormat:@"%@/v2/user/",DoubanWorld_BaseURL]
+//5.热门电影
+#define HotMovie_URL [NSString stringWithFormat:@"%@/v2/movie/in_theaters",DoubanWorld_BaseURL]
 
 #endif

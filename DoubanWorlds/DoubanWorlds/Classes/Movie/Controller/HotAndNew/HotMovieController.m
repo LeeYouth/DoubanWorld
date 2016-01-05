@@ -7,21 +7,40 @@
 //  
 
 #import "HotMovieController.h"
+#import "MovieHttpTool.h"
+#import "MovieModel.h"
 
 @interface HotMovieController ()
 
+@property (nonatomic, strong) NSMutableArray *resultArray;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
 
 @implementation HotMovieController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.resultArray = [NSMutableArray arrayWithCapacity:1];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
     [self initTableView];
     
+    [self requestData];
+    
+}
+
+-(void)requestData{
+    [MovieHttpTool getHotMovieWithStart:0 arrayBlock:^(NSMutableArray *resultArray) {
+        _resultArray = resultArray;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)initTableView{
@@ -38,7 +57,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return _resultArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -46,12 +65,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    MovieModel *model = [_resultArray objectAtIndex:indexPath.row];
     static NSString *cellIndertifer = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndertifer];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndertifer];
     }
-    cell.textLabel.text = @"测试数据====";
+    cell.textLabel.text = model.title;
     return cell;
     
 }
