@@ -25,6 +25,8 @@
     UILabel *_titleLabel;
     UIView *_starView;
     UIView *_lineView;
+    
+    UILabel *_nocommentLabel;//
 }
 
 @end
@@ -63,7 +65,6 @@
     _iconImageView = [[UIImageView alloc] init];
     [self.contentView addSubview:_iconImageView];
     
-    
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.backgroundColor = [UIColor clearColor];
@@ -96,6 +97,14 @@
     _lineView = [[UIView alloc] init];
     _lineView.backgroundColor = [AppTools colorWithHexString:@"#F0F0F0"];
     [self.contentView addSubview:_lineView];
+    
+    
+    _nocommentLabel = [[UILabel alloc] init];
+    _nocommentLabel.backgroundColor = [UIColor clearColor];
+    _nocommentLabel.textColor = [UIColor lightGrayColor];
+    _nocommentLabel.font = [UIFont systemFontOfSize:IntroduceFont];
+    _nocommentLabel.text = @"暂无评分";
+    [self.contentView addSubview:_nocommentLabel];
 
 }
 
@@ -151,6 +160,14 @@
         make.top.equalTo(self.contentView.mas_bottom).offset(offSet);
     }];
     
+    
+    [_nocommentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_titleLabel.mas_bottom).offset(padding);
+        make.size.mas_equalTo(CGSizeMake(w, 20));
+        make.left.equalTo(_titleLabel.mas_left);
+
+    }];
+    
 }
 
 -(void)setModel:(MovieModel *)model{
@@ -160,7 +177,17 @@
     
     _titleLabel.text = model.title;
     
-    _averageLabel.text = model.rating.average;
+    
+    if ([model.rating.average intValue] > 0) {
+        _averageLabel.text = model.rating.average;
+        _nocommentLabel.hidden = YES;
+        _starView.hidden = NO;
+        _averageLabel.hidden = NO;
+    }else{
+        _nocommentLabel.hidden = NO;
+        _starView.hidden = YES;
+        _averageLabel.hidden = YES;
+    }
     
     NSMutableArray *dirArr = [[NSMutableArray alloc] init];
     for (int i = 0; i < model.directors.count; i++) {

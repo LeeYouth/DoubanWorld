@@ -7,14 +7,27 @@
 //
 
 #import "NewFilmController.h"
+#import "MovieDetailController.h"
+#import "MovieHttpTool.h"
+#import "MovieModel.h"
+#import "HotMovieCell.h"
 
 @interface NewFilmController ()
 
+@property (nonatomic, strong) NSMutableArray *resultArray;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
 
 @implementation NewFilmController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.resultArray = [NSMutableArray arrayWithCapacity:1];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,12 +35,21 @@
     
     [self initTableView];
     
+    [self requestData];
+
+}
+
+-(void)requestData{
+    [MovieHttpTool getComingsoonWithStart:0 arrayBlock:^(NSMutableArray *resultArray) {
+        _resultArray = resultArray;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)initTableView{
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT )];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - MovieMenuHeight - NAV_BAR_HEIGHT - TAB_BAR_HEIGHT)];
     _tableView.delegate = (id<UITableViewDelegate>)self;
     _tableView.dataSource = (id<UITableViewDataSource>) self;;
     _tableView.showsHorizontalScrollIndicator = NO;
@@ -38,28 +60,26 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return _resultArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    MovieModel *model = [_resultArray objectAtIndex:indexPath.row];
+    return [HotMovieCell getCellHeight:model];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIndertifer = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndertifer];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndertifer];
-    }
-    cell.textLabel.text = @"测试数据====";
-    return cell;
-    
+    HotMovieCell *hotCell = [HotMovieCell cellWithTableView:tableView];
+    hotCell.model = [_resultArray objectAtIndex:indexPath.row];
+    return hotCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    MovieDetailController *detailVC = [[MovieDetailController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:YES];
+
 }
 
 @end

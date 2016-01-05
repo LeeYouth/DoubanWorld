@@ -16,11 +16,14 @@
     self = [super init];
     if (self) {
         [self setValuesForKeysWithDictionary:dic];
-        if (dic[@"id"]) {
-            self.ID = [NSString stringWithFormat:@"%@",dic[@"id"]];
-        }
         
-        self.avatars = [[AvatarsModel alloc] initWithDictionary:dic[@"avatars"]];
+        self.ID = [NSString stringWithFormat:@"%@",dic[@"id"]];
+        self.alt = [NSString stringWithFormat:@"%@",dic[@"alt"]];
+        self.name = [NSString stringWithFormat:@"%@",dic[@"name"]];
+        
+        if ([dic[@"avatars"] isKindOfClass:[NSDictionary class]]) {
+            self.avatars = [[AvatarsModel alloc] initWithDictionary:dic[@"avatars"]];
+        }
 
     }
     return self;

@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         [self setValuesForKeysWithDictionary:dic];
+        
         self.max = [NSString stringWithFormat:@"%@",dic[@"max"]];
         self.average = [NSString stringWithFormat:@"%@",dic[@"average"]];
         self.stars = [NSString stringWithFormat:@"%@",dic[@"stars"]];

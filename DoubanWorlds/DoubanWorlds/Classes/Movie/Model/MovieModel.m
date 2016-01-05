@@ -21,6 +21,7 @@
         
         self.rating = [[RatingModel alloc] initWithDictionary:dic[@"rating"]];
         self.ID = [NSString stringWithFormat:@"%@",dic[@"id"]];
+        self.collect_count = [NSString stringWithFormat:@"%@",dic[@"collect_count"]];
         
         self.genres = [[NSMutableArray alloc] initWithArray:dic[@"genres"]];
         

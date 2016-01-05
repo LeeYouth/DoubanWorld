@@ -33,6 +33,28 @@
     }];
 }
 
++(void)getComingsoonWithStart:(int)start arrayBlock:(ArrayBlock)arrayBlock{
+    NSString *urlSting = [NSString stringWithFormat:@"%@?count=10&start=%d",ComingsoonMovie_URL,start];
+    NSLog(@"ComingsoonMovie_URL = %@",urlSting);
+    [HttpTools getWithURL:urlSting params:nil success:^(id json) {
+        NSMutableArray *resArray = [[NSMutableArray alloc] init];
+        if ([json[@"subjects"] isKindOfClass:[NSArray class]]) {
+            NSArray *subjectsArr = json[@"subjects"];
+            for (NSDictionary *dict in subjectsArr) {
+                MovieModel *movieM = [[MovieModel alloc] initWithDictionary:dict];
+                [resArray addObject:movieM];
+            }
+        }
+        if (arrayBlock) {
+            arrayBlock(resArray);
+        }
+        NSLog(@"HotMovie_resultDict = %@",json);
+    } failure:^(NSError *error) {
+        [SVProgressHUDManager showErrorWithStatus:@"网络出错啦"];
+    }];
+}
+
+
 +(void)getMovieInfoWithID:(NSString *)movieID{
     NSString *urlString = [NSString stringWithFormat:@"%@%@",MovieInfo_URL,movieID];
     NSLog(@"MovieInfo_URL = %@",urlString);

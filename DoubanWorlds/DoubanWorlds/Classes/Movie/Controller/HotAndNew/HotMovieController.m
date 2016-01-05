@@ -7,6 +7,7 @@
 //  
 
 #import "HotMovieController.h"
+#import "MovieDetailController.h"
 #import "MovieHttpTool.h"
 #import "MovieModel.h"
 #import "HotMovieCell.h"
@@ -75,7 +76,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    
+    MovieDetailController *detailVC = [[MovieDetailController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 /*

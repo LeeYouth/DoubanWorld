@@ -16,6 +16,15 @@
  *  @param arrayBlock 返回数组
  */
 +(void)getHotMovieWithStart:(int)start arrayBlock:(ArrayBlock)arrayBlock;
+
+/**
+ *  即将上映的电影
+ *
+ *  @param start      开始页
+ *  @param arrayBlock 返回数组
+ */
++(void)getComingsoonWithStart:(int)start arrayBlock:(ArrayBlock)arrayBlock;
+
 /**
  *  电影详细信息
  *

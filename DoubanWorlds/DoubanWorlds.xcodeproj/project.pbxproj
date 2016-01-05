@@ -13,6 +13,7 @@
 		E60CD0411C3B9F6F001BD388 /* RatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0401C3B9F6F001BD388 /* RatingModel.m */; };
 		E60CD0441C3BA4C4001BD388 /* AvatarsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0431C3BA4C4001BD388 /* AvatarsModel.m */; };
 		E60CD0471C3BAB96001BD388 /* HotMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0461C3BAB96001BD388 /* HotMovieCell.m */; };
+		E60CD04A1C3BC38D001BD388 /* MovieDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0491C3BC38D001BD388 /* MovieDetailController.m */; };
 		E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */; };
 		E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146531C2CE39600CF0391 /* CityIndexCell.m */; };
 		E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146561C2CEA2800CF0391 /* LYCityHandler.m */; };
@@ -202,6 +203,8 @@
 		E60CD0431C3BA4C4001BD388 /* AvatarsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarsModel.m; sourceTree = "<group>"; };
 		E60CD0451C3BAB96001BD388 /* HotMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotMovieCell.h; sourceTree = "<group>"; };
 		E60CD0461C3BAB96001BD388 /* HotMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotMovieCell.m; sourceTree = "<group>"; };
+		E60CD0481C3BC38D001BD388 /* MovieDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailController.h; sourceTree = "<group>"; };
+		E60CD0491C3BC38D001BD388 /* MovieDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailController.m; sourceTree = "<group>"; };
 		E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
 		E61146521C2CE39600CF0391 /* CityIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityIndexCell.h; sourceTree = "<group>"; };
@@ -772,6 +775,8 @@
 				E63953881C3A89F200AEC8E1 /* HotAndNew */,
 				E63953851C3A894500AEC8E1 /* MovieViewController.h */,
 				E63953861C3A894500AEC8E1 /* MovieViewController.m */,
+				E60CD0481C3BC38D001BD388 /* MovieDetailController.h */,
+				E60CD0491C3BC38D001BD388 /* MovieDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1641,6 +1646,7 @@
 				E64A13BF1C2A7D1B00AC0750 /* ActivityOwnerModel.m in Sources */,
 				E6E2B4001C2943F5003F2C4B /* MainTabbarController.m in Sources */,
 				E616820F1C35090E008F77F2 /* ActivityTypeCell.m in Sources */,
+				E60CD04A1C3BC38D001BD388 /* MovieDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
