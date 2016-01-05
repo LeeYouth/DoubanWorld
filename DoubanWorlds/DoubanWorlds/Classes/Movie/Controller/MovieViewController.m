@@ -91,18 +91,21 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSInteger pageIndex = (NSInteger)scrollView.contentOffset.x/SCREEN_WIDTH;
-//    [_segmentedControl setSelectedSegmentIndex:pageIndex];
+
     [[NSNotificationCenter defaultCenter] postNotificationName:kMovieScrollViewMove object:nil userInfo:@{kMovieScrollViewMove : [NSString stringWithFormat:@"%ld",pageIndex]}];
 
 }
 
+#pragma mark - kMovieMenuBtnClickNote
 - (void)movieMenuBtnClick:(NSNotification *)note{
     NSString *indexNum = note.userInfo[kMovieMenuBtnClick];
     
     [self.backgroundScrollView setContentOffset:CGPointMake(SCREEN_WIDTH*[indexNum intValue], 0) animated:NO];
-    
 }
 
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 @end
