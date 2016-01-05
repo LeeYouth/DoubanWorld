@@ -11,7 +11,6 @@
 #import "HotMovieController.h"
 #import "NewFilmController.h"
 
-#define MovieMenuHeight 45.f
 
 @interface MovieViewController ()
 
@@ -69,8 +68,8 @@
     NSInteger viewCounts = _viewControllers.count;
     
     //初始化最底部的scrollView,装tableView用
-    self.backgroundScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT +MovieMenuHeight, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    self.backgroundScrollView.backgroundColor = [UIColor clearColor];
+    self.backgroundScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT + MovieMenuHeight, SCREEN_WIDTH, SCREEN_HEIGHT - MovieMenuHeight - NAV_BAR_HEIGHT - TAB_BAR_HEIGHT)];
+    self.backgroundScrollView.backgroundColor = KBackgroundColor;
     self.backgroundScrollView.pagingEnabled = YES;
     self.backgroundScrollView.bounces = NO;
     self.backgroundScrollView.showsHorizontalScrollIndicator = NO;
@@ -81,7 +80,7 @@
     
     for (int i = 0; i < viewCounts; i++) {
         UIViewController *listCtrl = self.viewControllers[i];
-        listCtrl.view.frame = CGRectMake(SCREEN_WIDTH*i, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        listCtrl.view.frame = CGRectMake(SCREEN_WIDTH*i, 0, SCREEN_WIDTH, SCREEN_HEIGHT - MovieMenuHeight - NAV_BAR_HEIGHT - TAB_BAR_HEIGHT );
         [self.backgroundScrollView addSubview:listCtrl.view];
     }
     
