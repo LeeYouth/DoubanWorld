@@ -736,7 +736,7 @@
 			path = DACircularProgress;
 			sourceTree = "<group>";
 		};
-		E63953801C3A890500AEC8E1 /* Movie */ = {
+		E63953801C3A890500AEC8E1 /* Movie(电影) */ = {
 			isa = PBXGroup;
 			children = (
 				E63953811C3A890500AEC8E1 /* Controller */,
@@ -744,6 +744,7 @@
 				E63953831C3A890500AEC8E1 /* Tool */,
 				E63953841C3A890500AEC8E1 /* View */,
 			);
+			name = "Movie(电影)";
 			path = Movie;
 			sourceTree = "<group>";
 		};
@@ -944,7 +945,7 @@
 		E6E2B3F31C2943F5003F2C4B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E63953801C3A890500AEC8E1 /* Movie */,
+				E63953801C3A890500AEC8E1 /* Movie(电影) */,
 				E6E964EB1C3A5DD100A1650C /* OAuth(授权) */,
 				E6E2B4151C294514003F2C4B /* Other */,
 				E6E2B4011C2944FE003F2C4B /* Me */,

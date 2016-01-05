@@ -37,6 +37,9 @@
 //        line.backgroundColor = [UIColor lightGrayColor];
 //        line.frame = CGRectMake(0, 44.4, SCREEN_WIDTH, 0.6);
 //        [self addSubview:line];
+        
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(kMovieMenuBtnClick:) name:kMovieScrollViewMove object:nil];
 
     }
     return self;
@@ -66,30 +69,40 @@
 
 #pragma mark - 按钮点击选择事件
 -(void)selectButtonAction:(UIButton *)sender{
-    sender.selected = YES;
     
     int buttonTag = (int)sender.tag;
     
     //滑动动画
     [self bottomLineAnimationBtnIndex:buttonTag];
     
-    for (UIButton *otherBtn in _buttonArray) {
-        if (sender.tag == otherBtn.tag) {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMovieMenuBtnClick object:nil userInfo:@{kMovieMenuBtnClick : [NSString stringWithFormat:@"%d",buttonTag]}];
+    
+}
 
-        }else{
-
-            otherBtn.selected = NO;
-        }
-    }
+-(void)kMovieMenuBtnClick:(NSNotification *)note{
+    NSString *indexNum = note.userInfo[kMovieScrollViewMove];
+    [self bottomLineAnimationBtnIndex:[indexNum intValue]];
 }
 
 #pragma mark - 滑动底部line动画
 -(void)bottomLineAnimationBtnIndex:(int)btnIndex{
     UIButton *currentBtn=[_buttonArray objectAtIndex:btnIndex];
+    
     //开启动画，移动下划线
     [UIView animateWithDuration:0.25 animations:^{
         _bottomline.left = currentBtn.left;
     }];
+    
+    for (UIButton *oneBtn in _buttonArray) {
+        if (oneBtn.tag == btnIndex) {
+            oneBtn.selected = YES;
+        }else{
+            oneBtn.selected = NO;
+        }
+    }
 }
 
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 @end

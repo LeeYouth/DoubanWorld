@@ -24,6 +24,11 @@
 
 @implementation MovieViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -33,14 +38,15 @@
     
     [self loadScrollView];
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieMenuBtnClick:) name:kMovieMenuBtnClick object:nil];
+
 }
 
 - (void)loadMenuView{
-    self.view.backgroundColor = [UIColor whiteColor];
     
     MovieMenuView *menuView = [[MovieMenuView alloc] init];
-    menuView.frame = CGRectMake(0, 64, SCREEN_WIDTH, MovieMenuHeight);
+    menuView.backgroundColor = [UIColor whiteColor];
+    menuView.frame = CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, MovieMenuHeight);
     [self.view addSubview:menuView];
 }
 
@@ -54,7 +60,7 @@
     [self addChildViewController:_hotVC];
     [self addChildViewController:_newfilmVC];
     
-    _viewControllers = [NSMutableArray arrayWithObjects:_newfilmVC,_newfilmVC,nil];
+    _viewControllers = [NSMutableArray arrayWithObjects:_hotVC,_newfilmVC,nil];
     
 }
 
@@ -63,8 +69,8 @@
     NSInteger viewCounts = _viewControllers.count;
     
     //初始化最底部的scrollView,装tableView用
-    self.backgroundScrollView = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.backgroundScrollView.backgroundColor = [UIColor whiteColor];
+    self.backgroundScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT +MovieMenuHeight, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.backgroundScrollView.backgroundColor = [UIColor clearColor];
     self.backgroundScrollView.pagingEnabled = YES;
     self.backgroundScrollView.bounces = NO;
     self.backgroundScrollView.showsHorizontalScrollIndicator = NO;
@@ -75,7 +81,7 @@
     
     for (int i = 0; i < viewCounts; i++) {
         UIViewController *listCtrl = self.viewControllers[i];
-        listCtrl.view.frame = CGRectMake(SCREEN_WIDTH*i, 64 + MovieMenuHeight, SCREEN_WIDTH, SCREEN_HEIGHT);
+        listCtrl.view.frame = CGRectMake(SCREEN_WIDTH*i, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         [self.backgroundScrollView addSubview:listCtrl.view];
     }
     
@@ -86,23 +92,17 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSInteger pageIndex = (NSInteger)scrollView.contentOffset.x/SCREEN_WIDTH;
 //    [_segmentedControl setSelectedSegmentIndex:pageIndex];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMovieScrollViewMove object:nil userInfo:@{kMovieScrollViewMove : [NSString stringWithFormat:@"%ld",pageIndex]}];
+
 }
 
-- (void)segmentedControlAction:(id)sender{
-    NSInteger selectedIndex = [sender selectedSegmentIndex];
+- (void)movieMenuBtnClick:(NSNotification *)note{
+    NSString *indexNum = note.userInfo[kMovieMenuBtnClick];
     
-    [self.backgroundScrollView setContentOffset:CGPointMake(SCREEN_WIDTH*selectedIndex, 0) animated:NO];
+    [self.backgroundScrollView setContentOffset:CGPointMake(SCREEN_WIDTH*[indexNum intValue], 0) animated:NO];
     
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

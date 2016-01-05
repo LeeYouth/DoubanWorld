@@ -18,3 +18,6 @@ extern NSString *kTypeButtonClick;//类型选择
 
 extern NSString *kIsCityButtonClick;//城市按钮是否点击了
 
+extern NSString *kMovieMenuBtnClick;//电影界面menu按钮监听
+
+extern NSString *kMovieScrollViewMove;//电影scroll移动

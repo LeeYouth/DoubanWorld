@@ -8,12 +8,16 @@
 
 #import "LYConstans.h"
 
-NSString * kCurrentLocation =@"kCurrentLocation";
+NSString * kCurrentLocation = @"kCurrentLocation";
 
-NSString * kCityButtonClick =@"kCityButtonClick";
+NSString * kCityButtonClick = @"kCityButtonClick";
 
-NSString * kTypeButtonClick =@"kTypeButtonClick";
+NSString * kTypeButtonClick = @"kTypeButtonClick";
 
-NSString * kIsCityButtonClick =@"kIsCityButtonClick";
+NSString * kIsCityButtonClick = @"kIsCityButtonClick";
 
-NSString * kCurrentActiveType =@"kCurrentActiveType";
+NSString * kCurrentActiveType = @"kCurrentActiveType";
+
+NSString * kMovieMenuBtnClick = @"kMovieMenuBtnClick";
+
+NSString * kMovieScrollViewMove = @"kMovieScrollViewMove";
