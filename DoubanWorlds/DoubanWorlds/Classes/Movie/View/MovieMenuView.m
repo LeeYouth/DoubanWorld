@@ -33,10 +33,10 @@
         _bottomline.backgroundColor = TheThemeColor;
         [self addSubview:_bottomline];
         
-//        UIView *line = [[UIView alloc] init];
-//        line.backgroundColor = [UIColor lightGrayColor];
-//        line.frame = CGRectMake(0, 44.4, SCREEN_WIDTH, 0.6);
-//        [self addSubview:line];
+        UIView *line = [[UIView alloc] init];
+        line.backgroundColor = [AppTools colorWithHexString:@"#F0F0F0"];
+        line.frame = CGRectMake(0, 44, SCREEN_WIDTH, 1);
+        [self addSubview:line];
         
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(kMovieMenuBtnClick:) name:kMovieScrollViewMove object:nil];
