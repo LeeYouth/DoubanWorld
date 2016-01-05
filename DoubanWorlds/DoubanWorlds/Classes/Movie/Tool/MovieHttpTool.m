@@ -33,5 +33,17 @@
     }];
 }
 
++(void)getMovieInfoWithID:(NSString *)movieID{
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",MovieInfo_URL,movieID];
+    NSLog(@"MovieInfo_URL = %@",urlString);
+    [HttpTools getWithURL:urlString params:nil success:^(id json) {
+       
+        NSLog(@"MovieInfo_URL_resultDict = %@",json);
+    } failure:^(NSError *error) {
+        [SVProgressHUDManager showErrorWithStatus:@"网络出错啦"];
+    }];
+
+}
+
 
 @end

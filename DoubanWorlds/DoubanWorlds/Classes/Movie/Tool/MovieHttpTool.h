@@ -9,7 +9,18 @@
 #import <Foundation/Foundation.h>
 
 @interface MovieHttpTool : NSObject
-
+/**
+ *  获取热映电影
+ *
+ *  @param start      开始页
+ *  @param arrayBlock 返回数组
+ */
 +(void)getHotMovieWithStart:(int)start arrayBlock:(ArrayBlock)arrayBlock;
+/**
+ *  电影详细信息
+ *
+ *  @param movieID 电影ID
+ */
++(void)getMovieInfoWithID:(NSString *)movieID;
 
 @end

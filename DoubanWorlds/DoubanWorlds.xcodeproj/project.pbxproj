@@ -12,6 +12,7 @@
 		E60CD03E1C3B9F18001BD388 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD03D1C3B9F18001BD388 /* MovieModel.m */; };
 		E60CD0411C3B9F6F001BD388 /* RatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0401C3B9F6F001BD388 /* RatingModel.m */; };
 		E60CD0441C3BA4C4001BD388 /* AvatarsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0431C3BA4C4001BD388 /* AvatarsModel.m */; };
+		E60CD0471C3BAB96001BD388 /* HotMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0461C3BAB96001BD388 /* HotMovieCell.m */; };
 		E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */; };
 		E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146531C2CE39600CF0391 /* CityIndexCell.m */; };
 		E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146561C2CEA2800CF0391 /* LYCityHandler.m */; };
@@ -199,6 +200,8 @@
 		E60CD0401C3B9F6F001BD388 /* RatingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingModel.m; sourceTree = "<group>"; };
 		E60CD0421C3BA4C4001BD388 /* AvatarsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarsModel.h; sourceTree = "<group>"; };
 		E60CD0431C3BA4C4001BD388 /* AvatarsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarsModel.m; sourceTree = "<group>"; };
+		E60CD0451C3BAB96001BD388 /* HotMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotMovieCell.h; sourceTree = "<group>"; };
+		E60CD0461C3BAB96001BD388 /* HotMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotMovieCell.m; sourceTree = "<group>"; };
 		E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
 		E61146521C2CE39600CF0391 /* CityIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityIndexCell.h; sourceTree = "<group>"; };
@@ -802,6 +805,8 @@
 			children = (
 				E639538F1C3A8ACD00AEC8E1 /* MovieMenuView.h */,
 				E63953901C3A8ACD00AEC8E1 /* MovieMenuView.m */,
+				E60CD0451C3BAB96001BD388 /* HotMovieCell.h */,
+				E60CD0461C3BAB96001BD388 /* HotMovieCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1560,6 +1565,7 @@
 				E611AAD01C2A362D00A1107C /* UIScrollView+LDRefresh.m in Sources */,
 				E639531D1C3A6A2A00AEC8E1 /* UserInfos.m in Sources */,
 				E63953391C3A7CE900AEC8E1 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
+				E60CD0471C3BAB96001BD388 /* HotMovieCell.m in Sources */,
 				E654867A1C30D35600A47EC1 /* HotCityCell.m in Sources */,
 				E6F753841C3250E600E570C2 /* YLYSearchBar.m in Sources */,
 				E63953741C3A7DB800AEC8E1 /* UIView+ZLExtension.m in Sources */,

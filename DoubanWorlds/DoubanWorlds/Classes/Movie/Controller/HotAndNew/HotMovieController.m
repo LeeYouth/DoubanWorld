@@ -9,6 +9,7 @@
 #import "HotMovieController.h"
 #import "MovieHttpTool.h"
 #import "MovieModel.h"
+#import "HotMovieCell.h"
 
 @interface HotMovieController ()
 
@@ -61,20 +62,14 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    MovieModel *model = [_resultArray objectAtIndex:indexPath.row];
+    return [HotMovieCell getCellHeight:model];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    MovieModel *model = [_resultArray objectAtIndex:indexPath.row];
-    static NSString *cellIndertifer = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndertifer];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndertifer];
-    }
-    cell.textLabel.text = model.title;
-    return cell;
-    
+    HotMovieCell *hotCell = [HotMovieCell cellWithTableView:tableView];
+    hotCell.model = [_resultArray objectAtIndex:indexPath.row];
+    return hotCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

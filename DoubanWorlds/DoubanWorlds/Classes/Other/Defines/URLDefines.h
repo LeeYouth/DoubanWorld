@@ -30,5 +30,23 @@
 #define UserInfo_URL [NSString stringWithFormat:@"%@/v2/user/",DoubanWorld_BaseURL]
 //5.热门电影
 #define HotMovie_URL [NSString stringWithFormat:@"%@/v2/movie/in_theaters",DoubanWorld_BaseURL]
+//6.电影详细信息
+#define MovieInfo_URL [NSString stringWithFormat:@"%@/v2/movie/subject/",DoubanWorld_BaseURL]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #endif
