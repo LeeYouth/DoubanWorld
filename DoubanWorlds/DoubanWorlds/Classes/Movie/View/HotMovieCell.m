@@ -11,7 +11,6 @@
 #import "AvatarsModel.h"
 #import "RatingModel.h"
 #import "CastModel.h"
-#import "RatingView.h"
 
 
 #define TitleFont 17.f
@@ -24,7 +23,7 @@
     UILabel *_castsLabel;
     UILabel *_averageLabel;//分数
     UILabel *_titleLabel;
-    RatingView *_starView;
+    UIImageView *_starView;
     UIView *_lineView;
     
     UILabel *_nocommentLabel;//
@@ -72,8 +71,7 @@
     _titleLabel.font = [UIFont systemFontOfSize:TitleFont];
     [self.contentView addSubview:_titleLabel];
     
-    _starView = [[RatingView alloc] init];
-    _starView.backgroundColor = [UIColor clearColor];
+    _starView = [[UIImageView alloc] init];
     [self.contentView addSubview:_starView];
     
     _averageLabel = [[UILabel alloc] init];
@@ -113,6 +111,8 @@
     int magin = HMStatusCellMargin;
     int padding = 5;
     
+    int padding1 = 10;
+    
     CGFloat w = SCREEN_WIDTH - 3*magin - 80;
     
     
@@ -131,19 +131,19 @@
     }];
     
     [_starView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_titleLabel.mas_bottom).offset(padding);
-        make.size.mas_equalTo(CGSizeMake(80, 20));
+        make.top.equalTo(_titleLabel.mas_bottom).offset(padding1);
+        make.size.mas_equalTo(CGSizeMake(60, 10));
         make.left.equalTo(_titleLabel.mas_left);
     }];
     
     [_averageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_starView.mas_top);
-        make.size.mas_equalTo(CGSizeMake(40, 20));
-        make.left.equalTo(_starView.mas_right).offset(padding);
+        make.size.mas_equalTo(CGSizeMake(40, 10));
+        make.left.equalTo(_starView.mas_right).offset(padding1);
     }];
     
     [_directorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_starView.mas_bottom).offset(padding);
+        make.top.equalTo(_starView.mas_bottom).offset(padding1);
         make.left.with.height.with.equalTo(_titleLabel);
     }];
     
@@ -178,10 +178,8 @@
     
     _titleLabel.text = model.title;
     
-    NSString *string = [NSString stringWithFormat:@"%.1f",[AppTools formatRating:model.rating.average]];
+    _starView.image = [UIImage imageNamed:[AppTools formatRating:model.rating.average]];
 
-    _starView.showStar = [AppTools formatRating:model.rating.average] * 10;
-    NSLog(@"aaaaaaaaaaaaaaa = %@",string);
     if ([model.rating.average intValue] > 0) {
         _averageLabel.text = model.rating.average;
         _nocommentLabel.hidden = YES;
@@ -213,7 +211,34 @@
 
 
 +(CGFloat)getCellHeight:(MovieModel *)model{
-    return 150;
+//    return 150;
+    
+    CGFloat imageBottom = 120 + HMStatusCellMargin;
+    
+    CGFloat dirH = 20;
+    
+    int magin = HMStatusCellMargin;
+    int padding = 5;
+
+    CGFloat w = SCREEN_WIDTH - 3*magin - 80;
+    
+    CGSize maxSize = CGSizeMake(w, MAXFLOAT);
+
+    NSMutableArray *casArr = [[NSMutableArray alloc] init];
+    for (int i = 0; i < model.casts.count; i++) {
+        CastModel *casModel = model.casts[i];
+        [casArr addObject:casModel.name];
+    }
+    NSString *casString = [NSString stringWithFormat:@"演员: %@",[casArr componentsJoinedByString:@"/ "]];
+
+    CGSize casSize = [casString attrStrSizeWithFont:[UIFont systemFontOfSize:IntroduceFont] andmaxSize:maxSize lineSpacing:4];
+    
+    CGFloat allH = casSize.height + 4*padding + 3*dirH + HMStatusCellMargin;
+    if (imageBottom > allH) {
+        return imageBottom + HMStatusCellMargin;
+    }else{
+        return allH + HMStatusCellMargin;
+    }
 }
 
 

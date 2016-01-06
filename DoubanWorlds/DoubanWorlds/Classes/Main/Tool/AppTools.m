@@ -96,30 +96,40 @@
     return image;
 }
 
-+ (float)formatRating:(NSString *)rating{
++ (NSString *)formatRating:(NSString *)rating{
     float ratingInt = [rating floatValue]*0.5;
     NSLog(@"bbbbbbbbbbb = %f",[rating floatValue]);
 
     if (ratingInt > 0.000000 && ratingInt <= 0.5) {
-        return 0.5;
+//        return 0.5;
+        return @"home_star1_img";
     }else if(ratingInt > 0.500000 && ratingInt <= 1.000000){
-        return 1;
+//        return 1;
+        return @"home_star2_img";
     }else if(ratingInt > 1.000000 && ratingInt <= 1.500000){
-        return 1.5;
+//        return 1.5;
+        return @"home_star3_img";
     }else if(ratingInt > 1.500000 && ratingInt <= 2.000000){
-        return 2;
+//        return 2;
+        return @"home_star4_img";
     }else if(ratingInt > 2.000000 && ratingInt <= 2.500000){
-        return 2.5;
+//        return 2.5;
+        return @"home_star5_img";
     }else if(ratingInt > 2.500000 && ratingInt <= 3.000000){
-        return 3;
+//        return 3;
+        return @"home_star6_img";
     }else if(ratingInt > 3.000000 && ratingInt <= 3.500000){
-        return 3.5;
+//        return 3.5;
+        return @"home_star7_img";
     }else if(ratingInt > 3.500000 && ratingInt <= 4.000000){
-        return 4;
+//        return 4;
+        return @"home_star8_img";
     }else if(ratingInt > 4.000000 && ratingInt <= 4.500000){
-        return 4.5;
+//        return 4.5;
+        return @"home_star9_img";
     }else{
-        return 5;
+//        return 5;
+        return @"home_star10_img";
     }
     
 }
