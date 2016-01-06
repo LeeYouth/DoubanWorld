@@ -1,4 +1,4 @@
-# DoubanWorld
+# 代码持续更新中...
 # 模仿豆瓣一部分，包括豆瓣同城活动，豆瓣电影
 ## 图一
 ![image](https://github.com/LeeYouth/DoubanWorld/blob/master/DoubanWorlds/DoubanWorlds/Classes/Other/Resources/Introducegif/doubanWorlds.gif )  
