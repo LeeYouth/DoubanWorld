@@ -27,7 +27,6 @@
         if (arrayBlock) {
             arrayBlock(resArray);
         }
-        NSLog(@"HotMovie_resultDict = %@",json);
     } failure:^(NSError *error) {
         [SVProgressHUDManager showErrorWithStatus:@"网络出错啦"];
     }];
@@ -48,7 +47,6 @@
         if (arrayBlock) {
             arrayBlock(resArray);
         }
-        NSLog(@"HotMovie_resultDict = %@",json);
     } failure:^(NSError *error) {
         [SVProgressHUDManager showErrorWithStatus:@"网络出错啦"];
     }];

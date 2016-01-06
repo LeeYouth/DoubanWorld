@@ -33,7 +33,7 @@
 #define HMStatusCellMargin 15
 
 #define TheThemeColor KColor(63, 184, 56)//主题颜色
-#define KBackgroundColor KColor(244, 244, 244)//北京颜色
+#define KBackgroundColor KColor(244, 244, 244)//背景颜色
 
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 #define iOS8 ([[[UIDevice currentDevice]systemVersion]doubleValue]>= 8.0)

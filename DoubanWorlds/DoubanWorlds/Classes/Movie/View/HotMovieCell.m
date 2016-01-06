@@ -11,6 +11,7 @@
 #import "AvatarsModel.h"
 #import "RatingModel.h"
 #import "CastModel.h"
+#import "RatingView.h"
 
 
 #define TitleFont 17.f
@@ -23,7 +24,7 @@
     UILabel *_castsLabel;
     UILabel *_averageLabel;//分数
     UILabel *_titleLabel;
-    UIView *_starView;
+    RatingView *_starView;
     UIView *_lineView;
     
     UILabel *_nocommentLabel;//
@@ -71,8 +72,8 @@
     _titleLabel.font = [UIFont systemFontOfSize:TitleFont];
     [self.contentView addSubview:_titleLabel];
     
-    _starView = [[UIView alloc] init];
-    _starView.backgroundColor = [UIColor redColor];
+    _starView = [[RatingView alloc] init];
+    _starView.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:_starView];
     
     _averageLabel = [[UILabel alloc] init];
@@ -177,7 +178,10 @@
     
     _titleLabel.text = model.title;
     
-    
+    NSString *string = [NSString stringWithFormat:@"%.1f",[AppTools formatRating:model.rating.average]];
+
+    _starView.showStar = [AppTools formatRating:model.rating.average] * 10;
+    NSLog(@"aaaaaaaaaaaaaaa = %@",string);
     if ([model.rating.average intValue] > 0) {
         _averageLabel.text = model.rating.average;
         _nocommentLabel.hidden = YES;

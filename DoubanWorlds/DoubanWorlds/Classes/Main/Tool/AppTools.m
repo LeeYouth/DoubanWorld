@@ -10,7 +10,7 @@
 
 @implementation AppTools
 
-+(UIColor *) colorWithHexString: (NSString *) stringToConvert{
++ (UIColor *) colorWithHexString: (NSString *) stringToConvert{
     NSString *cString = [[stringToConvert stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
     // String should be 6 or 8 characters
@@ -63,7 +63,7 @@
     
 }
 
-+(NSMutableAttributedString *)setLineSpacingWith:(NSString *)contentText lineSpacing:(CGFloat)lineSpacing{
++ (NSMutableAttributedString *)setLineSpacingWith:(NSString *)contentText lineSpacing:(CGFloat)lineSpacing{
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:contentText];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:lineSpacing];
@@ -71,7 +71,7 @@
     return attributedString;
 }
 
-+(NSString *)formatCount:(NSString *)count{
++ (NSString *)formatCount:(NSString *)count{
     NSString *title;
     // 1.得出title的内容
     if ([count intValue] >= 10000) {
@@ -84,8 +84,7 @@
     return title;
 }
 
-+ (UIImage *)imageWithColor:(UIColor *)color
-{
++ (UIImage *)imageWithColor:(UIColor *)color{
     CGRect rect = CGRectMake(0, 0, 1, 1);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
     [color setFill];
@@ -95,6 +94,34 @@
     UIGraphicsEndImageContext();
     
     return image;
+}
+
++ (float)formatRating:(NSString *)rating{
+    float ratingInt = [rating floatValue]*0.5;
+    NSLog(@"bbbbbbbbbbb = %f",[rating floatValue]);
+
+    if (ratingInt > 0.000000 && ratingInt <= 0.5) {
+        return 0.5;
+    }else if(ratingInt > 0.500000 && ratingInt <= 1.000000){
+        return 1;
+    }else if(ratingInt > 1.000000 && ratingInt <= 1.500000){
+        return 1.5;
+    }else if(ratingInt > 1.500000 && ratingInt <= 2.000000){
+        return 2;
+    }else if(ratingInt > 2.000000 && ratingInt <= 2.500000){
+        return 2.5;
+    }else if(ratingInt > 2.500000 && ratingInt <= 3.000000){
+        return 3;
+    }else if(ratingInt > 3.000000 && ratingInt <= 3.500000){
+        return 3.5;
+    }else if(ratingInt > 3.500000 && ratingInt <= 4.000000){
+        return 4;
+    }else if(ratingInt > 4.000000 && ratingInt <= 4.500000){
+        return 4.5;
+    }else{
+        return 5;
+    }
+    
 }
 
 @end

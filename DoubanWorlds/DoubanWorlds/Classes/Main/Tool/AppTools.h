@@ -37,5 +37,6 @@
 
 + (UIImage *)imageWithColor:(UIColor *)color;
 
++ (float)formatRating:(NSString *)rating;
 
 @end
