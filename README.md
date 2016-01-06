@@ -1,1 +1,10 @@
 # DoubanWorld
+# 模仿豆瓣一部分，包括豆瓣同城活动，豆瓣电影
+## 图一
+![image](https://github.com/LeeYouth/DoubanWorld/blob/master/DoubanWorlds/DoubanWorlds/Classes/Other/Resources/Introducegif/doubanWorlds.gif )  
+## 图二
+![image](https://github.com/LeeYouth/DoubanWorld/blob/master/DoubanWorlds/DoubanWorlds/Classes/Other/Resources/Introducegif/doubanWorlds1.gif )  
+## 图三
+![image](https://github.com/LeeYouth/DoubanWorld/blob/master/DoubanWorlds/DoubanWorlds/Classes/Other/Resources/Introducegif/doubanWorlds2.gif )  
+## 图四
+![image](https://github.com/LeeYouth/DoubanWorld/blob/master/DoubanWorlds/DoubanWorlds/Classes/Other/Resources/Introducegif/doubanWorlds3.gif )
