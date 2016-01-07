@@ -65,7 +65,7 @@
     
     _playMovie = [[UIImageView alloc] init];
     _playMovie.image = [UIImage imageNamed:@"VoiceAssistantPlayBtnHL@2x.png"];
-//    [_headImageView addSubview:_playMovie];
+    [_headImageView addSubview:_playMovie];
     
     
     
@@ -172,10 +172,10 @@
         make.height.mas_equalTo(@(H));
     }];
     
-    [_playMovie mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(_headImageView);
-        make.size.mas_equalTo(CGSizeMake(40, 40));
-    }];
+//    [_playMovie mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(_headImageView);
+//        make.size.mas_equalTo(CGSizeMake(40, 40));
+//    }];
 }
 
 
