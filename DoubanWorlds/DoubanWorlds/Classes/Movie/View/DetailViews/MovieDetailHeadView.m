@@ -31,6 +31,8 @@
     UILabel *_ratingLabel;
     
     UILabel *_noCommentLabel;
+    
+    UIImageView *_playMovie;
 }
 
 @end
@@ -61,6 +63,12 @@
     UITapGestureRecognizer *tapG = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHeadPortrait)];
     [_headImageView addGestureRecognizer:tapG];
     
+    _playMovie = [[UIImageView alloc] init];
+    _playMovie.image = [UIImage imageNamed:@"VoiceAssistantPlayBtnHL@2x.png"];
+//    [_headImageView addSubview:_playMovie];
+    
+    
+    
     
     _titleLabel = [[UILabel alloc] init];
     _titleLabel.textColor = [UIColor whiteColor];
@@ -70,19 +78,19 @@
     
     _originalTitleLabel = [[UILabel alloc] init];
     _originalTitleLabel.numberOfLines = 0;
-    _originalTitleLabel.textColor = [UIColor whiteColor];
+    _originalTitleLabel.textColor = [UIColor grayColor];
     _originalTitleLabel.backgroundColor = [UIColor clearColor];
     _originalTitleLabel.font = [UIFont systemFontOfSize:IntroduceFont];
     [self addSubview:_originalTitleLabel];
     
     _genresLabel = [[UILabel alloc] init];
-    _genresLabel.textColor = [UIColor whiteColor];
+    _genresLabel.textColor = [UIColor grayColor];
     _genresLabel.backgroundColor = [UIColor clearColor];
     _genresLabel.font = [UIFont systemFontOfSize:IntroduceFont];
     [self addSubview:_genresLabel];
     
     _countryLabel = [[UILabel alloc] init];
-    _countryLabel.textColor = [UIColor whiteColor];
+    _countryLabel.textColor = [UIColor grayColor];
     _countryLabel.backgroundColor = [UIColor clearColor];
     _countryLabel.font = [UIFont systemFontOfSize:IntroduceFont];
     [self addSubview:_countryLabel];
@@ -93,13 +101,13 @@
     [self addSubview:_starView];
     
     _ratingLabel = [[UILabel alloc] init];
-    _ratingLabel.textColor = [UIColor whiteColor];
+    _ratingLabel.textColor = [UIColor grayColor];
     _ratingLabel.backgroundColor = [UIColor clearColor];
     _ratingLabel.font = [UIFont systemFontOfSize:RatingFont];
     [self addSubview:_ratingLabel];
     
     _noCommentLabel = [[UILabel alloc] init];
-    _noCommentLabel.textColor = [UIColor whiteColor];
+    _noCommentLabel.textColor = [UIColor grayColor];
     _noCommentLabel.backgroundColor = [UIColor clearColor];
     _noCommentLabel.font = [UIFont systemFontOfSize:IntroduceFont];
     [self addSubview:_noCommentLabel];
@@ -162,6 +170,11 @@
         make.right.and.left.equalTo(_titleLabel);
         make.bottom.equalTo(self.mas_bottom).offset(-margin);
         make.height.mas_equalTo(@(H));
+    }];
+    
+    [_playMovie mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(_headImageView);
+        make.size.mas_equalTo(CGSizeMake(40, 40));
     }];
 }
 
