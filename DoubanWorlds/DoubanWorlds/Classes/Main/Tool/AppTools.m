@@ -98,7 +98,6 @@
 
 + (NSString *)formatRating:(NSString *)rating{
     float ratingInt = [rating floatValue]*0.5;
-    NSLog(@"bbbbbbbbbbb = %f",[rating floatValue]);
 
     if (ratingInt > 0.000000 && ratingInt <= 0.5) {
 //        return 0.5;

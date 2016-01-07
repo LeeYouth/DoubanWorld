@@ -136,7 +136,8 @@
         _expandZoomImageView.frame = f;
     }
     
-    if (yOffset > -64) {//取消隐藏
+    CGFloat offset = KMovieDetailHeadH - 64;
+    if (yOffset > -offset) {//取消隐藏
         _navgationBar.barHidden = NO;
     }else{//隐藏
         _navgationBar.barHidden = YES;
