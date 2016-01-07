@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+@class DetailMovieModel;
+
+typedef void (^MovieInfoBlock)(DetailMovieModel *movieModel);
 
 @interface MovieHttpTool : NSObject
 /**
@@ -30,6 +33,6 @@
  *
  *  @param movieID 电影ID
  */
-+(void)getMovieInfoWithID:(NSString *)movieID;
++(void)getMovieInfoWithID:(NSString *)movieID movieInfoBlock:(MovieInfoBlock)movieInfoBlock;
 
 @end

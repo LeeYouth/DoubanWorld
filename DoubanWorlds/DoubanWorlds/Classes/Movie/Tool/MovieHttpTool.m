@@ -8,6 +8,7 @@
 
 #import "MovieHttpTool.h"
 #import "MovieModel.h"
+#import "DetailMovieModel.h"
 
 @implementation MovieHttpTool
 
@@ -53,11 +54,18 @@
 }
 
 
-+(void)getMovieInfoWithID:(NSString *)movieID{
++(void)getMovieInfoWithID:(NSString *)movieID movieInfoBlock:(MovieInfoBlock)movieInfoBlock{
     NSString *urlString = [NSString stringWithFormat:@"%@%@",MovieInfo_URL,movieID];
     NSLog(@"MovieInfo_URL = %@",urlString);
     [HttpTools getWithURL:urlString params:nil success:^(id json) {
-       
+        
+        DetailMovieModel *model = [[DetailMovieModel alloc] init];
+        if ([json isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dict = json;
+            DetailMovieModel *m = [[DetailMovieModel alloc] initWithDictionary:dict];
+            model = m;
+        }
+        movieInfoBlock(model);
         NSLog(@"MovieInfo_URL_resultDict = %@",json);
     } failure:^(NSError *error) {
         [SVProgressHUDManager showErrorWithStatus:@"网络出错啦"];

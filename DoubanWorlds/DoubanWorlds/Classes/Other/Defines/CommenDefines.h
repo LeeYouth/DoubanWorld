@@ -47,6 +47,8 @@
 
 #define KActivityDetailHeadH 280.f
 
+#define KMovieDetailHeadH 240.f
+
 #define MovieMenuHeight 45.f
 
 

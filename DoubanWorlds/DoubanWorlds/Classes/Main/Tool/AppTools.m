@@ -134,4 +134,23 @@
     
 }
 
++ (NSString *)formatCountstr:(NSString *)countStr{
+    int count = [countStr intValue];
+    NSString *title = @"";
+    // 1.得出title的内容
+    if (count >= 10000) {
+        NSString *old = [NSString stringWithFormat:@"%.1f万", count/10000.0];
+        // 将.0换成空串
+        return title = [old stringByReplacingOccurrencesOfString:@".0" withString:@""];
+    }else if (count != 0){
+        if (count < 0) {
+            return title = [NSString stringWithFormat:@"%d", 0];
+        }else{
+            return title = [NSString stringWithFormat:@"%d", count];
+        }
+    }else{
+        return @"0";
+    }
+}
+
 @end

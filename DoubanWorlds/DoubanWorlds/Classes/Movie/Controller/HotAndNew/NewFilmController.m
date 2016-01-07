@@ -78,7 +78,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     MovieDetailController *detailVC = [[MovieDetailController alloc] init];
+    detailVC.movieModel = [_resultArray objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:detailVC animated:YES];
+
 
 }
 

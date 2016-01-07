@@ -19,6 +19,8 @@
 		E60CD0471C3BAB96001BD388 /* HotMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0461C3BAB96001BD388 /* HotMovieCell.m */; };
 		E60CD04A1C3BC38D001BD388 /* MovieDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E60CD0491C3BC38D001BD388 /* MovieDetailController.m */; };
 		E60F2B461C3DFF1C00E685C1 /* TranslucentNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F2B451C3DFF1C00E685C1 /* TranslucentNavbar.m */; };
+		E60F2B4A1C3E15AE00E685C1 /* MovieDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F2B491C3E15AE00E685C1 /* MovieDetailHeadView.m */; };
+		E60F2B4D1C3E393000E685C1 /* DetailMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F2B4C1C3E393000E685C1 /* DetailMovieModel.m */; };
 		E611464D1C2CD6C200CF0391 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */; };
 		E61146541C2CE39600CF0391 /* CityIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146531C2CE39600CF0391 /* CityIndexCell.m */; };
 		E61146571C2CEA2800CF0391 /* LYCityHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E61146561C2CEA2800CF0391 /* LYCityHandler.m */; };
@@ -216,6 +218,10 @@
 		E60CD0491C3BC38D001BD388 /* MovieDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailController.m; sourceTree = "<group>"; };
 		E60F2B441C3DFF1C00E685C1 /* TranslucentNavbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslucentNavbar.h; sourceTree = "<group>"; };
 		E60F2B451C3DFF1C00E685C1 /* TranslucentNavbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslucentNavbar.m; sourceTree = "<group>"; };
+		E60F2B481C3E15AE00E685C1 /* MovieDetailHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailHeadView.h; sourceTree = "<group>"; };
+		E60F2B491C3E15AE00E685C1 /* MovieDetailHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailHeadView.m; sourceTree = "<group>"; };
+		E60F2B4B1C3E393000E685C1 /* DetailMovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMovieModel.h; sourceTree = "<group>"; };
+		E60F2B4C1C3E393000E685C1 /* DetailMovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMovieModel.m; sourceTree = "<group>"; };
 		E611464B1C2CD6C200CF0391 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		E611464C1C2CD6C200CF0391 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
 		E61146521C2CE39600CF0391 /* CityIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityIndexCell.h; sourceTree = "<group>"; };
@@ -544,6 +550,15 @@
 			path = Introducegif;
 			sourceTree = "<group>";
 		};
+		E60F2B471C3E159500E685C1 /* DetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				E60F2B481C3E15AE00E685C1 /* MovieDetailHeadView.h */,
+				E60F2B491C3E15AE00E685C1 /* MovieDetailHeadView.m */,
+			);
+			path = DetailViews;
+			sourceTree = "<group>";
+		};
 		E611464A1C2CD6C200CF0391 /* PickViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -815,6 +830,8 @@
 				E60CD03A1C3B9E4D001BD388 /* CastModel.m */,
 				E60CD03C1C3B9F18001BD388 /* MovieModel.h */,
 				E60CD03D1C3B9F18001BD388 /* MovieModel.m */,
+				E60F2B4B1C3E393000E685C1 /* DetailMovieModel.h */,
+				E60F2B4C1C3E393000E685C1 /* DetailMovieModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -831,6 +848,7 @@
 		E63953841C3A890500AEC8E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E60F2B471C3E159500E685C1 /* DetailViews */,
 				E639538F1C3A8ACD00AEC8E1 /* MovieMenuView.h */,
 				E63953901C3A8ACD00AEC8E1 /* MovieMenuView.m */,
 				E60CD0451C3BAB96001BD388 /* HotMovieCell.h */,
@@ -1636,6 +1654,7 @@
 				E63953871C3A894500AEC8E1 /* MovieViewController.m in Sources */,
 				E60CD0441C3BA4C4001BD388 /* AvatarsModel.m in Sources */,
 				E611465A1C2D15F400CF0391 /* YLYTableViewIndexView.m in Sources */,
+				E60F2B4D1C3E393000E685C1 /* DetailMovieModel.m in Sources */,
 				E63953581C3A7D4E00AEC8E1 /* ZLPhotoPickerGroup.m in Sources */,
 				E63953321C3A7CE900AEC8E1 /* ZLPhotoPickerBrowserPhoto.m in Sources */,
 				E639535D1C3A7D4E00AEC8E1 /* ZLPhotoPickerCollectionView.m in Sources */,
@@ -1662,6 +1681,7 @@
 				E63953361C3A7CE900AEC8E1 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				E65486611C30C82200A47EC1 /* PickChinaCityController.m in Sources */,
 				E60CD0351C3B984F001BD388 /* MovieHttpTool.m in Sources */,
+				E60F2B4A1C3E15AE00E685C1 /* MovieDetailHeadView.m in Sources */,
 				E611AACC1C2A362D00A1107C /* LDRefreshFooterView.m in Sources */,
 				E64A13C31C2A8BF700AC0750 /* HotActivityCell.m in Sources */,
 				E63953591C3A7D4E00AEC8E1 /* ZLNavigationController.m in Sources */,

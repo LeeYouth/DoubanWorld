@@ -39,4 +39,6 @@
 
 + (NSString *)formatRating:(NSString *)rating;
 
++ (NSString *)formatCountstr:(NSString *)countStr;
+
 @end
