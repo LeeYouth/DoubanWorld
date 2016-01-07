@@ -11,7 +11,6 @@
 #import "HotMovieController.h"
 #import "NewFilmController.h"
 
-
 @interface MovieViewController ()
 
 @property (nonatomic, strong) HotMovieController *hotVC;
