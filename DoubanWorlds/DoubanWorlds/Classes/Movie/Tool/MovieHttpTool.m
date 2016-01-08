@@ -54,7 +54,7 @@
 }
 
 +(void)getMovieInfoWithID:(NSString *)movieID movieInfoBlock:(MovieInfoBlock)movieInfoBlock{
-    NSString *urlString = [NSString stringWithFormat:@"%@%@?apikey=0339b495d888705009ad1dc1899950f0",MovieInfo_URL,movieID];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",MovieInfo_URL,movieID];
     NSLog(@"MovieInfo_URL = %@",urlString);
     [HttpTools getWithURL:urlString params:nil success:^(id json) {
         
