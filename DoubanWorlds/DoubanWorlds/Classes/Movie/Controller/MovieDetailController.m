@@ -43,6 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //待更新
     
     [self initTableView];
     
@@ -108,7 +109,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 80;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
