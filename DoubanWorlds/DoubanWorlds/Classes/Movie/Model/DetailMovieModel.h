@@ -54,6 +54,8 @@
 @property (nonatomic ,strong) NSString *summary;
 @property (nonatomic ,strong) NSMutableArray *aka;
 
+@property (nonatomic ,assign) BOOL isExpanded;
+
 
 - (id)initWithDictionary:(NSDictionary *)dic;
 

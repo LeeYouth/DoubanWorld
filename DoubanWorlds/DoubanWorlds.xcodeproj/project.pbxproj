@@ -73,6 +73,7 @@
 		E61682321C351A2E008F77F2 /* type-support.png in Resources */ = {isa = PBXBuildFile; fileRef = E61682201C351A2E008F77F2 /* type-support.png */; };
 		E61682331C351A2E008F77F2 /* type-traffic-light.png in Resources */ = {isa = PBXBuildFile; fileRef = E61682211C351A2E008F77F2 /* type-traffic-light.png */; };
 		E61682341C351A2E008F77F2 /* umbrella.png in Resources */ = {isa = PBXBuildFile; fileRef = E61682221C351A2E008F77F2 /* umbrella.png */; };
+		E61A6DC81C4F6C07001D0609 /* MovieDetailIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E61A6DC71C4F6C07001D0609 /* MovieDetailIntroCell.m */; };
 		E639531D1C3A6A2A00AEC8E1 /* UserInfos.m in Sources */ = {isa = PBXBuildFile; fileRef = E639531C1C3A6A2A00AEC8E1 /* UserInfos.m */; };
 		E63953321C3A7CE900AEC8E1 /* ZLPhotoPickerBrowserPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E63953211C3A7CE900AEC8E1 /* ZLPhotoPickerBrowserPhoto.m */; };
 		E63953331C3A7CE900AEC8E1 /* ZLPhotoRect.m in Sources */ = {isa = PBXBuildFile; fileRef = E63953231C3A7CE900AEC8E1 /* ZLPhotoRect.m */; };
@@ -290,6 +291,8 @@
 		E61682201C351A2E008F77F2 /* type-support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "type-support.png"; sourceTree = "<group>"; };
 		E61682211C351A2E008F77F2 /* type-traffic-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "type-traffic-light.png"; sourceTree = "<group>"; };
 		E61682221C351A2E008F77F2 /* umbrella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = umbrella.png; sourceTree = "<group>"; };
+		E61A6DC61C4F6C07001D0609 /* MovieDetailIntroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailIntroCell.h; sourceTree = "<group>"; };
+		E61A6DC71C4F6C07001D0609 /* MovieDetailIntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailIntroCell.m; sourceTree = "<group>"; };
 		E639531B1C3A6A2A00AEC8E1 /* UserInfos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfos.h; sourceTree = "<group>"; };
 		E639531C1C3A6A2A00AEC8E1 /* UserInfos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfos.m; sourceTree = "<group>"; };
 		E63953201C3A7CE900AEC8E1 /* ZLPhotoPickerBrowserPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserPhoto.h; sourceTree = "<group>"; };
@@ -557,6 +560,8 @@
 			children = (
 				E60F2B481C3E15AE00E685C1 /* MovieDetailHeadView.h */,
 				E60F2B491C3E15AE00E685C1 /* MovieDetailHeadView.m */,
+				E61A6DC61C4F6C07001D0609 /* MovieDetailIntroCell.h */,
+				E61A6DC71C4F6C07001D0609 /* MovieDetailIntroCell.m */,
 			);
 			path = DetailViews;
 			sourceTree = "<group>";
@@ -1623,6 +1628,7 @@
 				E63953391C3A7CE900AEC8E1 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
 				E60CD0471C3BAB96001BD388 /* HotMovieCell.m in Sources */,
 				E654867A1C30D35600A47EC1 /* HotCityCell.m in Sources */,
+				E61A6DC81C4F6C07001D0609 /* MovieDetailIntroCell.m in Sources */,
 				E6F753841C3250E600E570C2 /* YLYSearchBar.m in Sources */,
 				E63953741C3A7DB800AEC8E1 /* UIView+ZLExtension.m in Sources */,
 				E639538B1C3A8A0A00AEC8E1 /* HotMovieController.m in Sources */,

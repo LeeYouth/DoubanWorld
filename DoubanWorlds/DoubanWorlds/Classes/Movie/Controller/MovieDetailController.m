@@ -14,11 +14,13 @@
 #import "AvatarsModel.h"
 #import "MovieDetailHeadView.h"
 #import "MovieHttpTool.h"
+#import "MovieDetailIntroCell.h"
 
 @interface MovieDetailController ()<UITableViewDataSource,UITableViewDelegate>
 {
     TranslucentNavbar *_navgationBar;
     MovieDetailHeadView *_headView;
+    DetailMovieModel *_deatilMovieModel;
 }
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -55,6 +57,9 @@
 - (void)requestData{
     [MovieHttpTool getMovieInfoWithID:_movieModel.ID movieInfoBlock:^(DetailMovieModel *movieModel) {
         _headView.infoModel = movieModel;
+        _deatilMovieModel = movieModel;
+        
+        [self.tableView reloadData];
     }];
 }
 
@@ -111,18 +116,32 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    if (indexPath.row == 0) {
+        return [MovieDetailIntroCell heightWithModel:_deatilMovieModel];
+    }else{
+        return 80;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIndertifer = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndertifer];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndertifer];
-    }
-    cell.textLabel.text = @"测试数据====";
-    return cell;
     
+    if (indexPath.row == 0) {
+        MovieDetailIntroCell *introCell = [MovieDetailIntroCell cellWithTableView:tableView];
+        introCell.indexPath = indexPath;
+        introCell.block = ^(NSIndexPath *path) {
+            [tableView reloadRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+        };
+        [introCell configCellWithModel:_deatilMovieModel];
+        return introCell;
+    }else{
+        static NSString *cellIndertifer = @"cell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndertifer];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndertifer];
+        }
+        cell.textLabel.text = @"测试数据====";
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -147,7 +166,7 @@
     }
 }
 
--(void)dealloc{
+- (void)dealloc{
     _tableView.delegate = nil;
 }
 
