@@ -45,6 +45,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor whiteColor];
         
         
@@ -94,7 +95,6 @@
     [self.contentView addSubview:_introLabel];
     
     _unfoldBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _unfoldBtn.backgroundColor = [UIColor redColor];
     _unfoldBtn.titleLabel.font = [UIFont boldSystemFontOfSize:16.f];
     [_unfoldBtn setTitle:@"展开" forState:UIControlStateNormal];
     [_unfoldBtn setTitle:@"展开" forState:UIControlStateHighlighted];
@@ -214,8 +214,21 @@
     MovieDetailIntroCell *cell = [[MovieDetailIntroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MovieDetailIntroCell"];
     [cell configCellWithModel:model];
     [cell layoutIfNeeded];
-    CGRect frame =  cell.unfoldBtn.frame;
-    return frame.origin.y + frame.size.height + 10;
+    
+    CGFloat viewH = 75;
+    CGFloat deafultH = 70;
+    CGFloat btnH = 20;
+    CGFloat bottomMargin = 10;
+    
+    CGFloat w = SCREEN_WIDTH - 2*HMStatusCellMargin;
+    CGSize maxSize = CGSizeMake(w, MAXFLOAT);
+    CGSize titleSize = [model.summary attrStrSizeWithFont:[UIFont systemFontOfSize:IntroduceFont] andmaxSize:maxSize lineSpacing:6];
+
+    if (model.isExpanded) {//展开
+        return viewH + titleSize.height + btnH + HMStatusCellMargin + bottomMargin;
+    }else{
+        return viewH + deafultH + btnH + HMStatusCellMargin + bottomMargin;
+    }
 }
 
 @end
