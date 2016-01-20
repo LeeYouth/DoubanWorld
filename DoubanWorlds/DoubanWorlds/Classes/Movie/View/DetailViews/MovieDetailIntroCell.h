@@ -14,7 +14,7 @@ typedef void (^CellBlock)(NSIndexPath *indexPath);
 
 @interface MovieDetailIntroCell : UITableViewCell
 
-@property (nonatomic ,strong) UIButton *unfoldBtn;//展开按钮
+@property (nonatomic ,strong) UIButton *unfoldBtn;//展开视图
 
 @property (nonatomic, copy) CellBlock block;
 

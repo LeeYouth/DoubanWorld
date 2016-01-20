@@ -9,15 +9,16 @@
 #import "MovieDetailIntroCell.h"
 #import "DetailMovieModel.h"
 
-#define IntroduceFont 15.f
+#define IntroduceFont 16.f
 #define UnfoldButtonFont 17.f
 
 @interface MovieDetailIntroCell()
 {
     DetailMovieModel *_tmpModel;
-    UILabel *_introLabel;
     
     UIView *_lineView;
+        
+    UILabel *_introLabel;
     
     UIView *_btnsView;//盛放两个button
     
@@ -93,6 +94,7 @@
     [self.contentView addSubview:_introLabel];
     
     _unfoldBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _unfoldBtn.backgroundColor = [UIColor redColor];
     _unfoldBtn.titleLabel.font = [UIFont boldSystemFontOfSize:16.f];
     [_unfoldBtn setTitle:@"展开" forState:UIControlStateNormal];
     [_unfoldBtn setTitle:@"展开" forState:UIControlStateHighlighted];
@@ -115,8 +117,7 @@
         make.height.mas_equalTo(75);
     }];
     
-    int padding = 10;
-    int btnPaddding = HMStatusCellMargin;
+    int padding = HMStatusCellMargin;
     
    [_introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        make.left.mas_equalTo(self.contentView).offset(padding);
@@ -126,7 +127,7 @@
     
     [_unfoldBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.mas_equalTo(_introLabel);
-        make.top.equalTo(_introLabel.mas_bottom).offset(btnPaddding);
+        make.top.equalTo(_introLabel.mas_bottom).offset(padding);
         make.height.mas_equalTo(20);
     }];
     
@@ -170,7 +171,7 @@
 
     _introLabel.attributedText = [AppTools setLineSpacingWith:introduceStr lineSpacing:6];
     
-    int padding = 10;
+    int padding = HMStatusCellMargin;
 
     if (model.isExpanded) {//展开
         [_introLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -214,7 +215,7 @@
     [cell configCellWithModel:model];
     [cell layoutIfNeeded];
     CGRect frame =  cell.unfoldBtn.frame;
-    return frame.origin.y + frame.size.height + HMStatusCellMargin;
+    return frame.origin.y + frame.size.height + 10;
 }
 
 @end
