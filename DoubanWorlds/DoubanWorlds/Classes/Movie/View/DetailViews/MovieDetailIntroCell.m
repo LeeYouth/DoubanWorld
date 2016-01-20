@@ -31,7 +31,7 @@
 
 @implementation MovieDetailIntroCell
 
-+(instancetype)cellWithTableView:(UITableView *)tableView{
++ (instancetype)cellWithTableView:(UITableView *)tableView{
     static NSString *cellIndertifer = @"MovieDetailIntroCell";
     MovieDetailIntroCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndertifer];
     if (!cell) {
@@ -58,7 +58,7 @@
 }
 
 
--(void)setupUI{
+- (void)setupUI{
     
     _btnsView = [[UIView alloc] init];
     _btnsView.backgroundColor = [UIColor clearColor];
@@ -95,6 +95,7 @@
     [self.contentView addSubview:_introLabel];
     
     _unfoldBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _unfoldBtn.backgroundColor = [UIColor clearColor];
     _unfoldBtn.titleLabel.font = [UIFont boldSystemFontOfSize:16.f];
     [_unfoldBtn setTitle:@"展开" forState:UIControlStateNormal];
     [_unfoldBtn setTitle:@"展开" forState:UIControlStateHighlighted];
@@ -109,7 +110,7 @@
     
 }
 
--(void)setupLayout{
+- (void)setupLayout{
     
     [_btnsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.contentView);
