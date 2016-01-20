@@ -61,6 +61,8 @@
 - (void)setupNavgationbar{
     _navgationBar = [[TranslucentNavbar alloc] init];
     _navgationBar.barHidden = YES;
+    _navgationBar.title = _movieModel.title;
+    _navgationBar.orgTitle = _movieModel.original_title;
     [self.view addSubview:_navgationBar];
 }
 

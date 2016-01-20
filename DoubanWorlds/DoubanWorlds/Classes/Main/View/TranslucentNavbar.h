@@ -12,4 +12,8 @@
 
 @property (nonatomic ,assign) BOOL barHidden;
 
+@property (nonatomic ,strong) NSString *title;//主标题
+
+@property (nonatomic ,strong) NSString *orgTitle;//原始标题
+
 @end
