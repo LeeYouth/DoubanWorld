@@ -24,7 +24,7 @@
 #define     SCREEN_HEIGHT                   ([[UIScreen mainScreen] bounds].size.height)
 #define     SCREEN_WIDTH                    ([[UIScreen mainScreen] bounds].size.width)
 #define     NAV_BAR_HEIGHT                   64
-#define     TAB_BAR_HEIGHT                   44
+#define     TAB_BAR_HEIGHT                   49
 
 
 #endif

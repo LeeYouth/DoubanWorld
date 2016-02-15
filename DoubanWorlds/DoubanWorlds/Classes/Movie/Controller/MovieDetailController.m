@@ -59,6 +59,7 @@
         _headView.infoModel = movieModel;
         _deatilMovieModel = movieModel;
         
+//        [self initTableView];
         [self.tableView reloadData];
     }];
 }
