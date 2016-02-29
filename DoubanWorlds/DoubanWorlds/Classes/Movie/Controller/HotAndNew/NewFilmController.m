@@ -58,7 +58,7 @@
 }
 
 #pragma mark - 下拉刷新数据
--(void)requestData{
+- (void)requestData{
     
     __weak NewFilmController *weakSelf = self;
     
