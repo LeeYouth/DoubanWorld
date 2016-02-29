@@ -191,8 +191,14 @@
     _tableView.refreshHeader = [_tableView addRefreshHeaderWithHandler:^ {
         [weakSelf refreshDataLocID:weakSelf.locID];
     }];
+    
+    //上拉加载更多
+    _tableView.refreshFooter = [_tableView addRefreshFooterWithHandler:^{
+        [weakSelf loadMoreDataLocID:weakSelf.locID];
+    }];
 }
 
+#pragma mark - 下拉刷新
 - (void)refreshDataLocID:(NSString *)cityID{
     NSString *acType = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentActiveType];
 
@@ -212,6 +218,26 @@
         [weakSelf.tableView.refreshHeader endRefresh];
         
         weakSelf.tableView.refreshFooter.loadMoreEnabled = YES;
+    });
+}
+
+#pragma mark - 上拉加载更多数据
+- (void)loadMoreDataLocID:(NSString *)cityID{
+    NSString *acType = [[NSUserDefaults standardUserDefaults] objectForKey:kCurrentActiveType];
+    
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjects:@[@"热门",@"音乐",@"戏剧",@"展览",@"讲座",@"聚会",@"运动",@"旅行",@"公益",@"电影"] forKeys:@[@"all",@"music",@"drama",@"exhibition",@"salon",@"party", @"sports", @"travel", @"commonweal",@"film"] ];
+    [self setTitleBtnTitle:[dict objectForKey:acType]];
+    __weak __typeof(self)weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [RecommendHttpTool getRecommendList:_startNum loc:self.locID type:acType arrayBlock:^(NSMutableArray *resultArray) {
+            
+            [_resultArray addObjectsFromArray:resultArray];
+            [weakSelf.tableView reloadData];
+            
+        }];
+        [weakSelf.tableView.refreshFooter endRefresh];
+        
     });
 }
 
