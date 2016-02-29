@@ -32,13 +32,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    //1.初始化tableView
     [self initTableView];
-    
+    //2.添加上拉加载和下拉刷新
     [self addRefreshView];
-    
+    //3.请求初始数据
     [self requestData];
-    
     
 }
 
