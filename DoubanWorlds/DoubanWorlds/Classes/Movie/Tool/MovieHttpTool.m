@@ -12,9 +12,9 @@
 
 @implementation MovieHttpTool
 
-+(void)getHotMovieWithStart:(int)start arrayBlock:(ArrayBlock)arrayBlock{
++(void)getHotMovieWithStart:(NSInteger)start arrayBlock:(ArrayBlock)arrayBlock{
     
-    NSString *urlSting = [NSString stringWithFormat:@"%@?count=10&start=%d",HotMovie_URL,start];
+    NSString *urlSting = [NSString stringWithFormat:@"%@?count=10&start=%ld",HotMovie_URL,start];
     NSLog(@"HotMovie_URL = %@",urlSting);
     [HttpTools getWithURL:urlSting params:nil success:^(id json) {
         NSMutableArray *resArray = [[NSMutableArray alloc] init];
@@ -33,8 +33,8 @@
     }];
 }
 
-+(void)getComingsoonWithStart:(int)start arrayBlock:(ArrayBlock)arrayBlock{
-    NSString *urlSting = [NSString stringWithFormat:@"%@?count=10&start=%d",ComingsoonMovie_URL,start];
++(void)getComingsoonWithStart:(NSInteger)start arrayBlock:(ArrayBlock)arrayBlock{
+    NSString *urlSting = [NSString stringWithFormat:@"%@?count=10&start=%ld",ComingsoonMovie_URL,start];
     NSLog(@"ComingsoonMovie_URL = %@",urlSting);
     [HttpTools getWithURL:urlSting params:nil success:^(id json) {
         NSMutableArray *resArray = [[NSMutableArray alloc] init];

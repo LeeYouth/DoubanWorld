@@ -11,6 +11,7 @@
 #import "MovieHttpTool.h"
 #import "MovieModel.h"
 #import "HotMovieCell.h"
+#import "LDRefresh.h"
 
 @interface NewFilmController ()
 
@@ -35,13 +36,50 @@
     
     [self initTableView];
     
+    [self addRefreshView];
+    
     [self requestData];
-
+    
+    
 }
 
+- (void)addRefreshView {
+    
+    __weak __typeof(self) weakSelf = self;
+    //下拉刷新
+    _tableView.refreshHeader = [_tableView addRefreshHeaderWithHandler:^ {
+        [weakSelf requestData];
+    }];
+    
+    //上拉加载更多
+    _tableView.refreshFooter = [_tableView addRefreshFooterWithHandler:^{
+        [weakSelf loadMoreData];
+    }];
+}
+
+#pragma mark - 下拉刷新数据
 -(void)requestData{
+    
+    __weak NewFilmController *weakSelf = self;
+    
     [MovieHttpTool getComingsoonWithStart:0 arrayBlock:^(NSMutableArray *resultArray) {
         _resultArray = resultArray;
+        
+        [weakSelf.tableView.refreshHeader endRefresh];
+        [self.tableView reloadData];
+        
+    }];
+}
+
+#pragma mark - 上拉加载更多数据
+- (void)loadMoreData{
+    
+    __weak NewFilmController *weakSelf = self;
+    
+    [MovieHttpTool getComingsoonWithStart:_resultArray.count arrayBlock:^(NSMutableArray *resultArray) {
+        [_resultArray addObjectsFromArray: resultArray];
+        
+        [weakSelf.tableView.refreshFooter endRefresh];
         [self.tableView reloadData];
     }];
 }

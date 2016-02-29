@@ -18,7 +18,7 @@ typedef void (^MovieInfoBlock)(DetailMovieModel *movieModel);
  *  @param start      开始页
  *  @param arrayBlock 返回数组
  */
-+(void)getHotMovieWithStart:(int)start arrayBlock:(ArrayBlock)arrayBlock;
++(void)getHotMovieWithStart:(NSInteger)start arrayBlock:(ArrayBlock)arrayBlock;
 
 /**
  *  即将上映的电影
@@ -26,7 +26,7 @@ typedef void (^MovieInfoBlock)(DetailMovieModel *movieModel);
  *  @param start      开始页
  *  @param arrayBlock 返回数组
  */
-+(void)getComingsoonWithStart:(int)start arrayBlock:(ArrayBlock)arrayBlock;
++(void)getComingsoonWithStart:(NSInteger)start arrayBlock:(ArrayBlock)arrayBlock;
 
 /**
  *  电影详细信息
