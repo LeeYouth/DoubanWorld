@@ -17,6 +17,9 @@
 #import "MapViewController.h"
 
 @interface ActivityDetailController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    UILabel *_titleLabel;
+}
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIImageView *expandZoomImageView;
@@ -67,11 +70,16 @@
 - (void)initTableView{
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
-//    {
-//        self.automaticallyAdjustsScrollViewInsets = NO;
-//    }
-//    
+    //标题
+    _titleLabel = [[UILabel alloc] init];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.font = [UIFont systemFontOfSize:16.0];
+    _titleLabel.frame = CGRectMake(SCREEN_WIDTH/2 - 100, 20, 200, 20);
+    self.navigationItem.titleView = _titleLabel;
+    _titleLabel.text = _activityModel.title;
+    _titleLabel.hidden = YES;
+
    
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT )];
     _tableView.delegate = self;
@@ -114,6 +122,13 @@
         f.origin.y = yOffset - 20;
         f.size.height =  -yOffset + 20;
         _expandZoomImageView.frame = f;
+    }
+    
+    CGFloat offset = KMovieDetailHeadH - 64;
+    if (yOffset > -offset) {//取消隐藏
+        _titleLabel.hidden = NO;
+    }else{//隐藏
+        _titleLabel.hidden = YES;
     }
 }
 
