@@ -7,7 +7,7 @@
 
 #import "SKTagView.h"
 #import "SKTagButton.h"
-#import <Masonry/Masonry.h>
+#import "Masonry.h"
 
 #define SAVE_C(c) [self.tagsContraints addObject:c]
 
